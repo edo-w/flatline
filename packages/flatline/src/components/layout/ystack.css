@@ -7,7 +7,7 @@
 		justify-content: start;
 
 		/* spacing */
-		gap: calc(var(--fl-ystack-gap) * var(--fl-space-unit));
+		gap: calc(var(--fl-ystack-gap) * var(--fl-size-unit));
 
 		/* alignment modifiers */
 		&.align-left {

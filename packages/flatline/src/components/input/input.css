@@ -1,7 +1,7 @@
 @layer components {
 	.fl-input {
-		--fl-input-pad-x: var(--fl-space-2);
-		--fl-input-pad-y: var(--fl-space-1);
+		--fl-input-pad-x: var(--fl-size-2);
+		--fl-input-pad-y: var(--fl-size-1);
 
 		--fl-input-bg: var(--fl-color-bg-surface);
 		--fl-input-fg: var(--fl-color-fg-default);
@@ -14,7 +14,6 @@
 
 		/* reset */
 		appearance: none;
-		-webkit-appearance: none;
 
 		/* spacing */
 		padding-inline: var(--fl-input-pad-x);

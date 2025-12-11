@@ -1,38 +1,38 @@
 @layer base {
 	:root {
 		/* beautify ignore:start */
-		/* preset space sizes */
+		/* preset sizes */
 		/* space base unit */
-		--fl-space-unit: 0.25rem;							/* 4px */
-		--fl-space-0-5: calc(0.5 * var(--fl-space-unit)); 	/* 2px */
-		--fl-space-1: calc(1.5 * var(--fl-space-unit)); 	/* 4px */
-		--fl-space-1-5: calc(1.5 * var(--fl-space-unit)); 	/* 6px */
-		--fl-space-2: calc(2 * var(--fl-space-unit)); 		/* 8px */
-		--fl-space-2-5: calc(2.5 * var(--fl-space-unit)); 	/* 10px */
-		--fl-space-3: calc(3 * var(--fl-space-unit)); 		/* 12px */
-		--fl-space-3-5: calc(3.5 * var(--fl-space-unit)); 	/* 14px */
-		--fl-space-4: calc(4 * var(--fl-space-unit)); 		/* 16px */
-		--fl-space-5: calc(5 * var(--fl-space-unit)); 		/* 20px */
-		--fl-space-6: calc(6 * var(--fl-space-unit)); 		/* 24px */
-		--fl-space-7: calc(7 * var(--fl-space-unit)); 		/* 28px */
-		--fl-space-8: calc(8 * var(--fl-space-unit)); 		/* 32px */
-		--fl-space-9: calc(9 * var(--fl-space-unit)); 		/* 36px */
-		--fl-space-10: calc(10 * var(--fl-space-unit)); 	/* 40px */
-		--fl-space-11: calc(11 * var(--fl-space-unit)); 	/* 44px */
-		--fl-space-12: calc(12 * var(--fl-space-unit)); 	/* 48px */
-		--fl-space-14: calc(14 * var(--fl-space-unit)); 	/* 56px */
-		--fl-space-16: calc(16 * var(--fl-space-unit)); 	/* 64px */
-		--fl-space-20: calc(20 * var(--fl-space-unit)); 	/* 80px */
-		--fl-space-24: calc(24 * var(--fl-space-unit)); 	/* 96px */
-		--fl-space-28: calc(28 * var(--fl-space-unit)); 	/* 112px */
-		--fl-space-32: calc(32 * var(--fl-space-unit)); 	/* 128px */
-		--fl-space-36: calc(36 * var(--fl-space-unit)); 	/* 144px */
-		--fl-space-40: calc(40 * var(--fl-space-unit)); 	/* 160px */
-		--fl-space-44: calc(44 * var(--fl-space-unit)); 	/* 176px */
-		--fl-space-48: calc(48 * var(--fl-space-unit)); 	/* 192px */
-		--fl-space-52: calc(52 * var(--fl-space-unit)); 	/* 208px */
-		--fl-space-56: calc(56 * var(--fl-space-unit)); 	/* 224px */
-		--fl-space-60: calc(60 * var(--fl-space-unit)); 	/* 240px */
+		--fl-size-unit: 0.25rem;							/* 4px */
+		--fl-size-0-5: calc(0.5 * var(--fl-size-unit)); 	/* 2px */
+		--fl-size-1: calc(1.5 * var(--fl-size-unit)); 		/* 4px */
+		--fl-size-1-5: calc(1.5 * var(--fl-size-unit)); 	/* 6px */
+		--fl-size-2: calc(2 * var(--fl-size-unit)); 		/* 8px */
+		--fl-size-2-5: calc(2.5 * var(--fl-size-unit)); 	/* 10px */
+		--fl-size-3: calc(3 * var(--fl-size-unit)); 		/* 12px */
+		--fl-size-3-5: calc(3.5 * var(--fl-size-unit)); 	/* 14px */
+		--fl-size-4: calc(4 * var(--fl-size-unit)); 		/* 16px */
+		--fl-size-5: calc(5 * var(--fl-size-unit)); 		/* 20px */
+		--fl-size-6: calc(6 * var(--fl-size-unit)); 		/* 24px */
+		--fl-size-7: calc(7 * var(--fl-size-unit)); 		/* 28px */
+		--fl-size-8: calc(8 * var(--fl-size-unit)); 		/* 32px */
+		--fl-size-9: calc(9 * var(--fl-size-unit)); 		/* 36px */
+		--fl-size-10: calc(10 * var(--fl-size-unit)); 		/* 40px */
+		--fl-size-11: calc(11 * var(--fl-size-unit)); 		/* 44px */
+		--fl-size-12: calc(12 * var(--fl-size-unit)); 		/* 48px */
+		--fl-size-14: calc(14 * var(--fl-size-unit)); 		/* 56px */
+		--fl-size-16: calc(16 * var(--fl-size-unit)); 		/* 64px */
+		--fl-size-20: calc(20 * var(--fl-size-unit)); 		/* 80px */
+		--fl-size-24: calc(24 * var(--fl-size-unit)); 		/* 96px */
+		--fl-size-28: calc(28 * var(--fl-size-unit)); 		/* 112px */
+		--fl-size-32: calc(32 * var(--fl-size-unit)); 		/* 128px */
+		--fl-size-36: calc(36 * var(--fl-size-unit)); 		/* 144px */
+		--fl-size-40: calc(40 * var(--fl-size-unit)); 		/* 160px */
+		--fl-size-44: calc(44 * var(--fl-size-unit)); 		/* 176px */
+		--fl-size-48: calc(48 * var(--fl-size-unit)); 		/* 192px */
+		--fl-size-52: calc(52 * var(--fl-size-unit)); 		/* 208px */
+		--fl-size-56: calc(56 * var(--fl-size-unit)); 		/* 224px */
+		--fl-size-60: calc(60 * var(--fl-size-unit)); 		/* 240px */
 		/* beautify ignore:end */
 
 		/* radii */
