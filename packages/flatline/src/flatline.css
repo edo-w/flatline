@@ -1,0 +1,161 @@
+:root {
+	/* beautify ignore:start */
+	/* preset space sizes */
+	/* space base unit */
+	--fl-space-unit: 0.25rem;							/* 4px */
+	--fl-space-0-5: calc(0.5 * var(--fl-space-unit)); 	/* 2px */
+	--fl-space-1: calc(1.5 * var(--fl-space-unit)); 	/* 4px */
+	--fl-space-1-5: calc(1.5 * var(--fl-space-unit)); 	/* 6px */
+	--fl-space-2: calc(2 * var(--fl-space-unit)); 		/* 8px */
+	--fl-space-2-5: calc(2.5 * var(--fl-space-unit)); 	/* 10px */
+	--fl-space-3: calc(3 * var(--fl-space-unit)); 		/* 12px */
+	--fl-space-3-5: calc(3.5 * var(--fl-space-unit)); 	/* 14px */
+	--fl-space-4: calc(4 * var(--fl-space-unit)); 		/* 16px */
+	--fl-space-5: calc(5 * var(--fl-space-unit)); 		/* 20px */
+	--fl-space-6: calc(6 * var(--fl-space-unit)); 		/* 24px */
+	--fl-space-7: calc(7 * var(--fl-space-unit)); 		/* 28px */
+	--fl-space-8: calc(8 * var(--fl-space-unit)); 		/* 32px */
+	--fl-space-9: calc(9 * var(--fl-space-unit)); 		/* 36px */
+	--fl-space-10: calc(10 * var(--fl-space-unit)); 	/* 40px */
+	--fl-space-11: calc(11 * var(--fl-space-unit)); 	/* 44px */
+	--fl-space-12: calc(12 * var(--fl-space-unit)); 	/* 48px */
+	--fl-space-14: calc(14 * var(--fl-space-unit)); 	/* 56px */
+	--fl-space-16: calc(16 * var(--fl-space-unit)); 	/* 64px */
+	--fl-space-20: calc(20 * var(--fl-space-unit)); 	/* 80px */
+	--fl-space-24: calc(24 * var(--fl-space-unit)); 	/* 96px */
+	--fl-space-28: calc(28 * var(--fl-space-unit)); 	/* 112px */
+	--fl-space-32: calc(32 * var(--fl-space-unit)); 	/* 128px */
+	--fl-space-36: calc(36 * var(--fl-space-unit)); 	/* 144px */
+	--fl-space-40: calc(40 * var(--fl-space-unit)); 	/* 160px */
+	--fl-space-44: calc(44 * var(--fl-space-unit)); 	/* 176px */
+	--fl-space-48: calc(48 * var(--fl-space-unit)); 	/* 192px */
+	--fl-space-52: calc(52 * var(--fl-space-unit)); 	/* 208px */
+	--fl-space-56: calc(56 * var(--fl-space-unit)); 	/* 224px */
+	--fl-space-60: calc(60 * var(--fl-space-unit)); 	/* 240px */
+	/* beautify ignore:end */
+
+	/* radii */
+	--fl-radius-2xs: 0.0625rem;
+	--fl-radius-xs: 0.125rem;
+	--fl-radius-sm: 0.25rem;
+	--fl-radius-md: 0.375rem;
+	--fl-radius-lg: 0.5rem;
+	--fl-radius-xl: 0.75rem;
+	--fl-radius-2xl: 1rem;
+	--fl-radius-3xl: 1.5rem;
+	--fl-radius-4xl: 2rem;
+	--fl-radius-full: 9999px;
+
+	/* shadows */
+	--fl-shadow-2xs: 0 1px rgb(0 0 0 / 0.05);
+	--fl-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--fl-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--fl-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	--fl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--fl-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+	--fl-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+	/* colors */
+	--fl-color-neutral-0: oklch(1 0 0);
+	--fl-color-neutral-25: oklch(0.985 0.002 255);
+	--fl-color-neutral-50: oklch(0.97 0.004 255);
+	--fl-color-neutral-100: oklch(0.94 0.008 255);
+	--fl-color-neutral-200: oklch(0.88 0.012 255);
+	--fl-color-neutral-300: oklch(0.82 0.016 255);
+	--fl-color-neutral-400: oklch(0.72 0.02 255);
+	--fl-color-neutral-500: oklch(0.62 0.025 255);
+	--fl-color-neutral-600: oklch(0.52 0.03 255);
+	--fl-color-neutral-700: oklch(0.42 0.032 255);
+	--fl-color-neutral-800: oklch(0.32 0.034 255);
+	--fl-color-neutral-900: oklch(0.22 0.035 255);
+	--fl-color-neutral-950: oklch(0.12 0.04 255);
+
+	--fl-color-blue-50: oklch(0.94 0.04 250);
+	--fl-color-blue-100: oklch(0.88 0.06 250);
+	--fl-color-blue-200: oklch(0.82 0.09 250);
+	--fl-color-blue-300: oklch(0.74 0.12 250);
+	--fl-color-blue-400: oklch(0.66 0.14 250);
+	--fl-color-blue-500: oklch(0.56 0.16 250);
+	--fl-color-blue-600: oklch(0.50 0.15 250);
+	--fl-color-blue-700: oklch(0.44 0.13 250);
+	--fl-color-blue-800: oklch(0.38 0.11 250);
+	--fl-color-blue-900: oklch(0.32 0.09 250);
+
+	--fl-color-purple-50: oklch(0.96 0.05 300);
+	--fl-color-purple-100: oklch(0.90 0.08 300);
+	--fl-color-purple-200: oklch(0.84 0.12 300);
+	--fl-color-purple-300: oklch(0.76 0.16 300);
+	--fl-color-purple-400: oklch(0.68 0.19 300);
+	--fl-color-purple-500: oklch(0.60 0.20 300);
+	--fl-color-purple-600: oklch(0.52 0.18 300);
+	--fl-color-purple-700: oklch(0.44 0.15 300);
+	--fl-color-purple-800: oklch(0.36 0.12 300);
+	--fl-color-purple-900: oklch(0.28 0.10 300);
+
+	--fl-color-green-50: oklch(0.96 0.05 150);
+	--fl-color-green-100: oklch(0.90 0.09 150);
+	--fl-color-green-200: oklch(0.84 0.13 150);
+	--fl-color-green-300: oklch(0.78 0.16 150);
+	--fl-color-green-400: oklch(0.71 0.19 150);
+	--fl-color-green-500: oklch(0.64 0.22 150);
+	--fl-color-green-600: oklch(0.56 0.20 150);
+	--fl-color-green-700: oklch(0.48 0.17 150);
+	--fl-color-green-800: oklch(0.40 0.12 150);
+	--fl-color-green-900: oklch(0.33 0.09 150);
+
+	--fl-color-amber-50: oklch(0.97 0.05 75);
+	--fl-color-amber-100: oklch(0.93 0.09 75);
+	--fl-color-amber-200: oklch(0.88 0.13 75);
+	--fl-color-amber-300: oklch(0.82 0.16 75);
+	--fl-color-amber-400: oklch(0.76 0.19 75);
+	--fl-color-amber-500: oklch(0.70 0.22 75);
+	--fl-color-amber-600: oklch(0.63 0.20 75);
+	--fl-color-amber-700: oklch(0.55 0.17 75);
+	--fl-color-amber-800: oklch(0.48 0.13 75);
+	--fl-color-amber-900: oklch(0.40 0.10 75);
+
+	--fl-color-red--50: oklch(0.96 0.04 30);
+	--fl-color-red--100: oklch(0.90 0.08 30);
+	--fl-color-red--200: oklch(0.84 0.12 30);
+	--fl-color-red--300: oklch(0.76 0.16 30);
+	--fl-color-red--400: oklch(0.70 0.19 30);
+	--fl-color-red--500: oklch(0.62 0.22 30);
+	--fl-color-red--600: oklch(0.54 0.20 30);
+	--fl-color-red--700: oklch(0.46 0.17 30);
+	--fl-color-red--800: oklch(0.38 0.13 30);
+	--fl-color-red--900: oklch(0.30 0.10 30);
+
+	--fl-color-black10: oklch(0 0 0 / 0.1);
+	--fl-color-black20: oklch(0 0 0 / 0.2);
+	--fl-color-black40: oklch(0 0 0 / 0.4);
+	--fl-color-black60: oklch(0 0 0 / 0.6);
+	--fl-color-white10: oklch(1 0 0 / 0.1);
+	--fl-color-white20: oklch(1 0 0 / 0.2);
+
+	/* semantic colors */
+	--fl-color-bg-canvas: var(--fl-color-neutral-0);
+	--fl-color-bg-subtle: var(--fl-color-neutral-25);
+	--fl-color-bg-muted: var(--fl-color-neutral-50);
+	--fl-color-bg-surface: var(--fl-color-neutral-0);
+	--fl-color-bg-surface-alt: var(--fl-color-neutral-25);
+	--fl-color-bg-elevated: var(--fl-color-neutral-0);
+
+	--fl-color-text-default: var(--fl-color-neutral-900);
+	--fl-color-text-muted: var(--fl-color-neutral-600);
+	--fl-color-text-subtle: var(--fl-color-neutral-500);
+	--fl-color-text-inverse: var(--fl-color-neutral-0);
+	--fl-color-text-disabled: var(--fl-color-neutral-400);
+
+	--fl-color-border-default: var(--fl-color-neutral-200);
+	--fl-color-border-subtle: var(--fl-color-neutral-100);
+	--fl-color-border-strong: var(--fl-color-neutral-400);
+	--fl-color-border-focus: var(--fl-color-brand-500);
+	--fl-color-border-danger: var(--fl-color-danger-500);
+
+	/* semantic tokens */
+	--fl-input-radius: var(--fl-radius-sm);
+	--fl-input-border-color: var(--fl-color-border-strong);
+	--fl-input-shadow: var(--fl-shadow-sm);
+	--fl-input-disabled-bg-color: var(--fl-color-neutral-50);
+	--fl-input-disabled-text-color: var(--fl-color-neutral-400);
+}
