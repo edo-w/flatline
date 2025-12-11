@@ -17,8 +17,16 @@ export const Default = meta.story({
 	}
 });
 
-export const WithItems = meta.story({
+export const Disabled = meta.story({
 	args: {
+		disabled: true,
+		style: { width: '200px' }
+	}
+});
+
+export const WithValue = meta.story({
+	args: {
+		defaultValue: '3',
 		children: (
 			<>
 				<option value="1">Item 1</option>
@@ -27,4 +35,19 @@ export const WithItems = meta.story({
 			</>
 		)
 	}
-})
+});
+
+export const WithItems = meta.story({
+	args: {
+		defaultValue: '',
+		children: (
+			<>
+				<option value="1">Item 1</option>
+				<option value="2">Item 2</option>
+				<option value="3">Item 3</option>
+			</>
+		)
+	}
+});
+
+

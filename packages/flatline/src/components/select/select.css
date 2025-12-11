@@ -36,9 +36,9 @@
 		cursor: pointer;
 
 		/* disabled state */
-		&:disabled {
-			background-color: var(--fl-select-bg-disabled);
-			color: var(--fl-select-fg-disabled);
+		&[data-disabled] {
+			background-color: var(--fl-input-bg-disabled);
+			color: var(--fl-input-fg-disabled);
 			cursor: not-allowed;
 		}
 
@@ -49,6 +49,7 @@
 			outline: none;
 		}
 
+		/* select part */
 		& .select {
 			/* reset */
 			appearance: none;
@@ -71,6 +72,11 @@
 			cursor: pointer;
 		}
 
+		&[data-disabled] .select {
+			cursor: not-allowed;
+		}
+
+		/* arrow part */
 		& .arrow {
 			/* layout */
 			position: absolute;

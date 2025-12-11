@@ -1,17 +1,18 @@
 import './select.css';
 import clsx from "clsx/lite";
-import type { HtmlHTMLAttributes } from "react";
+import type { SelectHTMLAttributes } from "react";
 import { selectClass } from "./classname";
 
-export type SelectProps = HtmlHTMLAttributes<HTMLSelectElement>;
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
 
 export function Select(props: SelectProps) {
-	const { children, className, ...rest } = props;
+	const { children, className, disabled, ...rest } = props;
 	const rootClass = clsx(selectClass.root, className);
+	const dataDisabled = disabled ? '' : undefined;
 
 	return (
-		<div className={rootClass}>
-			<select className={selectClass.select} {...rest}>
+		<div className={rootClass} data-disabled={dataDisabled}>
+			<select className={selectClass.select} disabled={disabled} {...rest}>
 				{children}
 			</select>
 			<svg xmlns="http://www.w3.org/2000/svg" className={selectClass.arrow}
