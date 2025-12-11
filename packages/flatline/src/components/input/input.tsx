@@ -1,8 +1,9 @@
+import './input.css';
 import clsx from 'clsx/lite';
 import { inputClass } from './classname';
-import './input.css';
+import type { InputHTMLAttributes } from 'react';
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
 export function Input(props: InputProps) {
 	const { className, ...rest } = props;

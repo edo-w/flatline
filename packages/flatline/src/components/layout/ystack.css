@@ -1,0 +1,54 @@
+@layer components {
+	.fl-ystack {
+		/* layout */
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: start;
+
+		/* spacing */
+		gap: calc(var(--fl-ystack-gap) * var(--fl-space-unit));
+
+		/* alignment modifiers */
+		&.align-left {
+			align-items: flex-start;
+		}
+
+		&.align-center {
+			align-items: center;
+		}
+
+		&.align-right {
+			align-items: flex-end;
+		}
+
+		&.align-stretch {
+			align-items: stretch;
+		}
+
+		/* justify modifiers */
+		&.justify-top {
+			justify-content: flex-start;
+		}
+
+		&.justify-center {
+			justify-content: center;
+		}
+
+		&.justify-bottom {
+			justify-content: flex-end;
+		}
+
+		&.justify-space-between {
+			justify-content: space-between;
+		}
+
+		&.justify-space-around {
+			justify-content: space-around;
+		}
+
+		&.justify-space-evenly {
+			justify-content: space-evenly;
+		}
+	}
+}
