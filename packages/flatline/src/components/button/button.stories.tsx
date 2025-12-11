@@ -1,5 +1,4 @@
 import preview from '../../../.storybook/preview';
-
 import { Button } from './index';
 
 const meta = preview.meta({

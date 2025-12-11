@@ -2,15 +2,18 @@
 	.fl-button {
 		--fl-button-pad-x: var(--fl-space-2);
 		--fl-button-pad-y: var(--fl-space-1);
-		--fl-button-bg-color: var(--fl-color-bg-surface);
-		--fl-button-bg-hover-color: var(--fl-color-neutral-50);
-		--fl-button-bg-active-color: var(--fl-color-neutral-100);
-		--fl-button-text-color: var(--fl-color-text-default);
+
+		--fl-button-bg: var(--fl-color-neutral-50);
+		--fl-button-bg-hover: var(--fl-color-neutral-50);
+		--fl-button-bg-active: var(--fl-color-neutral-100);
+		--fl-button-bg-disabled: var(--fl-input-bg-disabled);
+
+		--fl-button-fg: var(--fl-color-fg-default);
+		--fl-button-fg-disabled: var(--fl-input-fg-disabled);
+
 		--fl-button-border-size: 1px;
 		--fl-button-border-radius: var(--fl-input-radius);
 		--fl-button-border-color: var(--fl-input-border-color);
-		--fl-button-disabled-bg-color: var(--fl-input-disabled-bg-color);
-		--fl-button-disabled-text-color: var(--fl-input-disabled-text-color);
 
 		/* reset */
 		appearance: none;
@@ -26,10 +29,10 @@
 		padding-block: var(--fl-button-pad-y);
 
 		/* background */
-		background: var(--fl-button-bg-color);
+		background: var(--fl-button-bg);
 
 		/* text */
-		color: var(--fl-button-text-color);
+		color: var(--fl-button-fg);
 
 		/* borders */
 		border: var(--fl-button-border-size) solid var(--fl-button-border-color);
@@ -43,19 +46,19 @@
 
 		/* active state */
 		&:active:not(:disabled) {
-			background-color: var(--fl-button-bg-active-color);
+			background-color: var(--fl-button-bg-active);
 			transform: translateY(1px);
 		}
 
 		/* hover state */
 		&:hover:not(:disabled) {
-			background-color: var(--fl-button-bg-hover-color);
+			background-color: var(--fl-button-bg-hover);
 		}
 
 		/* disabled state */
 		&:disabled {
-			background-color: var(--fl-button-disabled-bg-color);
-			color: var(--fl-button-disabled-text-color);
+			background-color: var(--fl-button-bg-disabled);
+			color: var(--fl-button-fg-disabled);
 			cursor: not-allowed;
 		}
 	}

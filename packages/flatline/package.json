@@ -10,8 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-rc.0",
     "clsx": "^2.1.1",
-	"@base-ui-components/react": "1.0.0-rc.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

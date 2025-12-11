@@ -1,0 +1,50 @@
+@layer components {
+	.fl-input {
+		--fl-input-pad-x: var(--fl-space-2);
+		--fl-input-pad-y: var(--fl-space-1);
+
+		--fl-input-bg: var(--fl-color-bg-surface);
+		--fl-input-fg: var(--fl-color-fg-default);
+
+		--fl-input-border-size: 1px;
+		--fl-input-border-radius: var(--fl-input-radius);
+		--fl-input-border-focus-color: var(--fl-color-blue-500);
+
+		--fl-input-focus-ring: color-mix(in oklch, var(--fl-input-border-focus-color) 20%, transparent);
+
+		/* reset */
+		appearance: none;
+		-webkit-appearance: none;
+
+		/* spacing */
+		padding-inline: var(--fl-input-pad-x);
+		padding-block: var(--fl-input-pad-y);
+
+		/* background */
+		background: var(--fl-input-bg);
+
+		/* text */
+		color: var(--fl-input-fg);
+
+		/* borders */
+		border: var(--fl-input-border-size) solid var(--fl-input-border-color);
+		border-radius: var(--fl-input-border-radius);
+
+		/* effects */
+		box-shadow: var(--fl-input-shadow);
+
+		/* disabled state */
+		&:disabled {
+			background-color: var(--fl-input-bg-disabled);
+			color: var(--fl-input-fg-disabled);
+			cursor: not-allowed;
+		}
+
+		/* focus state */
+		&:focus:not(:disabled), &:focus-visible:not(:disabled) {
+			border-color: var(--fl-input-border-focus-color);
+			box-shadow: 0 0 0 3px var(--fl-input-focus-ring);
+			outline: none;
+		}
+	}
+}

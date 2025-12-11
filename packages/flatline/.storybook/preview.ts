@@ -1,5 +1,5 @@
 import { definePreview } from '@storybook/react-vite';
-import '../src/flatline.css';
+import '../src/storybook.css';
 
 export default definePreview({
   addons: []
