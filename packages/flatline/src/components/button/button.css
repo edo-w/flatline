@@ -3,7 +3,7 @@
 		--fl-button-pad-x: var(--fl-size-2);
 		--fl-button-pad-y: var(--fl-size-1);
 
-		--fl-button-bg: var(--fl-color-neutral-50);
+		--fl-button-bg: var(--fl-color-neutral-25);
 		--fl-button-bg-hover: var(--fl-color-neutral-50);
 		--fl-button-bg-active: var(--fl-color-neutral-100);
 		--fl-button-bg-disabled: var(--fl-input-bg-disabled);
