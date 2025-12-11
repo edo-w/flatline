@@ -1,0 +1,7 @@
+minimumReleaseAge: 8100
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+
+packages:
+  - 'packages/*'
