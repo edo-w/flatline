@@ -13,7 +13,7 @@ const meta = preview.meta({
 
 export const Default = meta.story({
 	args: {
-		style: { width: '200px'}
+		style: { width: '200px' }
 	}
 });
 
@@ -49,5 +49,25 @@ export const WithItems = meta.story({
 		)
 	}
 });
+
+export const WithGroupedItems = meta.story({
+	args: {
+		defaultValue: '',
+		children: (
+			<>
+				<optgroup label="Group 1">
+					<option value="11">Item 1</option>
+					<option value="2">Item 2</option>
+					<option value="3">Item 3</option>
+				</optgroup>
+				<optgroup label="Group 2">
+					<option value="4">Item 4</option>
+					<option value="5">Item 5</option>
+					<option value="6">Item 6</option>
+				</optgroup>
+			</>
+		)
+	}
+})
 
 

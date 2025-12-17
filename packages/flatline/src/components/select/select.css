@@ -1,51 +1,36 @@
 @layer components {
 	.fl-select {
-		--fl-select-pad-x: var(--fl-size-2);
-		--fl-select-pad-y: var(--fl-size-1);
-
-		--fl-select-bg: var(--fl-color-bg-surface);
-		--fl-select-fg: var(--fl-color-fg-default);
-
-		--fl-select-border-size: 1px;
-		--fl-select-border-radius: var(--fl-input-radius);
-		--fl-select-border-focus-color: var(--fl-color-blue-500);
-
-		--fl-select-focus-ring: color-mix(in oklch, var(--fl-select-border-focus-color) 20%, transparent);
-
-		--fl-select-arrow-color: var(--fl-input-border-color);
-
 		/* layout */
 		position: relative;
 		display: inline-flex;
 		flex-direction: row;
 
 		/* background */
-		background: var(--fl-select-bg);
+		background: var(--fl-control-bg);
 
 		/* text */
-		color: var(--fl-select-fg);
+		color: var(--fl-control-fg);
 
 		/* borders */
-		border: var(--fl-select-border-size) solid var(--fl-input-border-color);
-		border-radius: var(--fl-select-border-radius);
+		border: var(--fl-control-border-size) solid var(--fl-control-border-color);
+		border-radius: var(--fl-control-radius);
 
 		/* effects */
-		box-shadow: var(--fl-input-shadow);
+		box-shadow: var(--fl-control-shadow);
 
 		/* pointer */
-		cursor: pointer;
+		cursor: var(--fl-control-cursor);
 
 		/* disabled state */
 		&[data-disabled] {
-			background-color: var(--fl-input-bg-disabled);
-			color: var(--fl-input-fg-disabled);
-			cursor: not-allowed;
+			cursor: var(--fl-disabled-cursor);
+			opacity: var(--fl-disabled-opacity);
 		}
 
 		/* focus state */
 		&:focus-within:not(:disabled) {
-			border-color: var(--fl-select-border-focus-color);
-			box-shadow: 0 0 0 3px var(--fl-select-focus-ring);
+			border-color: var(--fl-focus-border);
+			box-shadow: var(--fl-focus-shadow);
 			outline: none;
 		}
 
@@ -58,8 +43,8 @@
 			width: 100%;
 
 			/* spacing */
-			padding-inline: var(--fl-select-pad-x);
-			padding-block: var(--fl-select-pad-y);
+			padding-inline: var(--fl-control-pad-x);
+			padding-block: var(--fl-control-pad-y);
 			padding-right: var(--fl-size-8);
 
 			/* borders */
@@ -69,11 +54,11 @@
 			background: transparent;
 
 			/* pointer */
-			cursor: pointer;
+			cursor: var(--fl-control-cursor);
 		}
 
 		&[data-disabled] .select {
-			cursor: not-allowed;
+			cursor: var(--fl-disabled-cursor);
 		}
 
 		/* arrow part */
@@ -85,7 +70,7 @@
 			transform: translateY(-50%);
 
 			/* text */
-			color: var(--fl-select-arrow-color);
+			color: var(--fl-control-fg);
 
 			/* sizing */
 			width: var(--fl-size-4);

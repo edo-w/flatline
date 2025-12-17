@@ -1,20 +1,5 @@
 @layer components {
 	.fl-button {
-		--fl-button-pad-x: var(--fl-size-2);
-		--fl-button-pad-y: var(--fl-size-1);
-
-		--fl-button-bg: var(--fl-color-neutral-25);
-		--fl-button-bg-hover: var(--fl-color-neutral-50);
-		--fl-button-bg-active: var(--fl-color-neutral-100);
-		--fl-button-bg-disabled: var(--fl-input-bg-disabled);
-
-		--fl-button-fg: var(--fl-color-fg-default);
-		--fl-button-fg-disabled: var(--fl-input-fg-disabled);
-
-		--fl-button-border-size: 1px;
-		--fl-button-border-radius: var(--fl-input-radius);
-		--fl-button-border-color: var(--fl-input-border-color);
-
 		/* reset */
 		appearance: none;
 
@@ -24,42 +9,48 @@
 		align-items: center;
 
 		/* spacing */
-		padding-inline: var(--fl-button-pad-x);
-		padding-block: var(--fl-button-pad-y);
+		padding-inline: var(--fl-control-pad-x);
+		padding-block: var(--fl-control-pad-y);
 
 		/* background */
-		background: var(--fl-button-bg);
+		background: var(--fl-color-gray-100);
 
 		/* text */
-		color: var(--fl-button-fg);
+		color: var(--fl-control-fg);
+		font-weight: var(--fl-font-weight-medium);
 
 		/* borders */
-		border: var(--fl-button-border-size) solid var(--fl-button-border-color);
-		border-radius: var(--fl-button-border-radius);
+		border: var(--fl-control-border-size) solid var(--fl-control-border-color);
+		border-radius: var(--fl-control-radius);
 
 		/* effects */
-		box-shadow: var(--fl-input-shadow);
+		box-shadow: var(--fl-control-shadow);
 
 		/* pointer */
-		cursor: pointer;
+		cursor: var(--fl-control-cursor);
+
+		/* hover state */
+		&:hover:not(:disabled) {
+			background-color: var(--fl-color-gray-200);
+		}
 
 		/* active state */
 		&:active:not(:disabled) {
 			transform: translateY(1px);
-			background-color: var(--fl-button-bg-active);
-
-		}
-
-		/* hover state */
-		&:hover:not(:disabled) {
-			background-color: var(--fl-button-bg-hover);
+			background-color: var(--fl-color-gray-300);
 		}
 
 		/* disabled state */
 		&:disabled {
-			background-color: var(--fl-button-bg-disabled);
-			color: var(--fl-button-fg-disabled);
-			cursor: not-allowed;
+			cursor: var(--fl-disabled-cursor);
+			opacity: var(--fl-disabled-opacity);
+		}
+
+		/* focus state */
+		&:focus-visible:not(:disabled) {
+			border-color: var(--fl-focus-border-color);
+			box-shadow: var(--fl-focus-shadow);
+			outline: none;
 		}
 	}
 }
