@@ -5,6 +5,6 @@ export interface BoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
 	margin?: string | number;
 }
 
-export function Box(props: BoxProps) {
+export function Box() {
 
 }

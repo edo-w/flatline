@@ -1,0 +1,100 @@
+@layer base {
+	:root {
+		/* beautify ignore:start */
+		/* preset sizes */
+		/* space base unit */
+		--fl-size-unit: 0.25rem;							/* 4px */
+		--fl-size-0-5: calc(0.5 * var(--fl-size-unit)); 	/* 2px */
+		--fl-size-1: calc(1.5 * var(--fl-size-unit)); 		/* 4px */
+		--fl-size-1-5: calc(1.5 * var(--fl-size-unit)); 	/* 6px */
+		--fl-size-2: calc(2 * var(--fl-size-unit)); 		/* 8px */
+		--fl-size-2-5: calc(2.5 * var(--fl-size-unit)); 	/* 10px */
+		--fl-size-3: calc(3 * var(--fl-size-unit)); 		/* 12px */
+		--fl-size-3-5: calc(3.5 * var(--fl-size-unit)); 	/* 14px */
+		--fl-size-4: calc(4 * var(--fl-size-unit)); 		/* 16px */
+		--fl-size-5: calc(5 * var(--fl-size-unit)); 		/* 20px */
+		--fl-size-6: calc(6 * var(--fl-size-unit)); 		/* 24px */
+		--fl-size-7: calc(7 * var(--fl-size-unit)); 		/* 28px */
+		--fl-size-8: calc(8 * var(--fl-size-unit)); 		/* 32px */
+		--fl-size-9: calc(9 * var(--fl-size-unit)); 		/* 36px */
+		--fl-size-10: calc(10 * var(--fl-size-unit)); 		/* 40px */
+		--fl-size-11: calc(11 * var(--fl-size-unit)); 		/* 44px */
+		--fl-size-12: calc(12 * var(--fl-size-unit)); 		/* 48px */
+		--fl-size-14: calc(14 * var(--fl-size-unit)); 		/* 56px */
+		--fl-size-16: calc(16 * var(--fl-size-unit)); 		/* 64px */
+		--fl-size-20: calc(20 * var(--fl-size-unit)); 		/* 80px */
+		--fl-size-24: calc(24 * var(--fl-size-unit)); 		/* 96px */
+		--fl-size-28: calc(28 * var(--fl-size-unit)); 		/* 112px */
+		--fl-size-32: calc(32 * var(--fl-size-unit)); 		/* 128px */
+		--fl-size-36: calc(36 * var(--fl-size-unit)); 		/* 144px */
+		--fl-size-40: calc(40 * var(--fl-size-unit)); 		/* 160px */
+		--fl-size-44: calc(44 * var(--fl-size-unit)); 		/* 176px */
+		--fl-size-48: calc(48 * var(--fl-size-unit)); 		/* 192px */
+		--fl-size-52: calc(52 * var(--fl-size-unit)); 		/* 208px */
+		--fl-size-56: calc(56 * var(--fl-size-unit)); 		/* 224px */
+		--fl-size-60: calc(60 * var(--fl-size-unit)); 		/* 240px */
+		/* beautify ignore:end */
+
+		/* radii */
+		--fl-radius-2xs: 0.0625rem;
+		--fl-radius-xs: 0.125rem;
+		--fl-radius-sm: 0.25rem;
+		--fl-radius-md: 0.375rem;
+		--fl-radius-lg: 0.5rem;
+		--fl-radius-xl: 0.75rem;
+		--fl-radius-2xl: 1rem;
+		--fl-radius-3xl: 1.5rem;
+		--fl-radius-4xl: 2rem;
+		--fl-radius-full: 9999px;
+
+		/* shadows */
+		--fl-shadow-2xs: 0 1px rgb(0 0 0 / 0.05);
+		--fl-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+		--fl-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+		--fl-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		--fl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+		--fl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+		--fl-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+		/* font weights */
+		--fl-font-weight-thin: 100;
+		--fl-font-weight-extralight: 200;
+		--fl-font-weight-light: 300;
+		--fl-font-weight-normal: 400;
+		--fl-font-weight-medium: 500;
+		--fl-font-weight-semibold: 600;
+		--fl-font-weight-bold: 700;
+		--fl-font-weight-extrabold: 800;
+		--fl-font-weight-black: 900;
+
+		/* semantic tokens */
+		--fl-body-bg: #fff;
+		--fl-body-bg-hover: var(--fl-color-gray-100);
+		--fl-body-fg: var(--fl-color-gray-900);
+		--fl-body-fg-muted: var(--fl-color-gray-600);
+
+		--fl-primary-bg: var(--fl-color-blue-500);
+
+		--fl-border-size: 1px;
+		--fl-border-radius: var(--fl-radius-sm);
+		--fl-border-color: var(--fl-color-gray-300);
+		--fl-border-subtle-color: var(--fl-color-gray-200);
+
+		--fl-disabled-opacity: 0.60;
+		--fl-disabled-cursor: not-allowed;
+
+		--fl-control-pad-x: var(--fl-size-2);
+		--fl-control-pad-y: var(--fl-size-1-5);
+		--fl-control-bg: var(--fl-body-bg);
+		--fl-control-fg: var(--fl-body-fg);
+		--fl-control-border-size: var(--fl-border-size);
+		--fl-control-border-color: var(--fl-color-gray-400);
+		--fl-control-radius: var(--fl-border-radius);
+		--fl-control-shadow: var(--fl-shadow-sm);
+		--fl-control-cursor: pointer;
+
+		--fl-focus-border: var(--fl-color-blue-500);
+		--fl-focus-ring: color-mix(in oklch, var(--fl-focus-border) 20%, transparent);
+		--fl-focus-shadow: 0 0 0 3px var(--fl-focus-ring);
+	}
+}
