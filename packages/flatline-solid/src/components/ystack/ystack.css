@@ -1,0 +1,31 @@
+@layer components {
+	.fl-ystack {
+		--fl-gap: 0;
+
+		/* layout */
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+
+		/* spacing */
+		gap: calc(var(--fl-gap) * var(--fl-size-unit));
+	}
+
+	/* alignment modifiers */
+	.fl-ystack.--align-left {
+		align-items: flex-start;
+	}
+
+	.fl-ystack.--align-center {
+		align-items: center;
+	}
+
+	.fl-ystack.--align-right {
+		align-items: flex-end;
+	}
+
+	.fl-ystack.--align-stretch {
+		align-items: stretch;
+	}
+}
