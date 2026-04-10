@@ -82,6 +82,7 @@
 		/* border colors */
 		--fl-border-color: var(--fl-color-gray-300);
 		--fl-border-size: 1px;
+		--fl-border-radius: var(--fl-radius-sm);
 
 		/* primary colors */
 		--fl-primary-color: var(--fl-color-blue-600);
@@ -101,7 +102,7 @@
 
 		/* focus ring */
 		--fl-focus-ring-color: var(--fl-primary-color);
-		--fl-focus-ring-size: 3px;
+		--fl-focus-ring-size: 2px;
 		--fl-focus-ring-offset: 2px;
 
 		/* disabled state */
