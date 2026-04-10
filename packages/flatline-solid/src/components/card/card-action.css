@@ -8,5 +8,8 @@
 		justify-self: end;
 		align-items: center;
 		justify-content: center;
+
+		/* text */
+		font-size: var(--fl-text-size-sm);
 	}
 }
