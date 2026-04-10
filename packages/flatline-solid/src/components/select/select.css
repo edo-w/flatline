@@ -1,0 +1,67 @@
+@layer components {
+	.fl-select {
+		/* layout */
+		position: relative;
+		display: inline-flex;
+		align-items: stretch;
+
+		/* background */
+		background: var(--fl-input-bg-color, var(--fl-body-bg-color));
+		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid var(--fl-input-border-color, var(--fl-border-color));
+		border-radius: var(--fl-input-border-radius, var(--fl-border-radius));
+
+		/* effects */
+		box-shadow: var(--fl-input-shadow, var(--fl-shadow-sm));
+	}
+
+	.fl-select:focus-within {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: 0;
+	}
+
+	.fl-select[data-disabled] {
+		cursor: var(--fl-disabled-cursor);
+		opacity: var(--fl-disabled-opacity);
+	}
+
+	.fl-select .fl-select_inner-select {
+		/* reset */
+		appearance: none;
+		outline: none;
+
+		/* layout */
+		width: 100%;
+		min-width: 0;
+
+		/* spacing */
+		padding-inline: var(--fl-input-pad-x, var(--fl-size-2));
+		padding-block: var(--fl-input-pad-y, var(--fl-size-1-5));
+		padding-right: calc(var(--fl-size-4) + var(--fl-size-4));
+
+		/* background */
+		background: transparent;
+		border: 0;
+
+		/* text */
+		color: var(--fl-input-text-color, var(--fl-body-text-color));
+		font: inherit;
+
+		/* pointer */
+		cursor: pointer;
+	}
+
+	.fl-select[data-disabled] .fl-select_inner-select {
+		cursor: var(--fl-disabled-cursor);
+	}
+
+	.fl-select .fl-select_arrow {
+		position: absolute;
+		right: var(--fl-size-2);
+		top: 50%;
+		width: var(--fl-size-4);
+		height: var(--fl-size-4);
+		transform: translateY(-50%);
+		pointer-events: none;
+		color: var(--fl-input-text-color, var(--fl-body-text-color));
+	}
+}

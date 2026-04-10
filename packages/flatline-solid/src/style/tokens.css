@@ -108,5 +108,16 @@
 		/* disabled state */
 		--fl-disabled-opacity: 0.6;
 		--fl-disabled-cursor: default;
+
+		/* input tokens */
+		--fl-input-pad-x: var(--fl-size-2);
+		--fl-input-pad-y: var(--fl-size-1-5);
+		--fl-input-bg-color: var(--fl-body-bg-color);
+		--fl-input-bg-hover-color: color-mix(in oklab, var(--fl-input-bg-color), black 5%);
+		--fl-input-border-color: var(--fl-border-color);
+		--fl-input-border-size: var(--fl-border-size, 1px);
+		--fl-input-border-radius: var(--fl-border-radius);
+		--fl-input-text-color: var(--fl-body-text-color);
+		--fl-input-shadow: var(--fl-shadow-sm);
 	}
 }
