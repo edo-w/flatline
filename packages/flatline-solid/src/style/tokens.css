@@ -82,11 +82,12 @@
 		/* semantic fonts */
 		--fl-font-body: var(--fl-font-weight-normal) var(--fl-text-size-base) / 1.5 var(--fl-font-family-system);
 		--fl-font-title: var(--fl-font-weight-semibold) var(--fl-text-size-xl) / 1.2 var(--fl-font-family-system);
-		--fl-font-subtitle: var(--fl-font-weight-medium) var(--fl-text-size-lg) / 1.35 var(--fl-font-family-system);
+		--fl-font-subtitle: var(--fl-font-weight-normal) var(--fl-text-size-base) / 1.35 var(--fl-font-family-system);
 
 		/* body colors */
 		--fl-body-bg-color: white;
 		--fl-body-text-color: var(--fl-color-gray-800);
+		--fl-body-muted-text-color: var(--fl-color-gray-500);
 
 		/* border colors */
 		--fl-border-color: var(--fl-color-gray-300);

@@ -1,0 +1,33 @@
+@layer components {
+	.fl-card_title {
+		--fl-card-title-color: var(--fl-body-text-color);
+
+		/* layout */
+		grid-column: 1;
+		grid-row: 1;
+
+		/* text */
+		font: var(--fl-font-title);
+		color: var(--fl-card-title-color);
+	}
+
+	/* primary color */
+	.fl-card_title.--color-primary {
+		--fl-card-title-color: var(--fl-primary-color);
+	}
+
+	/* secondary color */
+	.fl-card_title.--color-secondary {
+		--fl-card-title-color: var(--fl-secondary-text-color);
+	}
+
+	/* success color */
+	.fl-card_title.--color-success {
+		--fl-card-title-color: var(--fl-success-color);
+	}
+
+	/* danger color */
+	.fl-card_title.--color-danger {
+		--fl-card-title-color: var(--fl-danger-color);
+	}
+}

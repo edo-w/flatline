@@ -1,0 +1,31 @@
+@layer components {
+	.fl-card {
+		--fl-card-pad: var(--fl-size-4);
+		--fl-card-bg-color: var(--fl-body-bg-color);
+		--fl-card-border-color: var(--fl-input-border-color);
+		--fl-card-border-size: var(--fl-input-border-size);
+		--fl-card-border-radius: var(--fl-input-border-radius);
+		--fl-card-text-color: var(--fl-body-text-color);
+		--fl-card-shadow: var(--fl-shadow-sm);
+		--fl-card-gap: 6;
+
+		/* layout */
+		display: flex;
+		flex-direction: column;
+
+		/* spacing */
+		gap: calc(var(--fl-card-gap) * var(--fl-size-unit));
+		padding: var(--fl-card-pad);
+
+		/* background */
+		background: var(--fl-card-bg-color);
+		border: var(--fl-card-border-size) solid var(--fl-card-border-color);
+		border-radius: var(--fl-card-border-radius);
+
+		/* text */
+		color: var(--fl-card-text-color);
+
+		/* effects */
+		box-shadow: var(--fl-card-shadow);
+	}
+}

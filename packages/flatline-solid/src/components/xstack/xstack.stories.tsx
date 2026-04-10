@@ -22,6 +22,9 @@ const meta: Meta<typeof XStack> = {
 	component: XStack,
 	parameters: {
 		layout: 'centered',
+		controls: {
+			exclude: ['use:eventListener']
+		}
 	},
 	args: {
 		children: [

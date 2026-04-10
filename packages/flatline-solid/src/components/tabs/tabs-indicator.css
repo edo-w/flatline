@@ -7,7 +7,7 @@
 		background-color: var(--fl-tabs-indicator-color);
 
 		/* effects */
-		transition: all 250ms ease-in-out;
+		transition: all var(--fl-animation-duration) ease-in-out;
 	}
 
 	/* horizontal indicator */

@@ -6,6 +6,9 @@ const meta: Meta<typeof Tabs> = {
 	component: Tabs,
 	parameters: {
 		layout: 'centered',
+		controls: {
+			exclude: ['style', 'use:eventListener']
+		}
 	},
 	args: {
 		defaultValue: 'profile',

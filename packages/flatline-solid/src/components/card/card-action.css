@@ -1,0 +1,12 @@
+@layer components {
+	.fl-card_action {
+		/* layout */
+		grid-column: 2;
+		grid-row: 1 / 3;
+		display: inline-flex;
+		align-self: start;
+		justify-self: end;
+		align-items: center;
+		justify-content: center;
+	}
+}

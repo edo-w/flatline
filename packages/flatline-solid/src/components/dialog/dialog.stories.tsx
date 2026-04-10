@@ -29,6 +29,11 @@ function CloseIcon() {
 const meta: Meta<DialogStoryArgs> = {
 	title: 'Dialog',
 	component: Dialog,
+	parameters: {
+		controls: {
+			exclude: ['use:eventListener']
+		}
+	},
 	args: {
 		modal: true,
 		defaultOpen: false,

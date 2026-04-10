@@ -22,6 +22,9 @@ const meta: Meta<typeof YStack> = {
 	component: YStack,
 	parameters: {
 		layout: 'centered',
+		controls: {
+			exclude: ['use:eventListener']
+		}
 	},
 	args: {
 		children: [

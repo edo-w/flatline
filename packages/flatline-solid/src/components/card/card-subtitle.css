@@ -1,0 +1,12 @@
+@layer components {
+	.fl-card_subtitle {
+		/* layout */
+		grid-column: 1;
+		grid-row: 2;
+
+		/* text */
+		font: var(--fl-font-subtitle);
+		font-size: var(--fl-text-size-sm);
+		color: var(--fl-body-muted-text-color);
+	}
+}

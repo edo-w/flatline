@@ -1,0 +1,13 @@
+@layer components {
+	.fl-card_header {
+		/* layout */
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-rows: auto auto;
+		align-items: start;
+
+		/* spacing */
+		column-gap: var(--fl-size-3);
+		row-gap: var(--fl-size-1);
+	}
+}

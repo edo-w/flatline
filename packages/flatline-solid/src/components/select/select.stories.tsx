@@ -6,6 +6,9 @@ const meta: Meta<typeof Select> = {
 	component: Select,
 	parameters: {
 		layout: 'centered',
+		controls: {
+			exclude: ['use:eventListener']
+		}
 	},
 	args: {
 		style: { width: '200px' },

@@ -1,0 +1,39 @@
+@layer components {
+	.fl-card_footer {
+		--fl-card-footer-gap: var(--fl-size-2);
+
+		/* layout */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+
+		/* spacing */
+		gap: calc(var(--fl-card-footer-gap) * var(--fl-size-unit));
+	}
+
+	/* justify center */
+	.fl-card_footer.--justify-center {
+		justify-content: center;
+	}
+
+	/* justify right */
+	.fl-card_footer.--justify-right {
+		justify-content: flex-end;
+	}
+
+	/* justify space-between */
+	.fl-card_footer.--justify-space-between {
+		justify-content: space-between;
+	}
+
+	/* justify space-around */
+	.fl-card_footer.--justify-space-around {
+		justify-content: space-around;
+	}
+
+	/* justify space-evenly */
+	.fl-card_footer.--justify-space-evenly {
+		justify-content: space-evenly;
+	}
+}

@@ -6,6 +6,9 @@ const meta: Meta<typeof Input> = {
 	component: Input,
 	parameters: {
 		layout: 'centered',
+		controls: {
+			exclude: ['use:eventListener']
+		}
 	},
 	args: {
 		type: 'text',
