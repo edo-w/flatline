@@ -2,8 +2,8 @@
   "name": "@edo-w/flatline-solid",
   "type": "module",
   "exports": {
-	".": "./dist/src/index.js",
-	"./*": "./dist/src/*.js"
+    ".": "./dist/src/index.js",
+    "./*": "./dist/src/*.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -17,7 +17,7 @@
     "vite-plugin-solid": "^2.11.12"
   },
   "scripts": {
-	"clean": "rimraf dist",
+    "clean": "rimraf dist",
     "check": "tsgo",
     "dev": "storybook dev -p 6006",
     "build:storybook": "storybook build",
@@ -26,6 +26,7 @@
     "make": "pnpm run check && pnpm run build:lib && pnpm run build:css"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.11",
     "solid-js": "^1.9.12"
   }
 }
