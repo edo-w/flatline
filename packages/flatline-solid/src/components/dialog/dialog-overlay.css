@@ -1,0 +1,43 @@
+@layer components {
+	.fl-dialog_overlay {
+		--fl-dialog-overlay-bg-base-color: 0 0 0;
+		--fl-dialog-overlay-bg-opacity: 0.20;
+		--fl-dialog-overlay-bg-color: rgb(var(--fl-dialog-overlay-bg-base-color) / var(--fl-dialog-overlay-bg-opacity));
+
+		/* layout */
+		position: fixed;
+		inset: 0;
+		z-index: 50;
+
+		/* background */
+		background-color: var(--fl-dialog-overlay-bg-color);
+
+		/* effects */
+		animation: fl-dialog-overlay-hide var(--fl-animation-duration) ease 100ms forwards;
+	}
+
+	/* expanded state */
+	.fl-dialog_overlay[data-expanded] {
+		animation: fl-dialog-overlay-show var(--fl-animation-duration) ease;
+	}
+
+	@keyframes fl-dialog-overlay-show {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fl-dialog-overlay-hide {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+}

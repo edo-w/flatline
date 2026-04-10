@@ -1,0 +1,12 @@
+@layer components {
+	.fl-dialog_header {
+		/* layout */
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		/* spacing */
+		gap: var(--fl-size-3);
+		margin-bottom: var(--fl-size-3);
+	}
+}

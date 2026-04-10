@@ -1,0 +1,46 @@
+@layer components {
+	.fl-dialog_close-button {
+		--fl-dialog-close-button-bg-color: transparent;
+		--fl-dialog-close-button-bg-hover-color: color-mix(in oklab, var(--fl-body-bg-color), black 5%);
+		--fl-dialog-close-button-border-radius: var(--fl-border-radius);
+		--fl-dialog-close-button-text-color: var(--fl-body-text-color);
+		--fl-dialog-close-button-text-hover-color: var(--fl-body-text-color);
+
+		/* reset */
+		appearance: none;
+
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 auto;
+		width: var(--fl-size-7);
+		height: var(--fl-size-7);
+
+		/* background */
+		background: var(--fl-dialog-close-button-bg-color);
+		border: 0;
+		border-radius: var(--fl-dialog-close-button-border-radius);
+
+		/* text */
+		color: var(--fl-dialog-close-button-text-color);
+
+		/* pointer */
+		cursor: pointer;
+
+		/* effects */
+		transition: background-color 188ms ease-in-out, color 188ms ease-in-out;
+	}
+
+	/* hover state */
+	.fl-dialog_close-button:hover {
+		background-color: var(--fl-dialog-close-button-bg-hover-color);
+		color: var(--fl-dialog-close-button-text-hover-color);
+	}
+
+	/* focus-visible state */
+	.fl-dialog_close-button:focus-visible {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: 0;
+	}
+}

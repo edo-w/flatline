@@ -1,0 +1,6 @@
+@layer components {
+	.fl-dialog_description {
+		/* text */
+		font: var(--fl-font-body);
+	}
+}

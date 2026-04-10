@@ -1,0 +1,61 @@
+@layer components {
+	.fl-dialog_trigger {
+		--fl-dialog-trigger-pad-x: var(--fl-size-2);
+		--fl-dialog-trigger-pad-y: var(--fl-size-1-5);
+		--fl-dialog-trigger-bg-color: var(--fl-primary-color);
+		--fl-dialog-trigger-bg-hover-color: color-mix(in oklab, var(--fl-dialog-trigger-bg-color), black 8%);
+		--fl-dialog-trigger-bg-active-color: color-mix(in oklab, var(--fl-dialog-trigger-bg-color), black 16%);
+		--fl-dialog-trigger-border-color: color-mix(in oklab, var(--fl-dialog-trigger-bg-color), black 20%);
+		--fl-dialog-trigger-border-size: var(--fl-border-size, 1px);
+		--fl-dialog-trigger-border-radius: var(--fl-border-radius);
+		--fl-dialog-trigger-text-color: var(--fl-primary-text-color);
+		--fl-dialog-trigger-shadow: var(--fl-shadow-md);
+
+		/* reset */
+		appearance: none;
+
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		/* spacing */
+		padding-inline: var(--fl-dialog-trigger-pad-x);
+		padding-block: var(--fl-dialog-trigger-pad-y);
+
+		/* background */
+		background: var(--fl-dialog-trigger-bg-color);
+		border: var(--fl-dialog-trigger-border-size) solid var(--fl-dialog-trigger-border-color);
+		border-radius: var(--fl-dialog-trigger-border-radius);
+
+		/* text */
+		color: var(--fl-dialog-trigger-text-color);
+		font: inherit;
+		font-weight: var(--fl-font-weight-medium);
+		white-space: nowrap;
+
+		/* pointer */
+		cursor: pointer;
+
+		/* effects */
+		box-shadow: var(--fl-dialog-trigger-shadow);
+		transition: background-color 188ms ease-in-out, transform 188ms ease-in-out;
+	}
+
+	/* hover state */
+	.fl-dialog_trigger:hover {
+		background: var(--fl-dialog-trigger-bg-hover-color);
+	}
+
+	/* focus-visible state */
+	.fl-dialog_trigger:focus-visible {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+	}
+
+	/* active state */
+	.fl-dialog_trigger:active {
+		background: var(--fl-dialog-trigger-bg-active-color);
+		transform: translateY(1px);
+	}
+}

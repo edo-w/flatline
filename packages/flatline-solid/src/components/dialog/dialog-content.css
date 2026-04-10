@@ -1,0 +1,89 @@
+@layer components {
+	.fl-dialog_content {
+		--fl-dialog-content-width: 44%;
+		--fl-dialog-content-pad: var(--fl-size-4);
+		--fl-dialog-content-bg-color: var(--fl-body-bg-color);
+		--fl-dialog-content-border-color: var(--fl-input-border-color);
+		--fl-dialog-content-border-size: var(--fl-input-border-size);
+		--fl-dialog-content-border-radius: var(--fl-input-border-radius);
+		--fl-dialog-content-text-color: var(--fl-body-text-color);
+		--fl-dialog-content-shadow: var(--fl-shadow-lg);
+
+		/* layout */
+		position: relative;
+		z-index: 50;
+		width: min(calc(100vw - var(--fl-size-8)), var(--fl-dialog-content-width));
+		max-width: 100%;
+
+		/* spacing */
+		padding: var(--fl-dialog-content-pad);
+
+		/* background */
+		background-color: var(--fl-dialog-content-bg-color);
+		border: var(--fl-dialog-content-border-size) solid var(--fl-dialog-content-border-color);
+		border-radius: var(--fl-dialog-content-border-radius);
+
+		/* text */
+		color: var(--fl-dialog-content-text-color);
+
+		/* effects */
+		box-shadow: var(--fl-dialog-content-shadow);
+		animation: fl-dialog-content-hide var(--fl-animation-duration) ease-in forwards;
+	}
+
+	/* size variants */
+	.fl-dialog_content.--size-sm {
+		--fl-dialog-content-width: 32%;
+	}
+
+	.fl-dialog_content.--size-md {
+		--fl-dialog-content-width: 44%;
+	}
+
+	.fl-dialog_content.--size-lg {
+		--fl-dialog-content-width: 56%;
+	}
+
+	.fl-dialog_content.--size-xl {
+		--fl-dialog-content-width: 68%;
+	}
+
+	.fl-dialog_content.--size-2xl {
+		--fl-dialog-content-width: 80%;
+	}
+
+	/* expanded state */
+	.fl-dialog_content[data-expanded] {
+		animation: fl-dialog-content-show var(--fl-animation-duration) ease-out;
+	}
+
+	/* focus-visible state */
+	.fl-dialog_content:focus-visible {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+	}
+
+	@keyframes fl-dialog-content-show {
+		from {
+			opacity: 0;
+			transform: scale(0.96);
+		}
+
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	@keyframes fl-dialog-content-hide {
+		from {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		to {
+			opacity: 0;
+			transform: scale(0.96);
+		}
+	}
+}
