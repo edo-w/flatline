@@ -1,0 +1,20 @@
+@layer components {
+	.fl-combobox_content {
+		/* layout */
+		position: absolute;
+		top: calc(100% + var(--fl-size-1));
+		left: 0;
+		right: 0;
+		z-index: 10;
+		max-height: 19rem;
+		overflow: hidden;
+
+		/* background */
+		background: var(--fl-body-bg-color);
+		border: var(--fl-border-size, 1px) solid var(--fl-border-color);
+		border-radius: var(--fl-border-radius);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-md);
+	}
+}

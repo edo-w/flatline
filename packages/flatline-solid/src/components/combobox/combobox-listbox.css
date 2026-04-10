@@ -1,0 +1,18 @@
+@layer components {
+	.fl-combobox_listbox {
+		/* layout */
+		max-height: inherit;
+		overflow-y: auto;
+
+		/* spacing */
+		margin: 0;
+		padding: var(--fl-size-2);
+
+		/* list */
+		list-style: none;
+	}
+
+	.fl-combobox_listbox:focus {
+		outline: none;
+	}
+}

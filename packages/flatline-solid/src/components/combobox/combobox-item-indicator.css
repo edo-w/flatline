@@ -1,0 +1,11 @@
+@layer components {
+	.fl-combobox_item-indicator {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--fl-size-4);
+		height: var(--fl-size-4);
+		flex: 0 0 auto;
+	}
+}

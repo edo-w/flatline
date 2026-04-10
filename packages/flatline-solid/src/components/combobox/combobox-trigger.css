@@ -1,0 +1,31 @@
+@layer components {
+	.fl-combobox_trigger {
+		/* reset */
+		appearance: none;
+		outline: none;
+
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 auto;
+
+		/* spacing */
+		padding-inline: var(--fl-size-2);
+		padding-block: var(--fl-input-pad-y, var(--fl-size-1-5));
+
+		/* background */
+		background: transparent;
+		border: 0;
+
+		/* text */
+		color: var(--fl-input-text-color, var(--fl-body-text-color));
+
+		/* pointer */
+		cursor: pointer;
+	}
+
+	.fl-combobox_control[data-disabled] .fl-combobox_trigger {
+		cursor: var(--fl-disabled-cursor);
+	}
+}

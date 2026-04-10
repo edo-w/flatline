@@ -1,5 +1,6 @@
 export * from './components/button';
 export * from './components/card';
+export * from './components/combobox';
 export * from './components/dialog';
 export * from './components/select';
 export * from './components/input';

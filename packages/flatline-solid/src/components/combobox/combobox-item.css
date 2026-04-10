@@ -1,0 +1,45 @@
+@layer components {
+	.fl-combobox_item {
+		/* layout */
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: var(--fl-size-8);
+		gap: var(--fl-size-2);
+
+		/* spacing */
+		padding-inline: var(--fl-size-2);
+		padding-block: var(--fl-size-1-5);
+
+		/* background */
+		border-radius: var(--fl-radius-sm);
+
+		/* text */
+		color: var(--fl-body-text-color);
+		font: var(--fl-font-body);
+
+		/* pointer */
+		cursor: pointer;
+		user-select: none;
+		outline: none;
+	}
+
+	.fl-combobox_item[data-disabled] {
+		cursor: var(--fl-disabled-cursor);
+		opacity: var(--fl-disabled-opacity);
+	}
+
+	.fl-combobox_item[data-selected] {
+		background: color-mix(in srgb, var(--fl-body-bg-color), var(--fl-primary-color) 15%);
+	}
+
+	.fl-combobox_item[data-highlighted] {
+		background: var(--fl-primary-color);
+		color: var(--fl-primary-text-color);
+	}
+
+	.fl-combobox_item .fl-combobox_item-label {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+}

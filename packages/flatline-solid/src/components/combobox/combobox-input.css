@@ -1,0 +1,32 @@
+@layer components {
+	.fl-combobox_input {
+		/* reset */
+		appearance: none;
+		outline: none;
+
+		/* layout */
+		flex: 1 1 auto;
+		min-width: 0;
+		min-height: calc(var(--fl-input-pad-y, var(--fl-size-1-5)) * 2 + 1em);
+
+		/* spacing */
+		padding-inline: var(--fl-input-pad-x, var(--fl-size-2));
+		padding-block: var(--fl-input-pad-y, var(--fl-size-1-5));
+
+		/* background */
+		background: transparent;
+		border: 0;
+
+		/* text */
+		color: var(--fl-input-text-color, var(--fl-body-text-color));
+		font: inherit;
+	}
+
+	.fl-combobox_input::placeholder {
+		color: var(--fl-body-muted-text-color);
+	}
+
+	.fl-combobox_input:disabled {
+		cursor: var(--fl-disabled-cursor);
+	}
+}

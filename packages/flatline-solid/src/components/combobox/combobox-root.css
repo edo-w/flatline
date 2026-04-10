@@ -1,0 +1,12 @@
+@layer components {
+	.fl-combobox {
+		/* layout */
+		position: relative;
+		display: inline-flex;
+		flex-direction: column;
+		width: 100%;
+
+		/* spacing */
+		gap: var(--fl-size-1);
+	}
+}
