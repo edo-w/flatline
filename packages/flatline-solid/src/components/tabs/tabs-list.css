@@ -1,0 +1,26 @@
+@layer components {
+	.fl-tabs .fl-tabs_list {
+		/* layout */
+		position: relative;
+		display: flex;
+	}
+
+	/* horizontal list */
+	.fl-tabs .fl-tabs_list[data-orientation='horizontal'] {
+		/* layout */
+		align-items: center;
+
+		/* background */
+		border-bottom: var(--fl-border-size, 1px) solid var(--fl-tabs-list-border-color);
+	}
+
+	/* vertical list */
+	.fl-tabs .fl-tabs_list[data-orientation='vertical'] {
+		/* layout */
+		flex-direction: column;
+		align-items: stretch;
+
+		/* background */
+		border-right: var(--fl-border-size, 1px) solid var(--fl-tabs-list-border-color);
+	}
+}

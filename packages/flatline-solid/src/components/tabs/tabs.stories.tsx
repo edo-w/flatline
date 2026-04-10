@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { Tabs } from './tabs';
+import { Tabs, type TabsRootProps } from './tabs';
 
 const meta: Meta<typeof Tabs> = {
 	title: 'Tabs',
@@ -39,9 +39,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-function renderTabs(args: Story['args']) {
+function RenderTabs(props: TabsRootProps) {
 	return (
-		<Tabs {...args} aria-label="Main navigation">
+		<Tabs {...props} aria-label="Main navigation">
 			<Tabs.List>
 				<Tabs.Trigger value="profile">Profile</Tabs.Trigger>
 				<Tabs.Trigger value="dashboard">Dashboard</Tabs.Trigger>
@@ -58,15 +58,23 @@ function renderTabs(args: Story['args']) {
 }
 
 export const Primary: Story = {
-	render: renderTabs,
+	render: (args: TabsRootProps) => <RenderTabs {...args} />,
 	args: {
 		color: 'primary'
 	}
 };
 
 export const Secondary: Story = {
-	render: renderTabs,
+	render: (args: TabsRootProps) => <RenderTabs {...args} />,
 	args: {
 		color: 'secondary'
+	}
+};
+
+export const Vertical: Story = {
+	render: (args: TabsRootProps) => <RenderTabs {...args} />,
+	args: {
+		orientation: 'vertical',
+		style: { width: '560px' }
 	}
 };

@@ -1,0 +1,24 @@
+@layer components {
+	.fl-tabs .fl-tabs_content {
+		/* spacing */
+		padding: var(--fl-size-4);
+
+		/* text */
+		color: var(--fl-body-text-color);
+	}
+
+	/* focus-visible state */
+	.fl-tabs .fl-tabs_content:focus-visible {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+	}
+
+	/* vertical content */
+	.fl-tabs[data-orientation='vertical'] .fl-tabs_content {
+		/* layout */
+		flex: 1 1 auto;
+
+		/* spacing */
+		padding-top: 0;
+	}
+}

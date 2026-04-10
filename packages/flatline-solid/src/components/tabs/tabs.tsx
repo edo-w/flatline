@@ -9,7 +9,11 @@ import {
 } from '@kobalte/core/tabs';
 import { mergeProps, splitProps, type JSX } from 'solid-js';
 import { tabsClass, type TabsColor } from './class';
-import './tabs.css';
+import './tabs-root.css';
+import './tabs-list.css';
+import './tabs-trigger.css';
+import './tabs-indicator.css';
+import './tabs-content.css';
 
 export type TabsRootBaseProps = KTabsRootProps & JSX.HTMLAttributes<HTMLDivElement>;
 

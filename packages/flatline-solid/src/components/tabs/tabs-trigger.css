@@ -1,0 +1,56 @@
+@layer components {
+	.fl-tabs .fl-tabs_trigger {
+		/* reset */
+		appearance: none;
+
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		/* spacing */
+		padding-inline: var(--fl-size-4);
+		padding-block: var(--fl-input-pad-y, var(--fl-size-1-5));
+
+		/* background */
+		border: 0;
+		background: transparent;
+
+		/* text */
+		color: var(--fl-body-text-color);
+		font: inherit;
+		font-weight: var(--fl-font-weight-medium);
+		white-space: nowrap;
+		user-select: none;
+
+		/* pointer */
+		cursor: pointer;
+
+		/* effects */
+		transition: background-color 188ms ease-in-out, color 188ms ease-in-out;
+	}
+
+	/* hover state */
+	.fl-tabs .fl-tabs_trigger:hover:not([data-disabled]) {
+		background-color: var(--fl-tabs-trigger-hover-bg);
+	}
+
+	/* focus-visible state */
+	.fl-tabs .fl-tabs_trigger:focus-visible {
+		outline: none;
+		background-color: var(--fl-tabs-trigger-focus-bg);
+	}
+
+	/* selected state */
+	.fl-tabs .fl-tabs_trigger[data-selected] {
+		color: var(--fl-tabs-indicator-color);
+	}
+
+	/* disabled state */
+	.fl-tabs .fl-tabs_trigger[data-disabled],
+	.fl-tabs .fl-tabs_trigger[data-disabled]:hover {
+		opacity: var(--fl-disabled-opacity);
+		background-color: transparent;
+		cursor: var(--fl-disabled-cursor);
+	}
+}

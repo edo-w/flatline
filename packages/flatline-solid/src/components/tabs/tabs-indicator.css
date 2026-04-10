@@ -1,0 +1,36 @@
+@layer components {
+	.fl-tabs .fl-tabs_indicator {
+		/* layout */
+		position: absolute;
+
+		/* background */
+		background-color: var(--fl-tabs-indicator-color);
+
+		/* effects */
+		transition: all 250ms ease-in-out;
+	}
+
+	/* horizontal indicator */
+	.fl-tabs .fl-tabs_indicator[data-orientation='horizontal'] {
+		/* layout */
+		bottom: calc(var(--fl-border-size, 1px) * -1);
+
+		/* sizing */
+		height: var(--fl-tabs-indicator-size);
+
+		/* background */
+		border-radius: var(--fl-radius-full);
+	}
+
+	/* vertical indicator */
+	.fl-tabs .fl-tabs_indicator[data-orientation='vertical'] {
+		/* layout */
+		right: calc(var(--fl-border-size, 1px) * -1);
+
+		/* sizing */
+		width: var(--fl-tabs-indicator-size);
+
+		/* background */
+		border-radius: var(--fl-radius-full);
+	}
+}
