@@ -1,4 +1,4 @@
-minimumReleaseAge: 8100
+#minimumReleaseAge: 8100
 onlyBuiltDependencies:
   - esbuild
   - lefthook

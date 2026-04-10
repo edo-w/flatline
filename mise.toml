@@ -1,3 +1,4 @@
 [tools]
-node = "24"
+lefthook = "2"
+node = "latest"
 pnpm = "10"

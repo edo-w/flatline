@@ -1,8 +1,6 @@
 @layer base {
 	:root {
 		/* beautify ignore:start */
-		/* preset sizes */
-		/* space base unit */
 		--fl-size-unit: 0.25rem;							/* 4px */
 		--fl-size-0-5: calc(0.5 * var(--fl-size-unit)); 	/* 2px */
 		--fl-size-1: calc(1.5 * var(--fl-size-unit)); 		/* 4px */
@@ -67,34 +65,47 @@
 		--fl-font-weight-extrabold: 800;
 		--fl-font-weight-black: 900;
 
-		/* semantic tokens */
-		--fl-body-bg: #fff;
-		--fl-body-bg-hover: var(--fl-color-gray-100);
-		--fl-body-fg: var(--fl-color-gray-900);
-		--fl-body-fg-muted: var(--fl-color-gray-600);
+		/* text sizes */
+		--fl-text-size-xs: 0.75rem;
+		--fl-text-size-sm: 0.875rem;
+		--fl-text-size-base: 1rem;
+		--fl-text-size-lg: 1.125rem;
+		--fl-text-size-xl: 1.25rem;
+		--fl-text-size-2xl: 1.5rem;
+		--fl-text-size-3xl: 1.875rem;
+		--fl-text-size-4xl: 2.25rem;
 
-		--fl-primary-bg: var(--fl-color-blue-500);
+		/* body colors */
+		--fl-body-bg-color: white;
+		--fl-body-text-color: var(--fl-color-gray-800);
 
-		--fl-border-size: 1px;
-		--fl-border-radius: var(--fl-radius-sm);
+		/* border colors */
 		--fl-border-color: var(--fl-color-gray-300);
-		--fl-border-subtle-color: var(--fl-color-gray-200);
+		--fl-border-size: 1px;
 
-		--fl-disabled-opacity: 0.60;
-		--fl-disabled-cursor: not-allowed;
+		/* primary colors */
+		--fl-primary-color: var(--fl-color-blue-600);
+		--fl-primary-text-color: white;
 
-		--fl-control-pad-x: var(--fl-size-2);
-		--fl-control-pad-y: var(--fl-size-1-5);
-		--fl-control-bg: var(--fl-body-bg);
-		--fl-control-fg: var(--fl-body-fg);
-		--fl-control-border-size: var(--fl-border-size);
-		--fl-control-border-color: var(--fl-color-gray-400);
-		--fl-control-radius: var(--fl-border-radius);
-		--fl-control-shadow: var(--fl-shadow-sm);
-		--fl-control-cursor: pointer;
+		/* secondary */
+		--fl-secondary-color: var(--fl-color-gray-100);
+		--fl-secondary-text-color: var(--fl-body-text-color);
 
-		--fl-focus-border: var(--fl-color-blue-500);
-		--fl-focus-ring: color-mix(in oklch, var(--fl-focus-border) 20%, transparent);
-		--fl-focus-shadow: 0 0 0 3px var(--fl-focus-ring);
+		/* success */
+		--fl-success-color: var(--fl-color-green-600);
+		--fl-success-text-color: white;
+
+		/* danger */
+		--fl-danger-color: var(--fl-color-red-600);
+		--fl-danger-text-color: white;
+
+		/* focus ring */
+		--fl-focus-ring-color: var(--fl-primary-color);
+		--fl-focus-ring-size: 3px;
+		--fl-focus-ring-offset: 2px;
+
+		/* disabled state */
+		--fl-disabled-opacity: 0.6;
+		--fl-disabled-cursor: default;
 	}
 }

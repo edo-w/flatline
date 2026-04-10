@@ -1,0 +1,34 @@
+@layer components {
+	.fl-xstack {
+		--fl-gap: 0;
+
+		/* layout */
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+
+		/* spacing */
+		gap: calc(var(--fl-gap) * var(--fl-size-unit));
+	}
+
+	/* alignment modifiers */
+	.fl-xstack.--align-top {
+		align-items: flex-start;
+	}
+
+	.fl-xstack.--align-center {
+		align-items: center;
+	}
+
+	.fl-xstack.--align-bottom {
+		align-items: flex-end;
+	}
+
+	.fl-xstack.--align-stretch {
+		align-items: stretch;
+	}
+
+	.fl-xstack.--align-baseline {
+		align-items: baseline;
+	}
+}

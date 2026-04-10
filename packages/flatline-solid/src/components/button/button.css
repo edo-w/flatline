@@ -1,0 +1,155 @@
+@layer components {
+    .fl-button {
+        --fl-button-inner-gap: var(--fl-size-2);
+        --fl-button-pad-x: var(--fl-size-4);
+        --fl-button-pad-y: var(--fl-size-2);
+        --fl-button-bg-color: var(--fl-color-gray-100);
+        --fl-button-bg-hover-color: color-mix(in oklab, var(--fl-button-bg-color), black 5%);
+        --fl-button-bg-active-color: color-mix(in oklab, var(--fl-button-bg-color), white 10%);
+        --fl-button-border-color: color-mix(in oklab, var(--fl-button-bg-color), black 20%);
+        --fl-button-border-size: 1px;
+        --fl-button-border-radius: var(--fl-radius-sm);
+        --fl-button-text-color: var(--fl-text-color);
+        --fl-button-shadow: var(--fl-shadow-md);
+
+        /* reset */
+        appearance: none;
+
+        /* layout */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        /* spacing */
+        gap: var(--fl-button-inner-gap);
+        padding-inline: var(--fl-button-pad-x);
+        padding-block: var(--fl-button-pad-y);
+
+        /* background */
+        background: var(--fl-button-bg-color);
+        border: var(--fl-button-border-size) solid var(--fl-button-border-color);
+        border-radius: var(--fl-button-border-radius);
+
+        /* text */
+        color: var(--fl-button-text-color);
+        white-space: nowrap;
+		font-weight: var(--fl-font-weight-medium);
+
+        /* pointer */
+        cursor: pointer;
+
+        /* effects */
+        box-shadow: var(--fl-button-shadow);
+    }
+
+    /* focus-visible state */
+    .fl-button:focus-visible {
+        outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+        outline-offset: var(--fl-focus-ring-offset);
+    }
+
+    /* hover state */
+    .fl-button:hover:not(:disabled) {
+        background: var(--fl-button-bg-hover-color);
+    }
+
+    /* active state */
+    .fl-button:active:not(:disabled) {
+        background: var(--fl-button-bg-active-color);
+        transform: translateY(1px);
+    }
+
+    /* disabled state */
+    .fl-button:disabled {
+        opacity: var(--fl-disabled-opacity);
+        cursor: var(--fl-disabled-cursor);
+    }
+
+	/* solid primary variant */
+	.fl-button.--variant-solid.--color-primary {
+		--fl-button-bg-color: var(--fl-primary-color);
+		--fl-button-text-color: var(--fl-primary-text-color);
+	}
+
+	/* solid secondary variant */
+	.fl-button.--variant-solid.--color-secondary {
+		--fl-button-bg-color: var(--fl-secondary-color);
+		--fl-button-text-color: var(--fl-secondary-text-color);
+	}
+
+	/* solid success variant */
+	.fl-button.--variant-solid.--color-success {
+		--fl-button-bg-color: var(--fl-success-color);
+		--fl-button-text-color: var(--fl-success-text-color);
+	}
+
+	/* solid danger variant */
+	.fl-button.--variant-solid.--color-danger {
+		--fl-button-bg-color: var(--fl-danger-color);
+		--fl-button-text-color: var(--fl-danger-text-color);
+	}
+
+	/* light variant */
+	.fl-button.--variant-light {
+		box-shadow: unset;
+	}
+
+	/* light primary variant */
+	.fl-button.--variant-light.--color-primary {
+		--fl-button-bg-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+		--fl-button-text-color: var(--fl-primary-color);
+		--fl-button-border-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+	}
+
+	/* light secondary variant */
+	.fl-button.--variant-light.--color-secondary {
+		--fl-button-bg-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+		--fl-button-text-color: var(--fl-secondary-text-color);
+		--fl-button-border-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+	}
+
+	/* light success variant */
+	.fl-button.--variant-light.--color-success {
+		--fl-button-bg-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+		--fl-button-text-color: var(--fl-success-color);
+		--fl-button-border-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+	}
+
+	/* light danger variant */
+	.fl-button.--variant-light.--color-danger {
+		--fl-button-bg-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+		--fl-button-text-color: var(--fl-danger-color);
+		--fl-button-border-color: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+	}
+
+	/* ghost variant */
+	.fl-button.--variant-ghost {
+		background: transparent;
+		border-color: transparent;
+		box-shadow: unset;
+	}
+
+	/* ghost primary variant */
+	.fl-button.--variant-ghost.--color-primary {
+		--fl-button-text-color: var(--fl-primary-color);
+		--fl-button-bg-hover-color: color-mix(in oklab, var(--fl-primary-color), var(--fl-body-bg-color) 85%);
+	}
+
+	/* ghost secondary variant */
+	.fl-button.--variant-ghost.--color-secondary {
+		--fl-button-text-color: var(--fl-secondary-text-color);
+		--fl-button-bg-hover-color: color-mix(in oklab, var(--fl-secondary-text-color), var(--fl-body-bg-color) 90%);
+	}
+
+	/* ghost success variant */
+	.fl-button.--variant-ghost.--color-success {
+		--fl-button-text-color: var(--fl-success-color);
+		--fl-button-bg-hover-color: color-mix(in oklab, var(--fl-success-color), var(--fl-body-bg-color) 85%);
+	}
+
+	/* ghost danger variant */
+	.fl-button.--variant-ghost.--color-danger {
+		--fl-button-text-color: var(--fl-danger-color);
+		--fl-button-bg-hover-color: color-mix(in oklab, var(--fl-danger-color), var(--fl-body-bg-color) 85%);
+	}
+}

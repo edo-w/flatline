@@ -36,13 +36,14 @@
 		/* pointer */
 		cursor: var(--fl-control-cursor);
 
+		/* disabled state */
 		&[data-disabled] {
 			cursor: var(--fl-disabled-cursor);
 			opacity: var(--fl-disabled-opacity);
 		}
 	}
 
-	/* underine variant */
+	/* underline variant */
 	.fl-tabs-root.variant-underline {
 		& .fl-tabs-list {
 			border-bottom: var(--fl-tabs-border-size) solid var(--fl-tabs-border-color);

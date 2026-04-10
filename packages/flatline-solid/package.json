@@ -1,0 +1,31 @@
+{
+  "name": "@edo-w/flatline-solid",
+  "type": "module",
+  "exports": {
+	".": "./dist/src/index.js",
+	"./*": "./dist/src/*.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@typescript/native-preview": "^7.0.0-dev.20260409.1",
+    "clsx": "^2.1.1",
+    "cpx": "^1.5.0",
+    "rimraf": "^6.1.2",
+    "storybook": "^10.3.5",
+    "storybook-solidjs-vite": "^10.0.12",
+    "vite": "^7.2.6",
+    "vite-plugin-solid": "^2.11.12"
+  },
+  "scripts": {
+	"clean": "rimraf dist",
+    "check": "tsgo",
+    "dev": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "build:lib": "tsgo --build tsconfig.build.json",
+    "build:css": "cpx \"src/**/*.css\" \"dist/src\"",
+    "make": "pnpm run check && pnpm run build:lib && pnpm run build:css"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.12"
+  }
+}
