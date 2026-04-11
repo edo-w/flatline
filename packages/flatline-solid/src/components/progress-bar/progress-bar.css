@@ -1,0 +1,42 @@
+@layer components {
+	.fl-progress-bar {
+		/* layout */
+		position: relative;
+		display: block;
+		width: 100%;
+		height: var(--fl-size-2);
+		overflow: hidden;
+
+		/* background */
+		background: color-mix(in oklab, var(--fl-body-bg-color), black 8%);
+		border-radius: 2px;
+	}
+
+	.fl-progress-bar .fl-progress-bar_indicator {
+		/* layout */
+		display: block;
+		height: 100%;
+
+		/* background */
+		background: var(--fl-primary-color);
+		border-radius: inherit;
+
+		/* effects */
+		transition: width var(--fl-animation-duration) ease;
+	}
+
+	.fl-progress-bar[data-indeterminate] .fl-progress-bar_indicator {
+		width: 35% !important;
+		animation: fl-progress-bar-indeterminate 1.2s ease-in-out infinite;
+	}
+
+	@keyframes fl-progress-bar-indeterminate {
+		from {
+			transform: translateX(-100%);
+		}
+
+		to {
+			transform: translateX(300%);
+		}
+	}
+}
