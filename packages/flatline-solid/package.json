@@ -19,7 +19,6 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "^2.4.11",
-    "@changesets/cli": "^2.30.0",
     "@types/bun": "latest",
     "@typescript/native-preview": "^7.0.0-dev.20260409.1",
     "cpx2": "^8.0.0",
@@ -41,7 +40,7 @@
     "build:lib": "tsgo --build tsconfig.build.json && cpx \"src/**/*.css\" \"dist/src\"",
     "prepack": "pnpm run lint && pnpm run check && pnpm run build:lib",
     "pack": "npm pack",
-	"release": "pnpm run prepack && changeset publish"
+    "release": "pnpm run prepack && changeset publish"
   },
   "dependencies": {
     "@kobalte/core": "^0.13.11",
