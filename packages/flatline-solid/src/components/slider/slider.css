@@ -1,0 +1,83 @@
+@layer components {
+	.fl-slider {
+		--fl-slider-track-height: var(--fl-size-1);
+		--fl-slider-thumb-size: var(--fl-size-4);
+
+		/* reset */
+		appearance: none;
+		outline: none;
+
+		/* layout */
+		width: 100%;
+		height: var(--fl-slider-thumb-size);
+
+		/* background */
+		background: transparent;
+
+		/* text */
+		accent-color: var(--fl-secondary-color);
+
+		/* pointer */
+		cursor: pointer;
+	}
+
+	.fl-slider::-webkit-slider-runnable-track {
+		height: var(--fl-slider-track-height);
+		background: color-mix(in oklab, var(--fl-body-bg-color), black 10%);
+		border-radius: var(--fl-border-radius);
+	}
+
+	.fl-slider::-webkit-slider-thumb {
+		/* reset */
+		appearance: none;
+		box-sizing: border-box;
+
+		/* layout */
+		margin-top: calc((var(--fl-slider-track-height) - var(--fl-slider-thumb-size)) / 2);
+		width: var(--fl-slider-thumb-size);
+		height: var(--fl-slider-thumb-size);
+
+		/* background */
+		background: var(--fl-secondary-color);
+		border: var(--fl-border-size, 1px) solid color-mix(in oklab, var(--fl-secondary-color), black 35%);
+		border-radius: var(--fl-radius-full);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-sm);
+	}
+
+	.fl-slider::-moz-range-track {
+		height: var(--fl-slider-track-height);
+		background: color-mix(in oklab, var(--fl-body-bg-color), black 10%);
+		border: 0;
+		border-radius: var(--fl-border-radius);
+	}
+
+	.fl-slider::-moz-range-thumb {
+		/* reset */
+		box-sizing: border-box;
+
+		/* layout */
+		width: var(--fl-slider-thumb-size);
+		height: var(--fl-slider-thumb-size);
+
+		/* background */
+		background: var(--fl-secondary-color);
+		border: var(--fl-border-size, 1px) solid color-mix(in oklab, var(--fl-secondary-color), black 35%);
+		border-radius: var(--fl-radius-full);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-sm);
+	}
+
+	.fl-slider:focus-visible {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+		border-radius: var(--fl-border-radius);
+	}
+
+	.fl-slider:disabled {
+		opacity: var(--fl-disabled-opacity);
+		cursor: var(--fl-disabled-cursor);
+	}
+}
