@@ -1,0 +1,16 @@
+@layer components {
+	.fl-label {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+
+		/* spacing */
+		gap: var(--fl-size-1-5);
+
+		/* text */
+		color: var(--fl-body-text-color);
+		font-size: var(--fl-text-size-sm);
+		font-weight: var(--fl-font-weight-medium);
+		line-height: 1.4;
+	}
+}
