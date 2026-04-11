@@ -1,0 +1,90 @@
+@layer components {
+	.fl-switch {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+
+		/* spacing */
+		gap: var(--fl-size-2);
+
+		/* pointer */
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.fl-switch[data-disabled] {
+		cursor: var(--fl-disabled-cursor);
+		opacity: var(--fl-disabled-opacity);
+	}
+
+	.fl-switch .fl-switch_input {
+		/* layout */
+		position: absolute;
+		opacity: 0;
+		width: 1px;
+		height: 1px;
+		pointer-events: none;
+	}
+
+	.fl-switch .fl-switch_control {
+		--fl-switch-track-width: var(--fl-size-10);
+		--fl-switch-track-height: var(--fl-size-6);
+		--fl-switch-thumb-size: calc(var(--fl-switch-track-height) - var(--fl-size-1));
+
+		/* layout */
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		width: var(--fl-switch-track-width);
+		height: var(--fl-switch-track-height);
+
+		/* spacing */
+		padding-inline: var(--fl-size-0-5);
+
+		/* background */
+		background: color-mix(in oklab, var(--fl-body-bg-color), black 12%);
+		border: var(--fl-border-size, 1px) solid color-mix(in oklab, var(--fl-body-bg-color), black 18%);
+		border-radius: var(--fl-radius-md);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-xs);
+		transition:
+			background var(--fl-animation-duration) ease,
+			border-color var(--fl-animation-duration) ease;
+	}
+
+	.fl-switch .fl-switch_thumb {
+		/* layout */
+		width: var(--fl-switch-thumb-size);
+		height: var(--fl-switch-thumb-size);
+
+		/* background */
+		background: var(--fl-body-bg-color);
+		border-radius: var(--fl-radius-sm);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-sm);
+		transition: transform var(--fl-animation-duration) ease;
+	}
+
+	.fl-switch .fl-switch_input:focus-visible + .fl-switch_control {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+	}
+
+	.fl-switch .fl-switch_input:checked + .fl-switch_control {
+		background: color-mix(in oklab, var(--fl-primary-color), white 15%);
+		border-color: color-mix(in oklab, var(--fl-primary-color), black 10%);
+	}
+
+	.fl-switch .fl-switch_input:checked + .fl-switch_control .fl-switch_thumb {
+		transform: translateX(calc(var(--fl-switch-track-width) - var(--fl-switch-thumb-size) - var(--fl-size-1)));
+	}
+
+	.fl-switch .fl-switch_label {
+		/* text */
+		color: var(--fl-body-text-color);
+		font-size: var(--fl-text-size-sm);
+		font-weight: var(--fl-font-weight-medium);
+	}
+}
