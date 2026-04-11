@@ -1,0 +1,9 @@
+@layer components {
+	.fl-radio-group {
+		/* layout */
+		display: grid;
+
+		/* spacing */
+		gap: var(--fl-size-2);
+	}
+}

@@ -1,0 +1,74 @@
+@layer components {
+	.fl-radio {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+
+		/* spacing */
+		gap: var(--fl-size-2);
+
+		/* pointer */
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.fl-radio[data-disabled] {
+		cursor: var(--fl-disabled-cursor);
+		opacity: var(--fl-disabled-opacity);
+	}
+
+	.fl-radio .fl-radio_input {
+		/* layout */
+		position: absolute;
+		opacity: 0;
+		width: 1px;
+		height: 1px;
+		pointer-events: none;
+	}
+
+	.fl-radio .fl-radio_control {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--fl-size-4);
+		height: var(--fl-size-4);
+
+		/* background */
+		background: var(--fl-body-bg-color);
+		border: var(--fl-border-size, 1px) solid var(--fl-border-color);
+		border-radius: var(--fl-radius-full);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-xs);
+	}
+
+	.fl-radio .fl-radio_indicator {
+		/* layout */
+		width: var(--fl-size-2);
+		height: var(--fl-size-2);
+
+		/* background */
+		background: var(--fl-primary-color);
+		border-radius: var(--fl-radius-full);
+
+		/* effects */
+		scale: 0;
+		transition: scale var(--fl-animation-duration) ease;
+	}
+
+	.fl-radio .fl-radio_input:checked + .fl-radio_control .fl-radio_indicator {
+		scale: 1;
+	}
+
+	.fl-radio .fl-radio_input:focus-visible + .fl-radio_control {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: var(--fl-focus-ring-offset);
+	}
+
+	.fl-radio .fl-radio_label {
+		/* text */
+		color: var(--fl-body-text-color);
+		font-size: var(--fl-text-size-base);
+	}
+}
