@@ -8,7 +8,8 @@
 		height: var(--fl-size-5);
 		flex: 0 0 var(--fl-size-5);
 
-		/* margin-right: -3px; */
+		/* spacing */
+		margin-right: calc(var(--fl-size-1-5) * -1);
 
 		/* effects */
 		transition: transform var(--fl-animation-duration) ease;
