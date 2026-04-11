@@ -11,14 +11,18 @@ export interface SelectProps extends SelectBaseProps {}
 export function Select(props: SelectProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'disabled']);
 
-	const rootClass = () => clsx(
-		selectClass.root,
-		local.class
-	);
+	const rootClass = () => clsx(selectClass.root, local.class);
 
 	return (
-		<div class={rootClass()} data-disabled={local.disabled ? '' : undefined}>
-			<select class={selectClass.innerSelect} disabled={local.disabled} {...rest}>
+		<div
+			class={rootClass()}
+			data-disabled={local.disabled ? '' : undefined}
+		>
+			<select
+				class={selectClass.innerSelect}
+				disabled={local.disabled}
+				{...rest}
+			>
 				{local.children}
 			</select>
 			<ChevronDownIcon class={selectClass.arrow} />

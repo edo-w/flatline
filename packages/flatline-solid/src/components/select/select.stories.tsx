@@ -7,31 +7,31 @@ const meta: Meta<typeof Select> = {
 	parameters: {
 		layout: 'centered',
 		controls: {
-			exclude: ['use:eventListener']
-		}
+			exclude: ['use:eventListener'],
+		},
 	},
 	args: {
 		style: { width: '200px' },
-		value: ''
+		value: '',
 	},
 	argTypes: {
 		style: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		children: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		value: {
 			control: 'text',
 		},
 		disabled: {
 			control: 'boolean',
-		}
-	}
+		},
+	},
 };
 
 export default meta;
@@ -45,7 +45,7 @@ export const Default: Story = {
 			<option value="1">Item 1</option>,
 			<option value="2">Item 2</option>,
 			<option value="3">Item 3</option>,
-		]
+		],
 	},
 };
 
@@ -57,18 +57,14 @@ export const Disabled: Story = {
 			<option value="1">Item 1</option>,
 			<option value="2">Item 2</option>,
 			<option value="3">Item 3</option>,
-		]
+		],
 	},
 };
 
 export const WithValue: Story = {
 	args: {
 		value: '3',
-		children: [
-			<option value="1">Item 1</option>,
-			<option value="2">Item 2</option>,
-			<option value="3">Item 3</option>,
-		]
+		children: [<option value="1">Item 1</option>, <option value="2">Item 2</option>, <option value="3">Item 3</option>],
 	},
 };
 
@@ -79,7 +75,7 @@ export const WithItems: Story = {
 			<option value="1">Item 1</option>,
 			<option value="2">Item 2</option>,
 			<option value="3">Item 3</option>,
-		]
+		],
 	},
 };
 
@@ -96,7 +92,7 @@ export const WithGroupedItems: Story = {
 				<option value="4">Item 4</option>
 				<option value="5">Item 5</option>
 				<option value="6">Item 6</option>
-			</optgroup>
-		]
+			</optgroup>,
+		],
 	},
 };

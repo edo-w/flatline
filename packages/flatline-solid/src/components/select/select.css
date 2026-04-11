@@ -7,7 +7,8 @@
 
 		/* background */
 		background: var(--fl-input-bg-color, var(--fl-body-bg-color));
-		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid var(--fl-input-border-color, var(--fl-border-color));
+		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid
+			var(--fl-input-border-color, var(--fl-border-color));
 		border-radius: var(--fl-input-border-radius, var(--fl-border-radius));
 
 		/* effects */
@@ -55,13 +56,20 @@
 	}
 
 	.fl-select .fl-select_arrow {
+		/* layout */
 		position: absolute;
 		right: var(--fl-size-2);
 		top: 50%;
 		width: var(--fl-size-4);
 		height: var(--fl-size-4);
-		transform: translateY(-50%);
-		pointer-events: none;
+
+		/* text */
 		color: var(--fl-input-text-color, var(--fl-body-text-color));
+
+		/* pointer */
+		pointer-events: none;
+
+		/* effects */
+		transform: translateY(-50%);
 	}
 }
