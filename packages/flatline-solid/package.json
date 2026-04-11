@@ -39,8 +39,7 @@
     "build:storybook": "storybook build",
     "build:lib": "tsgo --build tsconfig.build.json && cpx \"src/**/*.css\" \"dist/src\"",
     "prepack": "pnpm run lint && pnpm run check && pnpm run build:lib",
-    "pack": "npm pack",
-    "release": "pnpm run prepack && changeset publish"
+    "pack": "npm pack"
   },
   "dependencies": {
     "@kobalte/core": "^0.13.11",
