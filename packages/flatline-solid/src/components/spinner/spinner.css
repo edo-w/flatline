@@ -1,0 +1,51 @@
+@layer components {
+	.fl-spinner {
+		--fl-spinner-size: var(--fl-size-7);
+		--fl-spinner-color: var(--fl-primary-color);
+
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--fl-spinner-size);
+		height: var(--fl-spinner-size);
+
+		/* text */
+		color: var(--fl-spinner-color);
+	}
+
+	.fl-spinner.--size-sm {
+		--fl-spinner-size: var(--fl-size-5);
+	}
+
+	.fl-spinner.--size-lg {
+		--fl-spinner-size: var(--fl-size-9);
+	}
+
+	.fl-spinner .fl-spinner_svg {
+		/* layout */
+		width: 100%;
+		height: 100%;
+
+		/* effects */
+		animation: fl-spinner-rotate 0.8s linear infinite;
+	}
+
+	.fl-spinner .fl-spinner_svg circle {
+		opacity: 0.2;
+	}
+
+	.fl-spinner .fl-spinner_svg path {
+		stroke-linecap: round;
+	}
+
+	@keyframes fl-spinner-rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
