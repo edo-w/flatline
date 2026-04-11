@@ -1,0 +1,15 @@
+@layer components {
+	.fl-table .fl-table_footer {
+		/* background */
+		background: color-mix(in oklab, var(--fl-body-bg-color), black 3%);
+	}
+
+	.fl-table .fl-table_footer .fl-table_cell,
+	.fl-table .fl-table_footer .fl-table_head {
+		/* background */
+		border-bottom: 0;
+
+		/* text */
+		font-weight: var(--fl-font-weight-medium);
+	}
+}

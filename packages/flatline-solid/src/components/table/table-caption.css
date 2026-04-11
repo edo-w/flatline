@@ -1,0 +1,11 @@
+@layer components {
+	.fl-table .fl-table_caption {
+		/* spacing */
+		padding: var(--fl-size-2);
+
+		/* text */
+		color: var(--fl-body-muted-text-color);
+		font-size: var(--fl-text-size-sm);
+		text-align: left;
+	}
+}

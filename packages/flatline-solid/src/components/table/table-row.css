@@ -1,0 +1,6 @@
+@layer components {
+	.fl-table .fl-table_body .fl-table_row:hover {
+		/* background */
+		background: color-mix(in oklab, var(--fl-body-bg-color), var(--fl-primary-color) 3%);
+	}
+}

@@ -1,0 +1,12 @@
+@layer components {
+	.fl-table .fl-table_cell {
+		/* layout */
+		vertical-align: middle;
+
+		/* spacing */
+		padding: var(--fl-size-2) var(--fl-size-3);
+
+		/* background */
+		border-bottom: var(--fl-border-size, 1px) solid color-mix(in oklab, var(--fl-border-color), transparent 20%);
+	}
+}

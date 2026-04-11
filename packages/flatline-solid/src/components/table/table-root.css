@@ -1,0 +1,12 @@
+@layer components {
+	.fl-table {
+		/* layout */
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0;
+
+		/* text */
+		color: var(--fl-body-text-color);
+		font: inherit;
+	}
+}
