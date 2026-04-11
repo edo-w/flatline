@@ -11,7 +11,12 @@ export function ComboboxContent(props: ComboboxContentProps) {
 
 	return (
 		<Show when={context.isOpen()}>
-			<div class={rootClass()} {...rest}>{local.children}</div>
+			<div
+				class={rootClass()}
+				{...rest}
+			>
+				{local.children}
+			</div>
 		</Show>
 	);
 }

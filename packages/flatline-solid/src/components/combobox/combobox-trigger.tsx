@@ -8,9 +8,12 @@ import { callEventHandler } from './util';
 
 export function ComboboxTrigger(props: ComboboxTriggerProps) {
 	const context = useComboboxContext<any, any>();
-	const merged = mergeProps({
-		tabIndex: -1
-	}, props);
+	const merged = mergeProps(
+		{
+			tabIndex: -1,
+		},
+		props,
+	);
 	const [local, rest] = splitProps(merged, ['class', 'children', 'onMouseDown', 'onClick']);
 	const rootClass = () => clsx(comboboxClass.trigger, local.class);
 
@@ -31,7 +34,13 @@ export function ComboboxTrigger(props: ComboboxTriggerProps) {
 	};
 
 	return (
-		<button type="button" class={rootClass()} onMouseDown={handleMouseDown} onClick={handleClick} {...rest}>
+		<button
+			type="button"
+			class={rootClass()}
+			onMouseDown={handleMouseDown}
+			onClick={handleClick}
+			{...rest}
+		>
 			{local.children ?? <ComboboxIcon />}
 		</button>
 	);

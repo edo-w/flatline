@@ -9,5 +9,5 @@ export const comboboxClass = {
 	item: 'fl-combobox_item',
 	itemLabel: 'fl-combobox_item-label',
 	itemIndicator: 'fl-combobox_item-indicator',
-	group: 'fl-combobox_group'
+	group: 'fl-combobox_group',
 } as const;

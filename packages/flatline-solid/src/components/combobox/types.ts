@@ -1,7 +1,9 @@
 import type { Component, JSX } from 'solid-js';
 
 export type ComboboxAccessor<T, Result> = keyof Exclude<T, null> | ((value: Exclude<T, null>) => Result);
-export type ComboboxGroupAccessor<TOptionGroup, TOption> = keyof Exclude<TOptionGroup, null> | ((group: Exclude<TOptionGroup, null>) => TOption[]);
+export type ComboboxGroupAccessor<TOptionGroup, TOption> =
+	| keyof Exclude<TOptionGroup, null>
+	| ((group: Exclude<TOptionGroup, null>) => TOption[]);
 
 export interface ComboboxItemData<TOption> {
 	key: string;
@@ -27,7 +29,8 @@ export type ComboboxRenderGroupProps<TOptionGroup, TOption = any> = {
 	group: ComboboxGroupData<TOptionGroup, TOption>;
 };
 
-export interface ComboboxRootProps<TOption, TOptionGroup = never> extends Omit<JSX.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+export interface ComboboxRootProps<TOption, TOptionGroup = never>
+	extends Omit<JSX.HTMLAttributes<HTMLDivElement>, 'onChange'> {
 	options: Array<TOption | TOptionGroup>;
 	children?: JSX.Element;
 	optionValue?: ComboboxAccessor<TOption, string | number>;

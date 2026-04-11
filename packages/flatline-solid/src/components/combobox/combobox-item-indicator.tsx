@@ -12,7 +12,12 @@ export function ComboboxItemIndicator(props: ComboboxItemIndicatorProps) {
 
 	return (
 		<Show when={item.selected}>
-			<div class={rootClass()} {...rest}>{local.children ?? <CheckIcon />}</div>
+			<div
+				class={rootClass()}
+				{...rest}
+			>
+				{local.children ?? <CheckIcon />}
+			</div>
 		</Show>
 	);
 }

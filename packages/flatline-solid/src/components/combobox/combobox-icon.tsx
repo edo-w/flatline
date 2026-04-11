@@ -8,5 +8,12 @@ export function ComboboxIcon(props: ComboboxIconProps) {
 	const [local, rest] = splitProps(props, ['class', 'children']);
 	const rootClass = () => clsx(comboboxClass.icon, local.class);
 
-	return <span class={rootClass()} {...rest}>{local.children ?? <ChevronDownIcon />}</span>;
+	return (
+		<span
+			class={rootClass()}
+			{...rest}
+		>
+			{local.children ?? <ChevronDownIcon />}
+		</span>
+	);
 }

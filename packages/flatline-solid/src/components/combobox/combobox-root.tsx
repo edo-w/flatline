@@ -9,7 +9,7 @@ import {
 	onCleanup,
 	onMount,
 	splitProps,
-	type JSX
+	type JSX,
 } from 'solid-js';
 import { ComboboxContext, type ComboboxContextValue } from './context';
 import { ComboboxContent } from './combobox-content';
@@ -20,12 +20,21 @@ import { ComboboxPortal } from './combobox-portal';
 import { ComboboxTrigger } from './combobox-trigger';
 import { comboboxClass } from './class';
 import type { ComboboxGroupData, ComboboxItemData, ComboboxRootProps } from './types';
-import { callEventHandler, createContainsFilter, defaultTextValue, resolveAccessor, resolveGroupChildren } from './util';
+import {
+	callEventHandler,
+	createContainsFilter,
+	defaultTextValue,
+	resolveAccessor,
+	resolveGroupChildren,
+} from './util';
 
 export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootProps<TOption, TOptionGroup>) {
-	const merged = mergeProps({
-		closeOnSelection: true,
-	}, props);
+	const merged = mergeProps(
+		{
+			closeOnSelection: true,
+		},
+		props,
+	);
 
 	const [local, rest] = splitProps(merged, [
 		'class',
@@ -53,7 +62,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		'required',
 		'name',
 		'closeOnSelection',
-		'onFocusOut'
+		'onFocusOut',
 	]);
 	const resolvedChildren = children(() => local.children);
 
@@ -69,7 +78,13 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 	const isControlledInputValue = () => local.inputValue !== undefined;
 	const isControlledOpen = () => local.open !== undefined;
 	const filter = createMemo(() => createContainsFilter<TOption>());
-	const inputValue = createMemo(() => (isControlledInputValue() ? local.inputValue ?? '' : internalInputValue()));
+	const inputValue = createMemo(() => {
+		if (isControlledInputValue()) {
+			return local.inputValue ?? '';
+		}
+
+		return internalInputValue();
+	});
 
 	const normalizedGroups = createMemo<Array<ComboboxGroupData<TOptionGroup, TOption>>>(() => {
 		const groups: Array<ComboboxGroupData<TOptionGroup, TOption>> = [];
@@ -104,7 +119,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 					key: `group-${index}`,
 					textValue: defaultTextValue(entry),
 					rawValue: entry as TOptionGroup,
-					items: groupItems
+					items: groupItems,
 				});
 
 				continue;
@@ -122,7 +137,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 				label,
 				textValue,
 				disabled,
-				rawValue: option
+				rawValue: option,
 			});
 
 			itemIndex += 1;
@@ -132,7 +147,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 			groups.unshift({
 				key: 'group-root',
 				textValue: '',
-				items: looseItems
+				items: looseItems,
 			});
 		}
 
@@ -142,7 +157,11 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 	const allItems = createMemo(() => normalizedGroups().flatMap((group) => group.items));
 
 	const selectedItem = createMemo(() => {
-		const selectedOption = isControlledValue() ? local.value ?? null : internalValue();
+		let selectedOption = internalValue();
+
+		if (isControlledValue()) {
+			selectedOption = local.value ?? null;
+		}
 
 		if (selectedOption == null) {
 			return null;
@@ -152,8 +171,8 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 			resolveAccessor<TOption, string | number>(
 				selectedOption as TOption,
 				local.optionValue,
-				defaultTextValue as (value: TOption) => string | number
-			)
+				defaultTextValue as (value: TOption) => string | number,
+			),
 		);
 
 		return allItems().find((item) => item.value === selectedValue) ?? null;
@@ -165,13 +184,15 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		return normalizedGroups()
 			.map((group) => ({
 				...group,
-				items: group.items.filter((item) => filter()(item.rawValue, currentInput))
+				items: group.items.filter((item) => filter()(item.rawValue, currentInput)),
 			}))
 			.filter((group) => group.items.length > 0);
 	});
 
 	const visibleItems = createMemo(() => visibleGroups().flatMap((group) => group.items));
-	const isOpen = createMemo(() => (isControlledOpen() ? Boolean(local.open) : internalOpen()) && visibleItems().length > 0);
+	const isOpen = createMemo(
+		() => (isControlledOpen() ? Boolean(local.open) : internalOpen()) && visibleItems().length > 0,
+	);
 
 	const setOpen = (value: boolean) => {
 		if (!isControlledOpen()) {
@@ -404,7 +425,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		required: () => Boolean(local.required),
 		name: () => local.name,
 		clearPendingInput,
-		clearSelectedItem
+		clearSelectedItem,
 	};
 
 	const rootClass = () => clsx(comboboxClass.root, local.class);
@@ -431,8 +452,15 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 
 	return (
 		<ComboboxContext.Provider value={context}>
-			<div class={rootClass()} ref={setRootRef} onFocusOut={handleFocusOut} {...rest}>
-				{local.children ? resolvedChildren() : (
+			<div
+				class={rootClass()}
+				ref={setRootRef}
+				onFocusOut={handleFocusOut}
+				{...rest}
+			>
+				{local.children ? (
+					resolvedChildren()
+				) : (
 					<>
 						<ComboboxControl>
 							<ComboboxInput aria-label={local.placeholder ?? 'Combobox'} />

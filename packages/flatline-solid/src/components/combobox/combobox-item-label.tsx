@@ -9,5 +9,12 @@ export function ComboboxItemLabel(props: ComboboxItemLabelProps) {
 	const [local, rest] = splitProps(props, ['class', 'children']);
 	const rootClass = () => clsx(comboboxClass.itemLabel, local.class);
 
-	return <div class={rootClass()} {...rest}>{local.children ?? item.item.textValue}</div>;
+	return (
+		<div
+			class={rootClass()}
+			{...rest}
+		>
+			{local.children ?? item.item.textValue}
+		</div>
+	);
 }

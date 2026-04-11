@@ -1,24 +1,27 @@
 @layer components {
 	.fl-combobox_group {
+		/* reset */
+		list-style: none;
+
 		/* layout */
 		display: grid;
-		gap: var(--fl-size-1);
 
 		/* spacing */
+		gap: var(--fl-size-1);
 		padding-bottom: var(--fl-size-1);
 
 		/* text */
 		color: var(--fl-body-muted-text-color);
 		font-weight: var(--fl-font-weight-semibold);
 		font-size: var(--fl-text-size-xs);
-
-		/* list */
-		list-style: none;
 	}
 
 	.fl-combobox_group hr {
+		/* spacing */
 		margin-block: var(--fl-size-1-5);
 		margin-inline: calc(var(--fl-size-2) * -1);
+
+		/* background */
 		border-top: var(--fl-border-size, 1px) solid var(--fl-border-color);
 	}
 

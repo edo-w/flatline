@@ -8,7 +8,8 @@
 
 		/* background */
 		background: var(--fl-input-bg-color, var(--fl-body-bg-color));
-		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid var(--fl-input-border-color, var(--fl-border-color));
+		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid
+			var(--fl-input-border-color, var(--fl-border-color));
 		border-radius: var(--fl-input-border-radius, var(--fl-border-radius));
 
 		/* effects */

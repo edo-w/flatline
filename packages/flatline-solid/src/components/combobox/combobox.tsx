@@ -40,7 +40,7 @@ export type {
 	ComboboxRenderGroupProps,
 	ComboboxRenderItemProps,
 	ComboboxRootProps,
-	ComboboxTriggerProps
+	ComboboxTriggerProps,
 } from './types';
 
 export {
@@ -56,7 +56,7 @@ export {
 	ComboboxListbox,
 	ComboboxPortal,
 	ComboboxRoot,
-	ComboboxTrigger
+	ComboboxTrigger,
 };
 
 export interface ComboboxComponent {
@@ -87,5 +87,5 @@ export const Combobox: ComboboxComponent = Object.assign(ComboboxRoot, {
 	ItemLabel: ComboboxItemLabel,
 	ItemIndicator: ComboboxItemIndicator,
 	Group: ComboboxGroup,
-	HiddenSelect: ComboboxHiddenSelect
+	HiddenSelect: ComboboxHiddenSelect,
 });

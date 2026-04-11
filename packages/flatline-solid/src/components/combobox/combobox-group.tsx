@@ -8,7 +8,11 @@ export function ComboboxGroup<TOptionGroup = any, TOption = any>(props: Combobox
 	const rootClass = () => clsx(comboboxClass.group, local.class);
 
 	return (
-		<li class={rootClass()} role="presentation" {...rest}>
+		<li
+			class={rootClass()}
+			role="presentation"
+			{...rest}
+		>
 			<hr aria-hidden="true" />
 			<span>{local.children ?? local.group?.textValue}</span>
 		</li>

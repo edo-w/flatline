@@ -19,7 +19,11 @@ export function defaultTextValue(value: unknown) {
 	return '';
 }
 
-export function resolveAccessor<T, Result>(value: T, accessor: ComboboxAccessor<T, Result> | undefined, fallback: (value: T) => Result) {
+export function resolveAccessor<T, Result>(
+	value: T,
+	accessor: ComboboxAccessor<T, Result> | undefined,
+	fallback: (value: T) => Result,
+) {
 	if (accessor === undefined) {
 		return fallback(value);
 	}
@@ -37,7 +41,7 @@ export function resolveAccessor<T, Result>(value: T, accessor: ComboboxAccessor<
 
 export function resolveGroupChildren<TOptionGroup, TOption>(
 	value: TOptionGroup,
-	accessor: ComboboxGroupAccessor<TOptionGroup, TOption> | undefined
+	accessor: ComboboxGroupAccessor<TOptionGroup, TOption> | undefined,
 ) {
 	if (accessor === undefined) {
 		return undefined;

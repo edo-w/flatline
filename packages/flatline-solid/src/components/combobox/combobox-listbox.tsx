@@ -6,11 +6,7 @@ import { ComboboxItem } from './combobox-item';
 import { ComboboxItemIndicator } from './combobox-item-indicator';
 import { ComboboxItemLabel } from './combobox-item-label';
 import { comboboxClass } from './class';
-import type {
-	ComboboxListboxProps,
-	ComboboxRenderGroupProps,
-	ComboboxRenderItemProps
-} from './types';
+import type { ComboboxListboxProps, ComboboxRenderGroupProps, ComboboxRenderItemProps } from './types';
 
 function DefaultItemComponent<TOption>(props: ComboboxRenderItemProps<TOption>) {
 	return (
@@ -33,7 +29,12 @@ export function ComboboxListbox<TOption = any, TOptionGroup = never>(props: Comb
 	const GroupComponent = () => context.groupComponent ?? DefaultGroupComponent<TOptionGroup>;
 
 	return (
-		<ul id={`${context.rootId}-listbox`} class={rootClass()} role="listbox" {...rest}>
+		<ul
+			id={`${context.rootId}-listbox`}
+			class={rootClass()}
+			role="listbox"
+			{...rest}
+		>
 			{local.children ?? (
 				<For each={context.visibleGroups()}>
 					{(group) => {
@@ -45,9 +46,7 @@ export function ComboboxListbox<TOption = any, TOptionGroup = never>(props: Comb
 								<Show when={group.rawValue !== undefined}>
 									<GroupRenderer group={group} />
 								</Show>
-								<For each={group.items}>
-									{(item) => <ItemRenderer item={item} />}
-								</For>
+								<For each={group.items}>{(item) => <ItemRenderer item={item} />}</For>
 							</>
 						);
 					}}

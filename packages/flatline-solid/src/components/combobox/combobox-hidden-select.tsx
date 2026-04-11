@@ -6,5 +6,12 @@ export function ComboboxHiddenSelect(props: ComboboxHiddenSelectProps) {
 	const context = useComboboxContext<any, any>();
 	const [local, rest] = splitProps(props, ['name', 'value']);
 
-	return <input type="hidden" name={local.name ?? context.name()} value={local.value ?? context.selectedItem()?.value ?? ''} {...rest} />;
+	return (
+		<input
+			type="hidden"
+			name={local.name ?? context.name()}
+			value={local.value ?? context.selectedItem()?.value ?? ''}
+			{...rest}
+		/>
+	);
 }

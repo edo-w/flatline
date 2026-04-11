@@ -1,11 +1,19 @@
 import { createSignal, type Component } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import {
-	Combobox,
-	type ComboboxRenderGroupProps
-} from './combobox';
+import { Combobox, type ComboboxRenderGroupProps } from './combobox';
 
-const CITIES = ['Amsterdam', 'Athens', 'Barcelona', 'Berlin', 'Copenhagen', 'Lisbon', 'London', 'Madrid', 'Oslo', 'Paris'];
+const CITIES = [
+	'Amsterdam',
+	'Athens',
+	'Barcelona',
+	'Berlin',
+	'Copenhagen',
+	'Lisbon',
+	'London',
+	'Madrid',
+	'Oslo',
+	'Paris',
+];
 
 type LocationOption = {
 	value: string;
@@ -24,16 +32,16 @@ const GROUPED_LOCATIONS: LocationGroup[] = [
 		options: [
 			{ value: 'amsterdam', label: 'Amsterdam' },
 			{ value: 'berlin', label: 'Berlin' },
-			{ value: 'london', label: 'London', disabled: true }
-		]
+			{ value: 'london', label: 'London', disabled: true },
+		],
 	},
 	{
 		label: 'Nordics',
 		options: [
 			{ value: 'copenhagen', label: 'Copenhagen' },
-			{ value: 'oslo', label: 'Oslo' }
-		]
-	}
+			{ value: 'oslo', label: 'Oslo' },
+		],
+	},
 ];
 
 type ComboboxStoryArgs = {
@@ -61,8 +69,8 @@ const meta: Meta<ComboboxStoryArgs> = {
 	parameters: {
 		layout: 'centered',
 		controls: {
-			exclude: ['children', 'groupComponent', 'itemComponent', 'options', 'style', 'use:eventListener']
-		}
+			exclude: ['children', 'groupComponent', 'itemComponent', 'options', 'style', 'use:eventListener'],
+		},
 	},
 	args: {
 		options: CITIES,
@@ -73,19 +81,19 @@ const meta: Meta<ComboboxStoryArgs> = {
 	argTypes: {
 		options: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		placeholder: {
-			control: 'text'
+			control: 'text',
 		},
 		disabled: {
-			control: 'boolean'
+			control: 'boolean',
 		},
 		width: {
-			control: 'text'
-		}
-	}
+			control: 'text',
+		},
+	},
 };
 
 export default meta;
@@ -106,7 +114,7 @@ export const Default: Story = {
 				defaultValue={args.defaultValue}
 			/>
 		</div>
-	)
+	),
 };
 
 export const Controlled: Story = {
@@ -138,7 +146,7 @@ export const Controlled: Story = {
 				/>
 			</div>
 		);
-	}
+	},
 };
 
 export const GroupedItems: Story = {
@@ -154,7 +162,7 @@ export const GroupedItems: Story = {
 				groupComponent={GroupedGroup}
 				placeholder={args.placeholder}
 				disabled={args.disabled}
-				/>
+			/>
 		</div>
-	)
+	),
 };

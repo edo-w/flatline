@@ -1,13 +1,16 @@
 @layer components {
 	.fl-combobox_item {
+		/* reset */
+		outline: none;
+
 		/* layout */
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		min-height: var(--fl-size-8);
-		gap: var(--fl-size-2);
 
 		/* spacing */
+		gap: var(--fl-size-2);
 		padding-inline: var(--fl-size-2);
 		padding-block: var(--fl-size-1-5);
 
@@ -21,7 +24,6 @@
 		/* pointer */
 		cursor: pointer;
 		user-select: none;
-		outline: none;
 	}
 
 	.fl-combobox_item[data-disabled] {
@@ -39,6 +41,7 @@
 	}
 
 	.fl-combobox_item .fl-combobox_item-label {
+		/* layout */
 		flex: 1 1 auto;
 		min-width: 0;
 	}

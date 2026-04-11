@@ -1,10 +1,5 @@
 import { createContext, useContext, type Accessor, type Component, type Setter } from 'solid-js';
-import type {
-	ComboboxGroupData,
-	ComboboxItemData,
-	ComboboxRenderGroupProps,
-	ComboboxRenderItemProps
-} from './types';
+import type { ComboboxGroupData, ComboboxItemData, ComboboxRenderGroupProps, ComboboxRenderItemProps } from './types';
 
 interface ComboboxItemState<TOption> {
 	item: ComboboxItemData<TOption>;
@@ -46,8 +41,8 @@ export interface ComboboxContextValue<TOption, TOptionGroup> {
 	clearSelectedItem: () => void;
 }
 
-const ComboboxContext = createContext<ComboboxContextValue<any, any>>();
-const ComboboxItemContext = createContext<ComboboxItemState<any>>();
+export const ComboboxContext = createContext<ComboboxContextValue<any, any>>();
+export const ComboboxItemContext = createContext<ComboboxItemState<any>>();
 
 export function useComboboxContext<TOption, TOptionGroup>() {
 	const context = useContext(ComboboxContext);
@@ -68,5 +63,3 @@ export function useComboboxItemContext<TOption>() {
 
 	return context as ComboboxItemState<TOption>;
 }
-
-export { ComboboxContext, ComboboxItemContext };
