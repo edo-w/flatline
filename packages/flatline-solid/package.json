@@ -1,15 +1,27 @@
 {
   "name": "@edo-w/flatline-solid",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edo-w/flatline.git"
+  },
+  "author": "https://github.com/juanka881",
   "type": "module",
   "exports": {
     ".": "./dist/src/index.js",
     "./*": "./dist/src/*.js"
   },
+  "imports": {
+    "#src/*": "./dist/src/*"
+  },
+  "files": [
+    "./dist/src/*"
+  ],
   "devDependencies": {
     "@biomejs/biome": "^2.4.11",
+    "@changesets/cli": "^2.30.0",
     "@types/bun": "latest",
     "@typescript/native-preview": "^7.0.0-dev.20260409.1",
-    "clsx": "^2.1.1",
     "cpx2": "^8.0.0",
     "rimraf": "^6.1.2",
     "storybook": "^10.3.5",
@@ -18,18 +30,22 @@
     "vite-plugin-solid": "^2.11.12"
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf --glob dist storybook-static edo-w-flatline-solid-*.tgz",
     "fmt": "biome format --write",
     "lint": "biome check --write",
     "check": "tsgo",
+    "test": "echo \"no tests\"",
     "dev": "storybook dev -p 6006",
+    "build": "pnpm run build:lib && pnpm run build:storybook",
     "build:storybook": "storybook build",
-    "build:lib": "tsgo --build tsconfig.build.json",
-    "build:css": "cpx \"src/**/*.css\" \"dist/src\"",
-    "make": "pnpm run check && pnpm run build:lib && pnpm run build:css"
+    "build:lib": "tsgo --build tsconfig.build.json && cpx \"src/**/*.css\" \"dist/src\"",
+    "prepack": "pnpm run lint && pnpm run check && pnpm run build:lib",
+    "pack": "npm pack",
+	"release": "pnpm run prepack && changeset publish"
   },
   "dependencies": {
     "@kobalte/core": "^0.13.11",
+    "clsx": "^2.1.1",
     "solid-js": "^1.9.12"
   }
 }
