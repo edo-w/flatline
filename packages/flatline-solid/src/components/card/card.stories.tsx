@@ -18,8 +18,8 @@ const meta: Meta<CardStoryArgs> = {
 	parameters: {
 		layout: 'centered',
 		controls: {
-			exclude: ['gap', 'use:eventListener']
-		}
+			exclude: ['gap', 'use:eventListener'],
+		},
 	},
 	args: {
 		cardGap: '6',
@@ -30,23 +30,23 @@ const meta: Meta<CardStoryArgs> = {
 	},
 	argTypes: {
 		cardGap: {
-			control: 'text'
+			control: 'text',
 		},
 		titleColor: {
 			control: 'select',
-			options: ['primary', 'secondary', 'success', 'danger']
+			options: ['primary', 'secondary', 'success', 'danger'],
 		},
 		contentGap: {
-			control: 'text'
+			control: 'text',
 		},
 		footerGap: {
-			control: 'text'
+			control: 'text',
 		},
 		footerJustify: {
 			control: 'select',
-			options: ['left', 'center', 'right', 'space-between', 'space-around', 'space-evenly']
-		}
-	}
+			options: ['left', 'center', 'right', 'space-between', 'space-around', 'space-evenly'],
+		},
+	},
 };
 
 export default meta;
@@ -63,7 +63,9 @@ function RenderCard(props: CardStoryArgs) {
 					<Card.Title color={local.titleColor}>Project Overview</Card.Title>
 					<Card.Subtitle>Weekly status and next steps</Card.Subtitle>
 					<Card.Action>
-						<Button variant="ghost" color="secondary">Edit</Button>
+						<Button variant="ghost" color="secondary">
+							Edit
+						</Button>
 					</Card.Action>
 				</Card.Header>
 				<Card.Content gap={local.contentGap}>
@@ -72,8 +74,12 @@ function RenderCard(props: CardStoryArgs) {
 					<div>Three follow-up items still need review.</div>
 				</Card.Content>
 				<Card.Footer gap={local.footerGap} justify={local.footerJustify}>
-					<Button variant="light" color="secondary">Cancel</Button>
-					<Button variant="solid" color="primary">Continue</Button>
+					<Button variant="light" color="secondary">
+						Cancel
+					</Button>
+					<Button variant="solid" color="primary">
+						Continue
+					</Button>
 				</Card.Footer>
 			</Card>
 		</div>
@@ -100,14 +106,14 @@ export const TitleColors: Story = {
 				<RenderCard cardGap="6" titleColor="danger" contentGap="0" footerGap="2" footerJustify="left" />
 			</div>
 		);
-	}
+	},
 };
 
 export const FooterJustify: Story = {
 	parameters: {
 		controls: {
-			exclude: ['gap', 'use:eventListener']
-		}
+			exclude: ['gap', 'use:eventListener'],
+		},
 	},
 	render: () => {
 		const gridStyle = {
@@ -124,5 +130,5 @@ export const FooterJustify: Story = {
 				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="space-between" />
 			</div>
 		);
-	}
+	},
 };

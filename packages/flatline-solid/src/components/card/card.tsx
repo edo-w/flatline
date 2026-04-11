@@ -9,7 +9,11 @@ import './card-action.css';
 import './card-content.css';
 import './card-footer.css';
 
-function mergeStyleVar(style: JSX.CSSProperties | string | undefined, variable: string, value: number | string | undefined) {
+function mergeStyleVar(
+	style: JSX.CSSProperties | string | undefined,
+	variable: string,
+	value: number | string | undefined,
+) {
 	if (typeof style === 'string') {
 		return value === undefined ? style : `${variable}: ${value}; ${style}`;
 	}
@@ -59,19 +63,24 @@ export function CardHeader(props: CardHeaderProps) {
 
 	const rootClass = () => clsx(cardClass.header, local.class);
 
-	return <div class={rootClass()} {...rest}>{local.children}</div>;
+	return (
+		<div class={rootClass()} {...rest}>
+			{local.children}
+		</div>
+	);
 }
 
 export function CardTitle(props: CardTitleProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'color']);
 
-	const rootClass = () => clsx(
-		cardClass.title,
-		local.color ? cardClass.titleColor[local.color] : undefined,
-		local.class
-	);
+	const rootClass = () =>
+		clsx(cardClass.title, local.color ? cardClass.titleColor[local.color] : undefined, local.class);
 
-	return <h3 class={rootClass()} {...rest}>{local.children}</h3>;
+	return (
+		<h3 class={rootClass()} {...rest}>
+			{local.children}
+		</h3>
+	);
 }
 
 export function CardSubtitle(props: CardSubtitleProps) {
@@ -79,7 +88,11 @@ export function CardSubtitle(props: CardSubtitleProps) {
 
 	const rootClass = () => clsx(cardClass.subtitle, local.class);
 
-	return <p class={rootClass()} {...rest}>{local.children}</p>;
+	return (
+		<p class={rootClass()} {...rest}>
+			{local.children}
+		</p>
+	);
 }
 
 export function CardAction(props: CardActionProps) {
@@ -87,7 +100,11 @@ export function CardAction(props: CardActionProps) {
 
 	const rootClass = () => clsx(cardClass.action, local.class);
 
-	return <div class={rootClass()} {...rest}>{local.children}</div>;
+	return (
+		<div class={rootClass()} {...rest}>
+			{local.children}
+		</div>
+	);
 }
 
 export function CardContent(props: CardContentProps) {
@@ -105,11 +122,8 @@ export function CardContent(props: CardContentProps) {
 export function CardFooter(props: CardFooterProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'gap', 'justify', 'style']);
 
-	const rootClass = () => clsx(
-		cardClass.footer,
-		local.justify ? cardClass.footerJustify[local.justify] : undefined,
-		local.class
-	);
+	const rootClass = () =>
+		clsx(cardClass.footer, local.justify ? cardClass.footerJustify[local.justify] : undefined, local.class);
 
 	return (
 		<div class={rootClass()} style={mergeStyleVar(local.style, cardClass.footerGapVar, local.gap)} {...rest}>

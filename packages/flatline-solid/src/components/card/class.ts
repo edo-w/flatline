@@ -7,7 +7,7 @@ export const cardClass = {
 		primary: '--color-primary',
 		secondary: '--color-secondary',
 		success: '--color-success',
-		danger: '--color-danger'
+		danger: '--color-danger',
 	},
 	subtitle: 'fl-card_subtitle',
 	action: 'fl-card_action',
@@ -21,8 +21,8 @@ export const cardClass = {
 		right: '--justify-right',
 		'space-between': '--justify-space-between',
 		'space-around': '--justify-space-around',
-		'space-evenly': '--justify-space-evenly'
-	}
+		'space-evenly': '--justify-space-evenly',
+	},
 } as const;
 
 export type CardTitleColor = keyof typeof cardClass.titleColor;
