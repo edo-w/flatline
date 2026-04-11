@@ -1,0 +1,45 @@
+@layer components {
+	.fl-textarea {
+		/* reset */
+		appearance: initial;
+		outline: none;
+
+		/* layout */
+		display: block;
+		width: 100%;
+		min-width: 0;
+		min-height: var(--fl-size-24);
+
+		/* spacing */
+		padding-inline: var(--fl-input-pad-x);
+		padding-block: var(--fl-input-pad-y);
+
+		/* background */
+		background: var(--fl-input-bg-color);
+		border: var(--fl-input-border-size) solid var(--fl-input-border-color);
+		border-radius: var(--fl-input-border-radius);
+		box-shadow: var(--fl-input-shadow);
+
+		/* text */
+		color: var(--fl-input-text-color);
+		font: inherit;
+		line-height: 1.5;
+
+		/* pointer */
+		resize: vertical;
+	}
+
+	.fl-textarea::placeholder {
+		color: var(--fl-body-muted-text-color);
+	}
+
+	.fl-textarea:focus-visible:not(:disabled) {
+		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
+		outline-offset: 0;
+	}
+
+	.fl-textarea:disabled {
+		opacity: var(--fl-disabled-opacity);
+		cursor: var(--fl-disabled-cursor);
+	}
+}
