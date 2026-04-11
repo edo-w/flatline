@@ -12,10 +12,11 @@
 		border-radius: var(--fl-input-border-radius, var(--fl-border-radius));
 
 		/* effects */
-		box-shadow: var(--fl-input-shadow, var(--fl-shadow-sm));
+		box-shadow: var(--fl-input-shadow);
 	}
 
 	.fl-select:focus-within {
+		border-color: var(--fl-input-border-focus-color, var(--fl-focus-ring-color));
 		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
 		outline-offset: 0;
 	}

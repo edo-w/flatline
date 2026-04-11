@@ -36,12 +36,13 @@
 
 		/* background */
 		background: var(--fl-body-bg-color);
-		border: var(--fl-border-size, 1px) solid var(--fl-border-color);
+		border: var(--fl-input-border-size, var(--fl-border-size, 1px)) solid
+			var(--fl-input-border-color, var(--fl-border-color));
 		border-radius: var(--fl-radius-sm);
 		color: var(--fl-secondary-text-color);
 
 		/* effects */
-		box-shadow: var(--fl-shadow-xs);
+		box-shadow: var(--fl-input-shadow);
 		transition:
 			background var(--fl-animation-duration) ease,
 			border-color var(--fl-animation-duration) ease,

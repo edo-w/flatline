@@ -21,6 +21,7 @@
 
 	/* focus state */
 	.fl-input:focus-visible:not(:disabled) {
+		border-color: var(--fl-input-border-focus-color);
 		outline: var(--fl-focus-ring-size) solid var(--fl-focus-ring-color);
 		outline-offset: 0;
 	}
