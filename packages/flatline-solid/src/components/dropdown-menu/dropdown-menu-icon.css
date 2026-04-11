@@ -1,0 +1,20 @@
+@layer components {
+	.fl-dropdown-menu_icon {
+		/* layout */
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--fl-size-5);
+		height: var(--fl-size-5);
+		flex: 0 0 var(--fl-size-5);
+
+		/* margin-right: -3px; */
+
+		/* effects */
+		transition: transform var(--fl-animation-duration) ease;
+	}
+
+	.fl-dropdown-menu_icon[data-expanded] {
+		transform: rotate(180deg);
+	}
+}

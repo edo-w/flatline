@@ -1,0 +1,18 @@
+@layer components {
+	.fl-dropdown-menu_item-right-slot {
+		/* layout */
+		margin-left: auto;
+
+		/* spacing */
+		padding-left: var(--fl-size-5);
+
+		/* text */
+		color: var(--fl-body-muted-text-color);
+		font-size: var(--fl-text-size-xs);
+	}
+
+	[data-highlighted] > .fl-dropdown-menu_item-right-slot {
+		/* text */
+		color: inherit;
+	}
+}

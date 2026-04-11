@@ -1,0 +1,38 @@
+@layer components {
+	.fl-dropdown-menu_checkbox-item {
+		/* reset */
+		outline: none;
+
+		/* layout */
+		position: relative;
+		display: flex;
+		align-items: center;
+		min-height: var(--fl-size-8);
+
+		/* spacing */
+		padding-inline: var(--fl-size-2);
+		padding-left: var(--fl-size-6);
+
+		/* background */
+		border-radius: var(--fl-radius-sm);
+
+		/* text */
+		color: var(--fl-body-text-color);
+		font-size: var(--fl-text-size-sm);
+		line-height: 1.2;
+
+		/* pointer */
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.fl-dropdown-menu_checkbox-item[data-disabled] {
+		opacity: var(--fl-disabled-opacity);
+		pointer-events: none;
+	}
+
+	.fl-dropdown-menu_checkbox-item[data-highlighted] {
+		background: var(--fl-primary-color);
+		color: var(--fl-primary-text-color);
+	}
+}

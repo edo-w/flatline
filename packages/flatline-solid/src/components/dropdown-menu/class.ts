@@ -1,0 +1,16 @@
+export const dropdownMenuClass = {
+	root: 'fl-dropdown-menu',
+	trigger: 'fl-dropdown-menu_trigger',
+	icon: 'fl-dropdown-menu_icon',
+	content: 'fl-dropdown-menu_content',
+	subContent: 'fl-dropdown-menu_sub-content',
+	item: 'fl-dropdown-menu_item',
+	checkboxItem: 'fl-dropdown-menu_checkbox-item',
+	radioItem: 'fl-dropdown-menu_radio-item',
+	subTrigger: 'fl-dropdown-menu_sub-trigger',
+	groupLabel: 'fl-dropdown-menu_group-label',
+	separator: 'fl-dropdown-menu_separator',
+	itemIndicator: 'fl-dropdown-menu_item-indicator',
+	itemRightSlot: 'fl-dropdown-menu_item-right-slot',
+	arrow: 'fl-dropdown-menu_arrow',
+} as const;

@@ -1,0 +1,15 @@
+@layer components {
+	.fl-dropdown-menu_group-label {
+		/* layout */
+		display: block;
+
+		/* spacing */
+		padding-inline: var(--fl-size-1);
+		padding-block: var(--fl-size-1);
+
+		/* text */
+		color: var(--fl-body-muted-text-color);
+		font-size: var(--fl-text-size-xs);
+		font-weight: var(--fl-font-weight-semibold);
+	}
+}

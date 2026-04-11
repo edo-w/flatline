@@ -1,0 +1,12 @@
+@layer components {
+	.fl-dropdown-menu_item-indicator {
+		/* layout */
+		position: absolute;
+		left: var(--fl-size-0-5);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--fl-size-4);
+		height: var(--fl-size-4);
+	}
+}

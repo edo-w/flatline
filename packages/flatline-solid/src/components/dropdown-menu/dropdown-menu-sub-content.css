@@ -1,0 +1,26 @@
+@layer components {
+	.fl-dropdown-menu_sub-content {
+		/* reset */
+		outline: none;
+
+		/* layout */
+		min-width: 13.75rem;
+
+		/* spacing */
+		padding: var(--fl-size-2);
+
+		/* background */
+		background: var(--fl-body-bg-color);
+		border: var(--fl-border-size, 1px) solid var(--fl-border-color);
+		border-radius: var(--fl-border-radius);
+
+		/* effects */
+		box-shadow: var(--fl-shadow-lg);
+		transform-origin: var(--kb-menu-content-transform-origin);
+		animation: fl-dropdown-menu-content-hide 180ms ease-in forwards;
+	}
+
+	.fl-dropdown-menu_sub-content[data-expanded] {
+		animation: fl-dropdown-menu-content-show 180ms ease-out;
+	}
+}

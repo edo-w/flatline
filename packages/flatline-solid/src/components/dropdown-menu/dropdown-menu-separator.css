@@ -1,0 +1,11 @@
+@layer components {
+	.fl-dropdown-menu_separator {
+		/* spacing */
+		margin-block: var(--fl-size-1-5);
+		margin-inline: calc(var(--fl-size-2) * -1);
+
+		/* background */
+		border: 0;
+		border-top: var(--fl-border-size, 1px) solid var(--fl-border-color);
+	}
+}
