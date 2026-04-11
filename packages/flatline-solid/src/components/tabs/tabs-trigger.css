@@ -21,13 +21,15 @@
 		font: inherit;
 		font-weight: var(--fl-font-weight-medium);
 		white-space: nowrap;
-		user-select: none;
 
 		/* pointer */
 		cursor: pointer;
+		user-select: none;
 
 		/* effects */
-		transition: background-color 188ms ease-in-out, color 188ms ease-in-out;
+		transition:
+			background-color 188ms ease-in-out,
+			color 188ms ease-in-out;
 	}
 
 	/* hover state */

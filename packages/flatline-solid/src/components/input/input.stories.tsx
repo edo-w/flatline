@@ -7,12 +7,12 @@ const meta: Meta<typeof Input> = {
 	parameters: {
 		layout: 'centered',
 		controls: {
-			exclude: ['use:eventListener']
-		}
+			exclude: ['use:eventListener'],
+		},
 	},
 	args: {
 		type: 'text',
-		value: ''
+		value: '',
 	},
 	argTypes: {
 		type: {
@@ -27,8 +27,8 @@ const meta: Meta<typeof Input> = {
 		},
 		placeholder: {
 			control: 'text',
-		}
-	}
+		},
+	},
 };
 
 export default meta;
@@ -41,51 +41,51 @@ export const Default: Story = {
 
 export const DefaultWithValue: Story = {
 	args: {
-		value: 'some value'
+		value: 'some value',
 	},
 };
 
 export const Disabled: Story = {
 	args: {
-		disabled: true
+		disabled: true,
 	},
 };
 
 export const DisabledWithValue: Story = {
 	args: {
 		disabled: true,
-		value: 'some value'
+		value: 'some value',
 	},
 };
 
 export const Placeholder: Story = {
 	args: {
-		placeholder: 'some text'
+		placeholder: 'some text',
 	},
 };
 
 export const Text: Story = {
 	args: {
 		type: 'text',
-		value: 'Hello World!'
+		value: 'Hello World!',
 	},
 };
 
 export const Number: Story = {
 	args: {
 		type: 'number',
-		value: 81
+		value: 81,
 	},
 	argTypes: {
 		value: {
 			control: 'number',
-		}
-	}
+		},
+	},
 };
 
 export const Password: Story = {
 	args: {
 		type: 'password',
-		value: 'supersecret'
+		value: 'supersecret',
 	},
 };

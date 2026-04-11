@@ -63,7 +63,10 @@ function RenderCard(props: CardStoryArgs) {
 					<Card.Title color={local.titleColor}>Project Overview</Card.Title>
 					<Card.Subtitle>Weekly status and next steps</Card.Subtitle>
 					<Card.Action>
-						<Button variant="ghost" color="secondary">
+						<Button
+							variant="ghost"
+							color="secondary"
+						>
 							Edit
 						</Button>
 					</Card.Action>
@@ -73,11 +76,20 @@ function RenderCard(props: CardStoryArgs) {
 					<div>Design QA is scheduled for tomorrow.</div>
 					<div>Three follow-up items still need review.</div>
 				</Card.Content>
-				<Card.Footer gap={local.footerGap} justify={local.footerJustify}>
-					<Button variant="light" color="secondary">
+				<Card.Footer
+					gap={local.footerGap}
+					justify={local.footerJustify}
+				>
+					<Button
+						variant="light"
+						color="secondary"
+					>
 						Cancel
 					</Button>
-					<Button variant="solid" color="primary">
+					<Button
+						variant="solid"
+						color="primary"
+					>
 						Continue
 					</Button>
 				</Card.Footer>
@@ -100,10 +112,34 @@ export const TitleColors: Story = {
 
 		return (
 			<div style={gridStyle}>
-				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="left" />
-				<RenderCard cardGap="6" titleColor="secondary" contentGap="0" footerGap="2" footerJustify="left" />
-				<RenderCard cardGap="6" titleColor="success" contentGap="0" footerGap="2" footerJustify="left" />
-				<RenderCard cardGap="6" titleColor="danger" contentGap="0" footerGap="2" footerJustify="left" />
+				<RenderCard
+					cardGap="6"
+					titleColor="primary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="left"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="secondary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="left"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="success"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="left"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="danger"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="left"
+				/>
 			</div>
 		);
 	},
@@ -124,10 +160,34 @@ export const FooterJustify: Story = {
 
 		return (
 			<div style={gridStyle}>
-				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="left" />
-				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="center" />
-				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="right" />
-				<RenderCard cardGap="6" titleColor="primary" contentGap="0" footerGap="2" footerJustify="space-between" />
+				<RenderCard
+					cardGap="6"
+					titleColor="primary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="left"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="primary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="center"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="primary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="right"
+				/>
+				<RenderCard
+					cardGap="6"
+					titleColor="primary"
+					contentGap="0"
+					footerGap="2"
+					footerJustify="space-between"
+				/>
 			</div>
 		);
 	},

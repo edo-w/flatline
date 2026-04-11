@@ -7,21 +7,21 @@ const meta: Meta<typeof Tabs> = {
 	parameters: {
 		layout: 'centered',
 		controls: {
-			exclude: ['style', 'use:eventListener']
-		}
+			exclude: ['style', 'use:eventListener'],
+		},
 	},
 	args: {
 		defaultValue: 'profile',
 		color: 'primary',
 		style: { width: '420px' },
 		orientation: 'horizontal',
-		activationMode: 'automatic'
+		activationMode: 'automatic',
 	},
 	argTypes: {
 		children: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		color: {
 			control: 'select',
@@ -34,8 +34,8 @@ const meta: Meta<typeof Tabs> = {
 		activationMode: {
 			control: 'select',
 			options: ['automatic', 'manual'],
-		}
-	}
+		},
+	},
 };
 
 export default meta;
@@ -44,7 +44,10 @@ type Story = StoryObj<typeof meta>;
 
 function RenderTabs(props: TabsRootProps) {
 	return (
-		<Tabs {...props} aria-label="Main navigation">
+		<Tabs
+			{...props}
+			aria-label="Main navigation"
+		>
 			<Tabs.List>
 				<Tabs.Trigger value="profile">Profile</Tabs.Trigger>
 				<Tabs.Trigger value="dashboard">Dashboard</Tabs.Trigger>
@@ -63,21 +66,21 @@ function RenderTabs(props: TabsRootProps) {
 export const Primary: Story = {
 	render: (args: TabsRootProps) => <RenderTabs {...args} />,
 	args: {
-		color: 'primary'
-	}
+		color: 'primary',
+	},
 };
 
 export const Secondary: Story = {
 	render: (args: TabsRootProps) => <RenderTabs {...args} />,
 	args: {
-		color: 'secondary'
-	}
+		color: 'secondary',
+	},
 };
 
 export const Vertical: Story = {
 	render: (args: TabsRootProps) => <RenderTabs {...args} />,
 	args: {
 		orientation: 'vertical',
-		style: { width: '560px' }
-	}
+		style: { width: '560px' },
+	},
 };

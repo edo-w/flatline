@@ -10,12 +10,12 @@ export interface InputProps extends InputBaseProps {}
 export function Input(props: InputProps) {
 	const [local, rest] = splitProps(props, ['class', 'children']);
 
-	const rootClass = () => clsx(
-		inputClass.root,
-		local.class
-	);
+	const rootClass = () => clsx(inputClass.root, local.class);
 
 	return (
-		<input class={rootClass()} {...rest} />
+		<input
+			class={rootClass()}
+			{...rest}
+		/>
 	);
 }

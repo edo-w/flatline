@@ -8,7 +8,7 @@ import {
 	type DialogPortalProps as KDialogPortalProps,
 	type DialogRootProps as KDialogRootProps,
 	type DialogTitleProps as KDialogTitleProps,
-	type DialogTriggerProps as KDialogTriggerProps
+	type DialogTriggerProps as KDialogTriggerProps,
 } from '@kobalte/core/dialog';
 import { Button, type ButtonProps } from '../button';
 import { mergeProps, splitProps, type JSX } from 'solid-js';
@@ -50,106 +50,139 @@ export function DialogPortal(props: DialogPortalProps) {
 export function DialogTrigger(props: DialogTriggerProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.trigger,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.trigger, local.class);
 
-	return <KDialog.Trigger class={rootClass()} {...rest} />;
+	return (
+		<KDialog.Trigger
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogButtonTrigger(props: DialogButtonTriggerProps) {
-	const merged = mergeProps({
-		type: 'button',
-		variant: 'solid',
-		color: 'primary'
-	} as const, props);
+	const merged = mergeProps(
+		{
+			type: 'button',
+			variant: 'solid',
+			color: 'primary',
+		} as const,
+		props,
+	);
 
-	return <KDialog.Trigger as={Button} {...merged} />;
+	return (
+		<KDialog.Trigger
+			as={Button}
+			{...merged}
+		/>
+	);
 }
 
 export function DialogOverlay(props: DialogOverlayProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.overlay,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.overlay, local.class);
 
-	return <KDialog.Overlay class={rootClass()} {...rest} />;
+	return (
+		<KDialog.Overlay
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogPositioner(props: DialogPositionerProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.positioner,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.positioner, local.class);
 
-	return <div class={rootClass()} {...rest} />;
+	return (
+		<div
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogContent(props: DialogContentProps) {
-	const merged = mergeProps({
-		size: 'md'
-	} as const, props);
+	const merged = mergeProps(
+		{
+			size: 'md',
+		} as const,
+		props,
+	);
 	const [local, rest] = splitProps(merged, ['class', 'size']);
 
-	const rootClass = () => clsx(
-		dialogClass.content,
-		dialogClass.contentSize[local.size],
-		local.class
-	);
+	const rootClass = () => {
+		const sizeClass = dialogClass.contentSize[local.size];
 
-	return <KDialog.Content class={rootClass()} {...rest} />;
+		return clsx(dialogClass.content, sizeClass, local.class);
+	};
+
+	return (
+		<KDialog.Content
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogHeader(props: DialogHeaderProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.header,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.header, local.class);
 
-	return <div class={rootClass()} {...rest} />;
+	return (
+		<div
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogTitle(props: DialogTitleProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.title,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.title, local.class);
 
-	return <KDialog.Title class={rootClass()} {...rest} />;
+	return (
+		<KDialog.Title
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogDescription(props: DialogDescriptionProps) {
 	const [local, rest] = splitProps(props, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.description,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.description, local.class);
 
-	return <KDialog.Description class={rootClass()} {...rest} />;
+	return (
+		<KDialog.Description
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export function DialogCloseButton(props: DialogCloseButtonProps) {
-	const merged = mergeProps({
-		'aria-label': 'Close dialog'
-	} as const, props);
+	const merged = mergeProps(
+		{
+			'aria-label': 'Close dialog',
+		} as const,
+		props,
+	);
 	const [local, rest] = splitProps(merged, ['class']);
 
-	const rootClass = () => clsx(
-		dialogClass.closeButton,
-		local.class
-	);
+	const rootClass = () => clsx(dialogClass.closeButton, local.class);
 
-	return <KDialog.CloseButton class={rootClass()} {...rest} />;
+	return (
+		<KDialog.CloseButton
+			class={rootClass()}
+			{...rest}
+		/>
+	);
 }
 
 export const Dialog = Object.assign(DialogRoot, {
@@ -162,5 +195,5 @@ export const Dialog = Object.assign(DialogRoot, {
 	Header: DialogHeader,
 	Title: DialogTitle,
 	Description: DialogDescription,
-	CloseButton: DialogCloseButton
+	CloseButton: DialogCloseButton,
 });

@@ -21,11 +21,18 @@ export function Button(props: ButtonProps) {
 	);
 	const [local, rest] = splitProps(merged, ['class', 'children', 'variant', 'color']);
 
-	const rootClass = () =>
-		clsx(buttonClass.root, buttonClass.variant[local.variant], buttonClass.color[local.color], local.class);
+	const rootClass = () => {
+		const variantClass = buttonClass.variant[local.variant];
+		const colorClass = buttonClass.color[local.color];
+
+		return clsx(buttonClass.root, variantClass, colorClass, local.class);
+	};
 
 	return (
-		<button class={rootClass()} {...rest}>
+		<button
+			class={rootClass()}
+			{...rest}
+		>
 			{local.children}
 		</button>
 	);

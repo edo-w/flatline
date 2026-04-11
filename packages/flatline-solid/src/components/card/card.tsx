@@ -15,7 +15,11 @@ function mergeStyleVar(
 	value: number | string | undefined,
 ) {
 	if (typeof style === 'string') {
-		return value === undefined ? style : `${variable}: ${value}; ${style}`;
+		if (value === undefined) {
+			return style;
+		}
+
+		return `${variable}: ${value}; ${style}`;
 	}
 
 	return {
@@ -52,7 +56,11 @@ function CardRoot(props: CardProps) {
 	const rootClass = () => clsx(cardClass.root, local.class);
 
 	return (
-		<div class={rootClass()} style={mergeStyleVar(local.style, cardClass.rootGapVar, local.gap)} {...rest}>
+		<div
+			class={rootClass()}
+			style={mergeStyleVar(local.style, cardClass.rootGapVar, local.gap)}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);
@@ -64,7 +72,10 @@ export function CardHeader(props: CardHeaderProps) {
 	const rootClass = () => clsx(cardClass.header, local.class);
 
 	return (
-		<div class={rootClass()} {...rest}>
+		<div
+			class={rootClass()}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);
@@ -73,11 +84,17 @@ export function CardHeader(props: CardHeaderProps) {
 export function CardTitle(props: CardTitleProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'color']);
 
-	const rootClass = () =>
-		clsx(cardClass.title, local.color ? cardClass.titleColor[local.color] : undefined, local.class);
+	const rootClass = () => {
+		const colorClass = local.color ? cardClass.titleColor[local.color] : undefined;
+
+		return clsx(cardClass.title, colorClass, local.class);
+	};
 
 	return (
-		<h3 class={rootClass()} {...rest}>
+		<h3
+			class={rootClass()}
+			{...rest}
+		>
 			{local.children}
 		</h3>
 	);
@@ -89,7 +106,10 @@ export function CardSubtitle(props: CardSubtitleProps) {
 	const rootClass = () => clsx(cardClass.subtitle, local.class);
 
 	return (
-		<p class={rootClass()} {...rest}>
+		<p
+			class={rootClass()}
+			{...rest}
+		>
 			{local.children}
 		</p>
 	);
@@ -101,7 +121,10 @@ export function CardAction(props: CardActionProps) {
 	const rootClass = () => clsx(cardClass.action, local.class);
 
 	return (
-		<div class={rootClass()} {...rest}>
+		<div
+			class={rootClass()}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);
@@ -113,7 +136,11 @@ export function CardContent(props: CardContentProps) {
 	const rootClass = () => clsx(cardClass.content, local.class);
 
 	return (
-		<div class={rootClass()} style={mergeStyleVar(local.style, cardClass.contentGapVar, local.gap)} {...rest}>
+		<div
+			class={rootClass()}
+			style={mergeStyleVar(local.style, cardClass.contentGapVar, local.gap)}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);
@@ -122,11 +149,18 @@ export function CardContent(props: CardContentProps) {
 export function CardFooter(props: CardFooterProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'gap', 'justify', 'style']);
 
-	const rootClass = () =>
-		clsx(cardClass.footer, local.justify ? cardClass.footerJustify[local.justify] : undefined, local.class);
+	const rootClass = () => {
+		const justifyClass = local.justify ? cardClass.footerJustify[local.justify] : undefined;
+
+		return clsx(cardClass.footer, justifyClass, local.class);
+	};
 
 	return (
-		<div class={rootClass()} style={mergeStyleVar(local.style, cardClass.footerGapVar, local.gap)} {...rest}>
+		<div
+			class={rootClass()}
+			style={mergeStyleVar(local.style, cardClass.footerGapVar, local.gap)}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);

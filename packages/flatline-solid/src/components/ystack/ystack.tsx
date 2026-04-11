@@ -13,14 +13,18 @@ export interface YStackProps extends YStackBaseProps {
 export function YStack(props: YStackProps) {
 	const [local, rest] = splitProps(props, ['class', 'children', 'gap', 'align']);
 
-	const rootClass = () => clsx(
-		ystackClass.root,
-		local.align ? ystackClass.align[local.align] : undefined,
-		local.class
-	);
+	const rootClass = () => {
+		const alignClass = local.align ? ystackClass.align[local.align] : undefined;
+
+		return clsx(ystackClass.root, alignClass, local.class);
+	};
 
 	return (
-		<div class={rootClass()} style={{ [ystackClass.gapVar]: local.gap }} {...rest}>
+		<div
+			class={rootClass()}
+			style={{ [ystackClass.gapVar]: local.gap }}
+			{...rest}
+		>
 			{local.children}
 		</div>
 	);

@@ -14,7 +14,7 @@
 	}
 
 	/* vertical content */
-	.fl-tabs[data-orientation='vertical'] .fl-tabs_content {
+	.fl-tabs[data-orientation="vertical"] .fl-tabs_content {
 		/* layout */
 		flex: 1 1 auto;
 

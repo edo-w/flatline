@@ -1,11 +1,12 @@
 @layer reset, base, components, utilities;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import './reset.css';
-@import './colors.css';
-@import './tokens.css';
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./reset.css";
+@import "./colors.css";
+@import "./tokens.css";
 
-html, body {
+html,
+body {
 	font: var(--fl-font-body);
-  	font-optical-sizing: auto;
-  	font-style: normal;
+	font-optical-sizing: auto;
+	font-style: normal;
 }

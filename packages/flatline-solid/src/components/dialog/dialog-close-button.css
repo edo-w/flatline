@@ -29,7 +29,9 @@
 		cursor: pointer;
 
 		/* effects */
-		transition: background-color 188ms ease-in-out, color 188ms ease-in-out;
+		transition:
+			background-color 188ms ease-in-out,
+			color 188ms ease-in-out;
 	}
 
 	/* hover state */

@@ -6,8 +6,8 @@ export const xstackClass = {
 		center: '--align-center',
 		bottom: '--align-bottom',
 		stretch: '--align-stretch',
-		baseline: '--align-baseline'
-	}
+		baseline: '--align-baseline',
+	},
 } as const;
 
 export type XStackAlign = keyof typeof xstackClass.align;

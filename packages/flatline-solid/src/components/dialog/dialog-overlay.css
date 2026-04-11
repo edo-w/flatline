@@ -1,7 +1,7 @@
 @layer components {
 	.fl-dialog_overlay {
 		--fl-dialog-overlay-bg-base-color: 0 0 0;
-		--fl-dialog-overlay-bg-opacity: 0.20;
+		--fl-dialog-overlay-bg-opacity: 0.2;
 		--fl-dialog-overlay-bg-color: rgb(var(--fl-dialog-overlay-bg-base-color) / var(--fl-dialog-overlay-bg-opacity));
 
 		/* layout */

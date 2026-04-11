@@ -64,48 +64,84 @@ export const Gallery: Story = {
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Solid</div>
-						<Button variant="solid" color="primary">
+						<Button
+							variant="solid"
+							color="primary"
+						>
 							Solid Primary
 						</Button>
-						<Button variant="solid" color="secondary">
+						<Button
+							variant="solid"
+							color="secondary"
+						>
 							Solid Secondary
 						</Button>
-						<Button variant="solid" color="success">
+						<Button
+							variant="solid"
+							color="success"
+						>
 							Solid Success
 						</Button>
-						<Button variant="solid" color="danger">
+						<Button
+							variant="solid"
+							color="danger"
+						>
 							Solid Danger
 						</Button>
 					</div>
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Light</div>
-						<Button variant="light" color="primary">
+						<Button
+							variant="light"
+							color="primary"
+						>
 							Light Primary
 						</Button>
-						<Button variant="light" color="secondary">
+						<Button
+							variant="light"
+							color="secondary"
+						>
 							Light Secondary
 						</Button>
-						<Button variant="light" color="success">
+						<Button
+							variant="light"
+							color="success"
+						>
 							Light Success
 						</Button>
-						<Button variant="light" color="danger">
+						<Button
+							variant="light"
+							color="danger"
+						>
 							Light Danger
 						</Button>
 					</div>
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Ghost</div>
-						<Button variant="ghost" color="primary">
+						<Button
+							variant="ghost"
+							color="primary"
+						>
 							Ghost Primary
 						</Button>
-						<Button variant="ghost" color="secondary">
+						<Button
+							variant="ghost"
+							color="secondary"
+						>
 							Ghost Secondary
 						</Button>
-						<Button variant="ghost" color="success">
+						<Button
+							variant="ghost"
+							color="success"
+						>
 							Ghost Success
 						</Button>
-						<Button variant="ghost" color="danger">
+						<Button
+							variant="ghost"
+							color="danger"
+						>
 							Ghost Danger
 						</Button>
 					</div>
@@ -118,48 +154,96 @@ export const Gallery: Story = {
 
 					<div style={rowStyle}>
 						<div></div>
-						<Button disabled variant="solid" color="primary">
+						<Button
+							disabled
+							variant="solid"
+							color="primary"
+						>
 							Solid Primary
 						</Button>
-						<Button disabled variant="solid" color="secondary">
+						<Button
+							disabled
+							variant="solid"
+							color="secondary"
+						>
 							Solid Secondary
 						</Button>
-						<Button disabled variant="solid" color="success">
+						<Button
+							disabled
+							variant="solid"
+							color="success"
+						>
 							Solid Success
 						</Button>
-						<Button disabled variant="solid" color="danger">
+						<Button
+							disabled
+							variant="solid"
+							color="danger"
+						>
 							Solid Danger
 						</Button>
 					</div>
 
 					<div style={rowStyle}>
 						<div></div>
-						<Button disabled variant="light" color="primary">
+						<Button
+							disabled
+							variant="light"
+							color="primary"
+						>
 							Light Primary
 						</Button>
-						<Button disabled variant="light" color="secondary">
+						<Button
+							disabled
+							variant="light"
+							color="secondary"
+						>
 							Light Secondary
 						</Button>
-						<Button disabled variant="light" color="success">
+						<Button
+							disabled
+							variant="light"
+							color="success"
+						>
 							Light Success
 						</Button>
-						<Button disabled variant="light" color="danger">
+						<Button
+							disabled
+							variant="light"
+							color="danger"
+						>
 							Light Danger
 						</Button>
 					</div>
 
 					<div style={rowStyle}>
 						<div></div>
-						<Button disabled variant="ghost" color="primary">
+						<Button
+							disabled
+							variant="ghost"
+							color="primary"
+						>
 							Ghost Primary
 						</Button>
-						<Button disabled variant="ghost" color="secondary">
+						<Button
+							disabled
+							variant="ghost"
+							color="secondary"
+						>
 							Ghost Secondary
 						</Button>
-						<Button disabled variant="ghost" color="success">
+						<Button
+							disabled
+							variant="ghost"
+							color="success"
+						>
 							Ghost Success
 						</Button>
-						<Button disabled variant="ghost" color="danger">
+						<Button
+							disabled
+							variant="ghost"
+							color="danger"
+						>
 							Ghost Danger
 						</Button>
 					</div>

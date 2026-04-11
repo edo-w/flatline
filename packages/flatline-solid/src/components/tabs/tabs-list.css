@@ -6,7 +6,7 @@
 	}
 
 	/* horizontal list */
-	.fl-tabs .fl-tabs_list[data-orientation='horizontal'] {
+	.fl-tabs .fl-tabs_list[data-orientation="horizontal"] {
 		/* layout */
 		align-items: center;
 
@@ -15,7 +15,7 @@
 	}
 
 	/* vertical list */
-	.fl-tabs .fl-tabs_list[data-orientation='vertical'] {
+	.fl-tabs .fl-tabs_list[data-orientation="vertical"] {
 		/* layout */
 		flex-direction: column;
 		align-items: stretch;

@@ -39,7 +39,9 @@
 
 		/* effects */
 		box-shadow: var(--fl-dialog-trigger-shadow);
-		transition: background-color 188ms ease-in-out, transform 188ms ease-in-out;
+		transition:
+			background-color 188ms ease-in-out,
+			transform 188ms ease-in-out;
 	}
 
 	/* hover state */

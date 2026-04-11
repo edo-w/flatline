@@ -31,35 +31,35 @@ const meta: Meta<DialogStoryArgs> = {
 	component: Dialog,
 	parameters: {
 		controls: {
-			exclude: ['use:eventListener']
-		}
+			exclude: ['use:eventListener'],
+		},
 	},
 	args: {
 		modal: true,
 		defaultOpen: false,
-		size: 'md'
+		size: 'md',
 	},
 	argTypes: {
 		children: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		open: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		onOpenChange: {
 			table: {
-				disable: true
-			}
+				disable: true,
+			},
 		},
 		size: {
 			control: 'select',
 			options: ['sm', 'md', 'lg', 'xl', '2xl'],
-		}
-	}
+		},
+	},
 };
 
 export default meta;
@@ -69,14 +69,14 @@ type Story = StoryObj<typeof meta>;
 const variantLabel = {
 	solid: 'Solid',
 	light: 'Light',
-	ghost: 'Ghost'
+	ghost: 'Ghost',
 } as const;
 
 const colorLabel = {
 	primary: 'Primary',
 	secondary: 'Secondary',
 	success: 'Success',
-	danger: 'Danger'
+	danger: 'Danger',
 } as const;
 
 function RenderDialog(props: DialogStoryArgs) {
@@ -96,9 +96,8 @@ function RenderDialog(props: DialogStoryArgs) {
 							</Dialog.CloseButton>
 						</Dialog.Header>
 						<Dialog.Description>
-							Flatline Solid provides styled primitives built on accessible Kobalte components,
-							using the same design tokens and class naming conventions as the rest of the
-							package.
+							Flatline Solid provides styled primitives built on accessible Kobalte components, using the same design
+							tokens and class naming conventions as the rest of the package.
 						</Dialog.Description>
 					</Dialog.Content>
 				</Dialog.Positioner>
@@ -116,7 +115,10 @@ function RenderTrigger(props: {
 
 	return (
 		<Dialog>
-			<Dialog.ButtonTrigger variant={props.variant} color={props.color}>
+			<Dialog.ButtonTrigger
+				variant={props.variant}
+				color={props.color}
+			>
 				{label}
 			</Dialog.ButtonTrigger>
 			<Dialog.Portal>
@@ -130,8 +132,8 @@ function RenderTrigger(props: {
 							</Dialog.CloseButton>
 						</Dialog.Header>
 						<Dialog.Description>
-							This trigger uses the flatline-solid Button component through the dialog wrapper,
-							so consumers do not need to pass an `as` prop directly.
+							This trigger uses the flatline-solid Button component through the dialog wrapper, so consumers do not need
+							to pass an `as` prop directly.
 						</Dialog.Description>
 					</Dialog.Content>
 				</Dialog.Positioner>
@@ -142,14 +144,14 @@ function RenderTrigger(props: {
 
 export const Default: Story = {
 	render: (args: DialogStoryArgs) => <RenderDialog {...args} />,
-	args: {}
+	args: {},
 };
 
 export const InitiallyOpen: Story = {
 	render: (args: DialogStoryArgs) => <RenderDialog {...args} />,
 	args: {
-		defaultOpen: true
-	}
+		defaultOpen: true,
+	},
 };
 
 export const Gallery: Story = {
@@ -180,29 +182,77 @@ export const Gallery: Story = {
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Solid</div>
-						<RenderTrigger variant="solid" color="primary" size={local.size} />
-						<RenderTrigger variant="solid" color="secondary" size={local.size} />
-						<RenderTrigger variant="solid" color="success" size={local.size} />
-						<RenderTrigger variant="solid" color="danger" size={local.size} />
+						<RenderTrigger
+							variant="solid"
+							color="primary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="solid"
+							color="secondary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="solid"
+							color="success"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="solid"
+							color="danger"
+							size={local.size}
+						/>
 					</div>
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Light</div>
-						<RenderTrigger variant="light" color="primary" size={local.size} />
-						<RenderTrigger variant="light" color="secondary" size={local.size} />
-						<RenderTrigger variant="light" color="success" size={local.size} />
-						<RenderTrigger variant="light" color="danger" size={local.size} />
+						<RenderTrigger
+							variant="light"
+							color="primary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="light"
+							color="secondary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="light"
+							color="success"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="light"
+							color="danger"
+							size={local.size}
+						/>
 					</div>
 
 					<div style={rowStyle}>
 						<div style={labelStyle}>Ghost</div>
-						<RenderTrigger variant="ghost" color="primary" size={local.size} />
-						<RenderTrigger variant="ghost" color="secondary" size={local.size} />
-						<RenderTrigger variant="ghost" color="success" size={local.size} />
-						<RenderTrigger variant="ghost" color="danger" size={local.size} />
+						<RenderTrigger
+							variant="ghost"
+							color="primary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="ghost"
+							color="secondary"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="ghost"
+							color="success"
+							size={local.size}
+						/>
+						<RenderTrigger
+							variant="ghost"
+							color="danger"
+							size={local.size}
+						/>
 					</div>
 				</div>
 			</div>
 		);
-	}
+	},
 };

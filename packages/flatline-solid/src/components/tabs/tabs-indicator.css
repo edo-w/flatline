@@ -11,11 +11,9 @@
 	}
 
 	/* horizontal indicator */
-	.fl-tabs .fl-tabs_indicator[data-orientation='horizontal'] {
+	.fl-tabs .fl-tabs_indicator[data-orientation="horizontal"] {
 		/* layout */
 		bottom: calc(var(--fl-border-size, 1px) * -1);
-
-		/* sizing */
 		height: var(--fl-tabs-indicator-size);
 
 		/* background */
@@ -23,11 +21,9 @@
 	}
 
 	/* vertical indicator */
-	.fl-tabs .fl-tabs_indicator[data-orientation='vertical'] {
+	.fl-tabs .fl-tabs_indicator[data-orientation="vertical"] {
 		/* layout */
 		right: calc(var(--fl-border-size, 1px) * -1);
-
-		/* sizing */
 		width: var(--fl-tabs-indicator-size);
 
 		/* background */

@@ -1,13 +1,12 @@
 @layer components {
 	.fl-tabs {
-		/* variables */
 		--fl-tabs-indicator-size: 2px;
 		--fl-tabs-indicator-color: var(--fl-primary-color);
 		--fl-tabs-list-border-color: var(--fl-input-border-color, var(--fl-border-color));
 		--fl-tabs-trigger-hover-bg: var(--fl-input-bg-hover-color, color-mix(in oklab, white, black 5%));
 		--fl-tabs-trigger-focus-bg: color-mix(in oklab, var(--fl-input-bg-color, white), black 3%);
 
-		/* sizing */
+		/* layout */
 		width: 100%;
 
 		/* text */
@@ -25,7 +24,7 @@
 	}
 
 	/* vertical orientation */
-	.fl-tabs[data-orientation='vertical'] {
+	.fl-tabs[data-orientation="vertical"] {
 		/* layout */
 		display: flex;
 
