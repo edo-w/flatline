@@ -1,6 +1,6 @@
 import clsx from 'clsx/lite';
-import { splitProps, type JSX } from 'solid-js';
-import { xstackClass, type XStackAlign } from './class';
+import { type JSX, splitProps } from 'solid-js';
+import { type XStackAlign, xstackClass } from './class';
 import './xstack.css';
 
 export type XStackBaseProps = JSX.HTMLAttributes<HTMLDivElement>;

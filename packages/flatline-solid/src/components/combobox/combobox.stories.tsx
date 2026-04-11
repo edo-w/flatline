@@ -1,4 +1,4 @@
-import { createSignal, type Component } from 'solid-js';
+import { type Component, createSignal } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { Combobox, type ComboboxRenderGroupProps } from './combobox';
 

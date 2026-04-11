@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { createSignal } from 'solid-js';
+import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { Radio, RadioGroup } from './radio';
 
 const meta: Meta<typeof RadioGroup> = {

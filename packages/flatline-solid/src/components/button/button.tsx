@@ -1,6 +1,6 @@
 import clsx from 'clsx/lite';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import { buttonClass, type ButtonColor, type ButtonVariant } from './class';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
+import { type ButtonColor, type ButtonVariant, buttonClass } from './class';
 import './button.css';
 
 export type ButtonBaseProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;

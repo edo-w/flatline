@@ -1,3 +1,4 @@
+export * from './class';
 export * from './dropdown-menu';
 export * from './dropdown-menu-arrow';
 export * from './dropdown-menu-checkbox-item';
@@ -17,5 +18,4 @@ export * from './dropdown-menu-sub';
 export * from './dropdown-menu-sub-content';
 export * from './dropdown-menu-sub-trigger';
 export * from './dropdown-menu-trigger';
-export * from './class';
 export * from './types';

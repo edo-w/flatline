@@ -1,8 +1,8 @@
 import clsx from 'clsx/lite';
 import { Show, splitProps } from 'solid-js';
 import { CheckIcon } from '#src/icons';
-import { useComboboxItemContext } from './context';
 import { comboboxClass } from './class';
+import { useComboboxItemContext } from './context';
 import type { ComboboxItemIndicatorProps } from './types';
 
 export function ComboboxItemIndicator(props: ComboboxItemIndicatorProps) {

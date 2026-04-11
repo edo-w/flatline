@@ -1,4 +1,3 @@
-import clsx from 'clsx/lite';
 import {
 	Dialog as KDialog,
 	type DialogCloseButtonProps as KDialogCloseButtonProps,
@@ -10,9 +9,10 @@ import {
 	type DialogTitleProps as KDialogTitleProps,
 	type DialogTriggerProps as KDialogTriggerProps,
 } from '@kobalte/core/dialog';
+import clsx from 'clsx/lite';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
 import { Button, type ButtonProps } from '../button';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import { dialogClass, type DialogContentSize } from './class';
+import { type DialogContentSize, dialogClass } from './class';
 import './dialog-trigger.css';
 import './dialog-overlay.css';
 import './dialog-positioner.css';

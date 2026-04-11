@@ -23,6 +23,7 @@ import { ComboboxPortal } from './combobox-portal';
 import { ComboboxRoot } from './combobox-root';
 import { ComboboxTrigger } from './combobox-trigger';
 import type { ComboboxRootProps } from './types';
+
 export type {
 	ComboboxContentProps,
 	ComboboxControlProps,

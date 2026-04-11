@@ -1,6 +1,6 @@
 import clsx from 'clsx/lite';
-import { splitProps, type JSX } from 'solid-js';
-import { cardClass, type CardFooterJustify, type CardTitleColor } from './class';
+import { type JSX, splitProps } from 'solid-js';
+import { type CardFooterJustify, type CardTitleColor, cardClass } from './class';
 import './card-root.css';
 import './card-header.css';
 import './card-title.css';

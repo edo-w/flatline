@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite';
-import { createSignal, mergeProps, splitProps, type JSX } from 'solid-js';
+import { createSignal, type JSX, mergeProps, splitProps } from 'solid-js';
 import { radioClass } from './class';
 import { useRadioGroupContext } from './context';
 import type { RadioProps } from './types';

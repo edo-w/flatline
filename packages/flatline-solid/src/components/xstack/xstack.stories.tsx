@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from 'storybook-solidjs-vite';
+import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { XStack } from './xstack';
 
 function Box(props: { children: string; w?: string; h?: string; auto?: boolean }) {

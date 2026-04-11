@@ -1,8 +1,8 @@
+import { splitProps } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { Button } from '../button';
 import { Card, type CardProps } from './card';
 import type { CardFooterJustify, CardTitleColor } from './class';
-import { splitProps } from 'solid-js';
 
 type CardStoryArgs = Omit<CardProps, 'gap'> & {
 	cardGap?: number | string;

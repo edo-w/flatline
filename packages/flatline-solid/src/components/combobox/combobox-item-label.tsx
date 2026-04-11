@@ -1,7 +1,7 @@
 import clsx from 'clsx/lite';
 import { splitProps } from 'solid-js';
-import { useComboboxItemContext } from './context';
 import { comboboxClass } from './class';
+import { useComboboxItemContext } from './context';
 import type { ComboboxItemLabelProps } from './types';
 
 export function ComboboxItemLabel(props: ComboboxItemLabelProps) {

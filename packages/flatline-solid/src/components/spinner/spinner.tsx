@@ -1,6 +1,6 @@
 import clsx from 'clsx/lite';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import { spinnerClass, type SpinnerSize } from './class';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
+import { type SpinnerSize, spinnerClass } from './class';
 import './spinner.css';
 
 export type SpinnerBaseProps = JSX.HTMLAttributes<HTMLSpanElement>;

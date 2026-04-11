@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { Dialog, type DialogRootProps } from './dialog';
-import type { DialogContentSize } from './class';
 import { splitProps } from 'solid-js';
+import type { Meta, StoryObj } from 'storybook-solidjs-vite';
+import type { DialogContentSize } from './class';
+import { Dialog, type DialogRootProps } from './dialog';
 
 type DialogStoryArgs = DialogRootProps & {
 	size?: DialogContentSize;

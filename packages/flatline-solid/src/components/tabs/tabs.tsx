@@ -1,4 +1,3 @@
-import clsx from 'clsx/lite';
 import {
 	Tabs as KTabs,
 	type TabsContentProps as KTabsContentProps,
@@ -7,8 +6,9 @@ import {
 	type TabsRootProps as KTabsRootProps,
 	type TabsTriggerProps as KTabsTriggerProps,
 } from '@kobalte/core/tabs';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import { tabsClass, type TabsColor } from './class';
+import clsx from 'clsx/lite';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
+import { type TabsColor, tabsClass } from './class';
 import './tabs-root.css';
 import './tabs-list.css';
 import './tabs-trigger.css';

@@ -1,7 +1,7 @@
-import clsx from 'clsx/lite';
 import { DropdownMenu as KDropdownMenu } from '@kobalte/core/dropdown-menu';
-import { Button } from '../button';
+import clsx from 'clsx/lite';
 import { mergeProps, splitProps } from 'solid-js';
+import { Button } from '../button';
 import { dropdownMenuClass } from './class';
 import type { DropdownMenuTriggerProps } from './types';
 import './dropdown-menu-trigger.css';

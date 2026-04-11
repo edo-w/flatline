@@ -1,5 +1,5 @@
-import clsx from 'clsx/lite';
 import { DropdownMenu as KDropdownMenu } from '@kobalte/core/dropdown-menu';
+import clsx from 'clsx/lite';
 import { splitProps } from 'solid-js';
 import { dropdownMenuClass } from './class';
 import type { DropdownMenuItemIndicatorProps } from './types';

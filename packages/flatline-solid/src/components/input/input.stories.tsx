@@ -39,13 +39,13 @@ export const Default: Story = {
 	args: {},
 };
 
-export const DefaultWithValue: Story = {
+export const WithDefaultValue: Story = {
 	args: {
 		value: 'some value',
 	},
 };
 
-export const Disabled: Story = {
+export const DisabledInput: Story = {
 	args: {
 		disabled: true,
 	},
@@ -58,20 +58,20 @@ export const DisabledWithValue: Story = {
 	},
 };
 
-export const Placeholder: Story = {
+export const InputWithPlaceholder: Story = {
 	args: {
 		placeholder: 'some text',
 	},
 };
 
-export const Text: Story = {
+export const TextInput: Story = {
 	args: {
 		type: 'text',
 		value: 'Hello World!',
 	},
 };
 
-export const Number: Story = {
+export const NumberInput: Story = {
 	args: {
 		type: 'number',
 		value: 81,
@@ -83,7 +83,7 @@ export const Number: Story = {
 	},
 };
 
-export const Password: Story = {
+export const PasswordInput: Story = {
 	args: {
 		type: 'password',
 		value: 'supersecret',

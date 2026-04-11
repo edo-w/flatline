@@ -8,13 +8,14 @@ import { TableHeader } from './table-header';
 import { TableRoot } from './table-root';
 import { TableRow } from './table-row';
 import type { TableProps } from './types';
+
 export type {
 	TableBodyProps,
 	TableCaptionProps,
 	TableCellProps,
 	TableFooterProps,
-	TableHeadProps,
 	TableHeaderProps,
+	TableHeadProps,
 	TableProps,
 	TableRowProps,
 } from './types';

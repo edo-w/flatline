@@ -1,3 +1,4 @@
+export * from './class';
 export * from './table';
 export * from './table-body';
 export * from './table-caption';
@@ -7,5 +8,4 @@ export * from './table-head';
 export * from './table-header';
 export * from './table-root';
 export * from './table-row';
-export * from './class';
 export * from './types';

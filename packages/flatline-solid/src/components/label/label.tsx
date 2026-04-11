@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite';
-import { splitProps, type JSX } from 'solid-js';
+import { type JSX, splitProps } from 'solid-js';
 import { labelClass } from './class';
 import './label.css';
 

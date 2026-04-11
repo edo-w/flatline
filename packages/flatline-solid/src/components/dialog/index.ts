@@ -1,2 +1,2 @@
-export * from './dialog';
 export * from './class';
+export * from './dialog';

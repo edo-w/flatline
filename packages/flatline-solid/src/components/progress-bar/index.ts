@@ -1,2 +1,2 @@
-export * from './progress-bar';
 export * from './class';
+export * from './progress-bar';

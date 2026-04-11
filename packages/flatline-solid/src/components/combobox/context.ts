@@ -1,4 +1,4 @@
-import { createContext, useContext, type Accessor, type Component, type Setter } from 'solid-js';
+import { type Accessor, type Component, createContext, type Setter, useContext } from 'solid-js';
 import type { ComboboxGroupData, ComboboxItemData, ComboboxRenderGroupProps, ComboboxRenderItemProps } from './types';
 
 interface ComboboxItemState<TOption> {

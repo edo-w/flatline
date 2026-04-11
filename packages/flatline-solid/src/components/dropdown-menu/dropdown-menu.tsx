@@ -18,6 +18,7 @@ import { DropdownMenuSubContent } from './dropdown-menu-sub-content';
 import { DropdownMenuSubTrigger } from './dropdown-menu-sub-trigger';
 import { DropdownMenuTrigger } from './dropdown-menu-trigger';
 import type { DropdownMenuRootProps } from './types';
+
 export type {
 	DropdownMenuArrowProps,
 	DropdownMenuCheckboxItemProps,

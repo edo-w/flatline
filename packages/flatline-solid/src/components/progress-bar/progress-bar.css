@@ -26,6 +26,7 @@
 	}
 
 	.fl-progress-bar[data-indeterminate] .fl-progress-bar_indicator {
+		/* biome-ignore lint/complexity/noImportantStyles: required to override the inline width used for determinate progress */
 		width: 35% !important;
 		animation: fl-progress-bar-indeterminate 1.2s ease-in-out infinite;
 	}

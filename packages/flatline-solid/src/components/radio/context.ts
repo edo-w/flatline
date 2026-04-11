@@ -1,4 +1,4 @@
-import { createContext, useContext, type Accessor } from 'solid-js';
+import { type Accessor, createContext, useContext } from 'solid-js';
 
 export interface RadioGroupContextValue {
 	name: Accessor<string>;

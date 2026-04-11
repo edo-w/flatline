@@ -1,2 +1,2 @@
-export * from './label';
 export * from './class';
+export * from './label';

@@ -5,20 +5,20 @@ import {
 	createMemo,
 	createSignal,
 	createUniqueId,
+	type JSX,
 	mergeProps,
 	onCleanup,
 	onMount,
 	splitProps,
-	type JSX,
 } from 'solid-js';
-import { ComboboxContext, type ComboboxContextValue } from './context';
+import { comboboxClass } from './class';
 import { ComboboxContent } from './combobox-content';
 import { ComboboxControl } from './combobox-control';
 import { ComboboxInput } from './combobox-input';
 import { ComboboxListbox } from './combobox-listbox';
 import { ComboboxPortal } from './combobox-portal';
 import { ComboboxTrigger } from './combobox-trigger';
-import { comboboxClass } from './class';
+import { ComboboxContext, type ComboboxContextValue } from './context';
 import type { ComboboxGroupData, ComboboxItemData, ComboboxRootProps } from './types';
 import {
 	callEventHandler,

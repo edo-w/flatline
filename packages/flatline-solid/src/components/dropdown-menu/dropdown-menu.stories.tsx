@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { createSignal, type JSX } from 'solid-js';
+import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 import { CheckIcon, ChevronDownIcon, ChevronRightIcon, DotFilledIcon } from '#src/icons';
 import { DropdownMenu } from './dropdown-menu';
 
@@ -75,7 +75,7 @@ function RenderDropdown(props: {
 				<DropdownMenu.Icon>
 					<ChevronDownIcon />
 				</DropdownMenu.Icon>
-				</DropdownMenu.Trigger>
+			</DropdownMenu.Trigger>
 
 			<DropdownMenu.Portal>
 				<DropdownMenu.Content>
@@ -98,64 +98,62 @@ function RenderMixedMenu(props: { label: string; variant?: TriggerVariant; color
 			color={props.color}
 			disabled={props.disabled}
 		>
-			<>
-				<DropdownMenu.CheckboxItem
-					checked={bookmarked()}
-					onChange={setBookmarked}
-				>
+			<DropdownMenu.CheckboxItem
+				checked={bookmarked()}
+				onChange={setBookmarked}
+			>
+				<DropdownMenu.ItemIndicator>
+					<CheckIcon />
+				</DropdownMenu.ItemIndicator>
+				Bookmarked
+			</DropdownMenu.CheckboxItem>
+
+			<DropdownMenu.Separator />
+
+			<DropdownMenu.Group>
+				<DropdownMenu.GroupLabel>Library</DropdownMenu.GroupLabel>
+				<DropdownMenu.Item>Open</DropdownMenu.Item>
+				<DropdownMenu.Item>Duplicate</DropdownMenu.Item>
+			</DropdownMenu.Group>
+
+			<DropdownMenu.Separator />
+
+			<DropdownMenu.RadioGroup
+				value={sort()}
+				onChange={setSort}
+			>
+				<DropdownMenu.GroupLabel>Sort By</DropdownMenu.GroupLabel>
+				<DropdownMenu.RadioItem value="activity">
 					<DropdownMenu.ItemIndicator>
-						<CheckIcon />
+						<DotFilledIcon />
 					</DropdownMenu.ItemIndicator>
-					Bookmarked
-				</DropdownMenu.CheckboxItem>
+					Recent activity
+				</DropdownMenu.RadioItem>
+				<DropdownMenu.RadioItem value="name">
+					<DropdownMenu.ItemIndicator>
+						<DotFilledIcon />
+					</DropdownMenu.ItemIndicator>
+					Name
+				</DropdownMenu.RadioItem>
+			</DropdownMenu.RadioGroup>
 
-				<DropdownMenu.Separator />
+			<DropdownMenu.Separator />
 
-				<DropdownMenu.Group>
-					<DropdownMenu.GroupLabel>Library</DropdownMenu.GroupLabel>
-					<DropdownMenu.Item>Open</DropdownMenu.Item>
-					<DropdownMenu.Item>Duplicate</DropdownMenu.Item>
-				</DropdownMenu.Group>
+			<DropdownMenu.Sub>
+				<DropdownMenu.SubTrigger>
+					Share
+					<DropdownMenu.ItemRightSlot>
+						<ChevronRightIcon />
+					</DropdownMenu.ItemRightSlot>
+				</DropdownMenu.SubTrigger>
 
-				<DropdownMenu.Separator />
-
-				<DropdownMenu.RadioGroup
-					value={sort()}
-					onChange={setSort}
-				>
-					<DropdownMenu.GroupLabel>Sort By</DropdownMenu.GroupLabel>
-					<DropdownMenu.RadioItem value="activity">
-						<DropdownMenu.ItemIndicator>
-							<DotFilledIcon />
-						</DropdownMenu.ItemIndicator>
-						Recent activity
-					</DropdownMenu.RadioItem>
-					<DropdownMenu.RadioItem value="name">
-						<DropdownMenu.ItemIndicator>
-							<DotFilledIcon />
-						</DropdownMenu.ItemIndicator>
-						Name
-					</DropdownMenu.RadioItem>
-				</DropdownMenu.RadioGroup>
-
-				<DropdownMenu.Separator />
-
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger>
-						Share
-						<DropdownMenu.ItemRightSlot>
-							<ChevronRightIcon />
-						</DropdownMenu.ItemRightSlot>
-					</DropdownMenu.SubTrigger>
-
-					<DropdownMenu.Portal>
-						<DropdownMenu.SubContent>
-							<DropdownMenu.Item>Copy link</DropdownMenu.Item>
-							<DropdownMenu.Item>Email invite</DropdownMenu.Item>
-						</DropdownMenu.SubContent>
-					</DropdownMenu.Portal>
-				</DropdownMenu.Sub>
-			</>
+				<DropdownMenu.Portal>
+					<DropdownMenu.SubContent>
+						<DropdownMenu.Item>Copy link</DropdownMenu.Item>
+						<DropdownMenu.Item>Email invite</DropdownMenu.Item>
+					</DropdownMenu.SubContent>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Sub>
 		</RenderDropdown>
 	);
 }
@@ -273,12 +271,10 @@ export const Gallery: Story = {
 export const ItemsOnly: Story = {
 	render: () => (
 		<RenderDropdown label="File Actions">
-			<>
-				<DropdownMenu.Item>Open</DropdownMenu.Item>
-				<DropdownMenu.Item>Rename</DropdownMenu.Item>
-				<DropdownMenu.Item>Duplicate</DropdownMenu.Item>
-				<DropdownMenu.Item>Archive</DropdownMenu.Item>
-			</>
+			<DropdownMenu.Item>Open</DropdownMenu.Item>
+			<DropdownMenu.Item>Rename</DropdownMenu.Item>
+			<DropdownMenu.Item>Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item>Archive</DropdownMenu.Item>
 		</RenderDropdown>
 	),
 };
@@ -291,35 +287,33 @@ export const CheckboxOnly: Story = {
 
 		return (
 			<RenderDropdown label="Preferences">
-				<>
-					<DropdownMenu.CheckboxItem
-						checked={notifications()}
-						onChange={setNotifications}
-					>
-						<DropdownMenu.ItemIndicator>
-							<CheckIcon />
-						</DropdownMenu.ItemIndicator>
-						Notifications
-					</DropdownMenu.CheckboxItem>
-					<DropdownMenu.CheckboxItem
-						checked={autosave()}
-						onChange={setAutosave}
-					>
-						<DropdownMenu.ItemIndicator>
-							<CheckIcon />
-						</DropdownMenu.ItemIndicator>
-						Autosave drafts
-					</DropdownMenu.CheckboxItem>
-					<DropdownMenu.CheckboxItem
-						checked={presence()}
-						onChange={setPresence}
-					>
-						<DropdownMenu.ItemIndicator>
-							<CheckIcon />
-						</DropdownMenu.ItemIndicator>
-						Show presence
-					</DropdownMenu.CheckboxItem>
-				</>
+				<DropdownMenu.CheckboxItem
+					checked={notifications()}
+					onChange={setNotifications}
+				>
+					<DropdownMenu.ItemIndicator>
+						<CheckIcon />
+					</DropdownMenu.ItemIndicator>
+					Notifications
+				</DropdownMenu.CheckboxItem>
+				<DropdownMenu.CheckboxItem
+					checked={autosave()}
+					onChange={setAutosave}
+				>
+					<DropdownMenu.ItemIndicator>
+						<CheckIcon />
+					</DropdownMenu.ItemIndicator>
+					Autosave drafts
+				</DropdownMenu.CheckboxItem>
+				<DropdownMenu.CheckboxItem
+					checked={presence()}
+					onChange={setPresence}
+				>
+					<DropdownMenu.ItemIndicator>
+						<CheckIcon />
+					</DropdownMenu.ItemIndicator>
+					Show presence
+				</DropdownMenu.CheckboxItem>
 			</RenderDropdown>
 		);
 	},
@@ -362,54 +356,52 @@ export const RadioOnly: Story = {
 export const MultipleSubmenus: Story = {
 	render: () => (
 		<RenderDropdown label="Workspace">
-			<>
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger>
-						Share
-						<DropdownMenu.ItemRightSlot>
-							<ChevronRightIcon />
-						</DropdownMenu.ItemRightSlot>
-					</DropdownMenu.SubTrigger>
-					<DropdownMenu.Portal>
-						<DropdownMenu.SubContent>
-							<DropdownMenu.Item>Copy link</DropdownMenu.Item>
-							<DropdownMenu.Item>Invite by email</DropdownMenu.Item>
-						</DropdownMenu.SubContent>
-					</DropdownMenu.Portal>
-				</DropdownMenu.Sub>
+			<DropdownMenu.Sub>
+				<DropdownMenu.SubTrigger>
+					Share
+					<DropdownMenu.ItemRightSlot>
+						<ChevronRightIcon />
+					</DropdownMenu.ItemRightSlot>
+				</DropdownMenu.SubTrigger>
+				<DropdownMenu.Portal>
+					<DropdownMenu.SubContent>
+						<DropdownMenu.Item>Copy link</DropdownMenu.Item>
+						<DropdownMenu.Item>Invite by email</DropdownMenu.Item>
+					</DropdownMenu.SubContent>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Sub>
 
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger>
-						Move
-						<DropdownMenu.ItemRightSlot>
-							<ChevronRightIcon />
-						</DropdownMenu.ItemRightSlot>
-					</DropdownMenu.SubTrigger>
-					<DropdownMenu.Portal>
-						<DropdownMenu.SubContent>
-							<DropdownMenu.Item>Backlog</DropdownMenu.Item>
-							<DropdownMenu.Item>In Progress</DropdownMenu.Item>
-							<DropdownMenu.Item>Done</DropdownMenu.Item>
-						</DropdownMenu.SubContent>
-					</DropdownMenu.Portal>
-				</DropdownMenu.Sub>
+			<DropdownMenu.Sub>
+				<DropdownMenu.SubTrigger>
+					Move
+					<DropdownMenu.ItemRightSlot>
+						<ChevronRightIcon />
+					</DropdownMenu.ItemRightSlot>
+				</DropdownMenu.SubTrigger>
+				<DropdownMenu.Portal>
+					<DropdownMenu.SubContent>
+						<DropdownMenu.Item>Backlog</DropdownMenu.Item>
+						<DropdownMenu.Item>In Progress</DropdownMenu.Item>
+						<DropdownMenu.Item>Done</DropdownMenu.Item>
+					</DropdownMenu.SubContent>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Sub>
 
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger>
-						Export
-						<DropdownMenu.ItemRightSlot>
-							<ChevronRightIcon />
-						</DropdownMenu.ItemRightSlot>
-					</DropdownMenu.SubTrigger>
-					<DropdownMenu.Portal>
-						<DropdownMenu.SubContent>
-							<DropdownMenu.Item>CSV</DropdownMenu.Item>
-							<DropdownMenu.Item>JSON</DropdownMenu.Item>
-							<DropdownMenu.Item>Markdown</DropdownMenu.Item>
-						</DropdownMenu.SubContent>
-					</DropdownMenu.Portal>
-				</DropdownMenu.Sub>
-			</>
+			<DropdownMenu.Sub>
+				<DropdownMenu.SubTrigger>
+					Export
+					<DropdownMenu.ItemRightSlot>
+						<ChevronRightIcon />
+					</DropdownMenu.ItemRightSlot>
+				</DropdownMenu.SubTrigger>
+				<DropdownMenu.Portal>
+					<DropdownMenu.SubContent>
+						<DropdownMenu.Item>CSV</DropdownMenu.Item>
+						<DropdownMenu.Item>JSON</DropdownMenu.Item>
+						<DropdownMenu.Item>Markdown</DropdownMenu.Item>
+					</DropdownMenu.SubContent>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Sub>
 		</RenderDropdown>
 	),
 };
@@ -417,53 +409,51 @@ export const MultipleSubmenus: Story = {
 export const NestedSubmenuLevels: Story = {
 	render: () => (
 		<RenderDropdown label="Deploy">
-			<>
-				<DropdownMenu.Item>Overview</DropdownMenu.Item>
+			<DropdownMenu.Item>Overview</DropdownMenu.Item>
 
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger>
-						Main
-						<DropdownMenu.ItemRightSlot>
-							<ChevronRightIcon />
-						</DropdownMenu.ItemRightSlot>
-					</DropdownMenu.SubTrigger>
-					<DropdownMenu.Portal>
-						<DropdownMenu.SubContent>
-							<DropdownMenu.Item>Main action</DropdownMenu.Item>
+			<DropdownMenu.Sub>
+				<DropdownMenu.SubTrigger>
+					Main
+					<DropdownMenu.ItemRightSlot>
+						<ChevronRightIcon />
+					</DropdownMenu.ItemRightSlot>
+				</DropdownMenu.SubTrigger>
+				<DropdownMenu.Portal>
+					<DropdownMenu.SubContent>
+						<DropdownMenu.Item>Main action</DropdownMenu.Item>
 
-							<DropdownMenu.Sub>
-								<DropdownMenu.SubTrigger>
-									Sub 1
-									<DropdownMenu.ItemRightSlot>
-										<ChevronRightIcon />
-									</DropdownMenu.ItemRightSlot>
-								</DropdownMenu.SubTrigger>
-								<DropdownMenu.Portal>
-									<DropdownMenu.SubContent>
-										<DropdownMenu.Item>Sub 1 action</DropdownMenu.Item>
+						<DropdownMenu.Sub>
+							<DropdownMenu.SubTrigger>
+								Sub 1
+								<DropdownMenu.ItemRightSlot>
+									<ChevronRightIcon />
+								</DropdownMenu.ItemRightSlot>
+							</DropdownMenu.SubTrigger>
+							<DropdownMenu.Portal>
+								<DropdownMenu.SubContent>
+									<DropdownMenu.Item>Sub 1 action</DropdownMenu.Item>
 
-										<DropdownMenu.Sub>
-											<DropdownMenu.SubTrigger>
-												Sub 2
-												<DropdownMenu.ItemRightSlot>
-													<ChevronRightIcon />
-												</DropdownMenu.ItemRightSlot>
-											</DropdownMenu.SubTrigger>
-											<DropdownMenu.Portal>
-												<DropdownMenu.SubContent>
-													<DropdownMenu.Item>Run deploy</DropdownMenu.Item>
-													<DropdownMenu.Item>View logs</DropdownMenu.Item>
-													<DropdownMenu.Item>Rollback</DropdownMenu.Item>
-												</DropdownMenu.SubContent>
-											</DropdownMenu.Portal>
-										</DropdownMenu.Sub>
-									</DropdownMenu.SubContent>
-								</DropdownMenu.Portal>
-							</DropdownMenu.Sub>
-						</DropdownMenu.SubContent>
-					</DropdownMenu.Portal>
-				</DropdownMenu.Sub>
-			</>
+									<DropdownMenu.Sub>
+										<DropdownMenu.SubTrigger>
+											Sub 2
+											<DropdownMenu.ItemRightSlot>
+												<ChevronRightIcon />
+											</DropdownMenu.ItemRightSlot>
+										</DropdownMenu.SubTrigger>
+										<DropdownMenu.Portal>
+											<DropdownMenu.SubContent>
+												<DropdownMenu.Item>Run deploy</DropdownMenu.Item>
+												<DropdownMenu.Item>View logs</DropdownMenu.Item>
+												<DropdownMenu.Item>Rollback</DropdownMenu.Item>
+											</DropdownMenu.SubContent>
+										</DropdownMenu.Portal>
+									</DropdownMenu.Sub>
+								</DropdownMenu.SubContent>
+							</DropdownMenu.Portal>
+						</DropdownMenu.Sub>
+					</DropdownMenu.SubContent>
+				</DropdownMenu.Portal>
+			</DropdownMenu.Sub>
 		</RenderDropdown>
 	),
 };
@@ -491,39 +481,37 @@ export const DisabledStates: Story = {
 				/>
 
 				<RenderDropdown label="Disabled Items">
-					<>
-						<DropdownMenu.Item>Open</DropdownMenu.Item>
-						<DropdownMenu.Item disabled>Rename</DropdownMenu.Item>
-						<DropdownMenu.CheckboxItem
-							checked={notifications()}
-							onChange={setNotifications}
-						>
-							<DropdownMenu.ItemIndicator>
-								<CheckIcon />
-							</DropdownMenu.ItemIndicator>
-							Notifications
-						</DropdownMenu.CheckboxItem>
-						<DropdownMenu.CheckboxItem disabled>
-							<DropdownMenu.ItemIndicator>
-								<CheckIcon />
-							</DropdownMenu.ItemIndicator>
-							Locked preference
-						</DropdownMenu.CheckboxItem>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Sub>
-							<DropdownMenu.SubTrigger disabled>
-								Admin tools
-								<DropdownMenu.ItemRightSlot>
-									<ChevronRightIcon />
-								</DropdownMenu.ItemRightSlot>
-							</DropdownMenu.SubTrigger>
-							<DropdownMenu.Portal>
-								<DropdownMenu.SubContent>
-									<DropdownMenu.Item>Should stay unreachable</DropdownMenu.Item>
-								</DropdownMenu.SubContent>
-							</DropdownMenu.Portal>
-						</DropdownMenu.Sub>
-					</>
+					<DropdownMenu.Item>Open</DropdownMenu.Item>
+					<DropdownMenu.Item disabled>Rename</DropdownMenu.Item>
+					<DropdownMenu.CheckboxItem
+						checked={notifications()}
+						onChange={setNotifications}
+					>
+						<DropdownMenu.ItemIndicator>
+							<CheckIcon />
+						</DropdownMenu.ItemIndicator>
+						Notifications
+					</DropdownMenu.CheckboxItem>
+					<DropdownMenu.CheckboxItem disabled>
+						<DropdownMenu.ItemIndicator>
+							<CheckIcon />
+						</DropdownMenu.ItemIndicator>
+						Locked preference
+					</DropdownMenu.CheckboxItem>
+					<DropdownMenu.Separator />
+					<DropdownMenu.Sub>
+						<DropdownMenu.SubTrigger disabled>
+							Admin tools
+							<DropdownMenu.ItemRightSlot>
+								<ChevronRightIcon />
+							</DropdownMenu.ItemRightSlot>
+						</DropdownMenu.SubTrigger>
+						<DropdownMenu.Portal>
+							<DropdownMenu.SubContent>
+								<DropdownMenu.Item>Should stay unreachable</DropdownMenu.Item>
+							</DropdownMenu.SubContent>
+						</DropdownMenu.Portal>
+					</DropdownMenu.Sub>
 				</RenderDropdown>
 			</div>
 		);

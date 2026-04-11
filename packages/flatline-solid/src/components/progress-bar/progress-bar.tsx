@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
 import { progressBarClass } from './class';
 import './progress-bar.css';
 

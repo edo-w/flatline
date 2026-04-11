@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite';
-import { createSignal, mergeProps, splitProps, type JSX } from 'solid-js';
+import { createSignal, type JSX, mergeProps, splitProps } from 'solid-js';
 import { switchClass } from './class';
 import './switch.css';
 

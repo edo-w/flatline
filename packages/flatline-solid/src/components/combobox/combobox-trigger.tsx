@@ -1,8 +1,8 @@
 import clsx from 'clsx/lite';
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import { useComboboxContext } from './context';
-import { ComboboxIcon } from './combobox-icon';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
 import { comboboxClass } from './class';
+import { ComboboxIcon } from './combobox-icon';
+import { useComboboxContext } from './context';
 import type { ComboboxTriggerProps } from './types';
 import { callEventHandler } from './util';
 

@@ -1,6 +1,6 @@
+import { createSignal } from 'solid-js';
 import { fn } from 'storybook/test';
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { createSignal } from 'solid-js';
 import { Switch } from './switch';
 
 const meta: Meta<typeof Switch> = {

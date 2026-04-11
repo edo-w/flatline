@@ -1,11 +1,11 @@
 import clsx from 'clsx/lite';
 import { For, Show, splitProps } from 'solid-js';
-import { useComboboxContext } from './context';
+import { comboboxClass } from './class';
 import { ComboboxGroup } from './combobox-group';
 import { ComboboxItem } from './combobox-item';
 import { ComboboxItemIndicator } from './combobox-item-indicator';
 import { ComboboxItemLabel } from './combobox-item-label';
-import { comboboxClass } from './class';
+import { useComboboxContext } from './context';
 import type { ComboboxListboxProps, ComboboxRenderGroupProps, ComboboxRenderItemProps } from './types';
 
 function DefaultItemComponent<TOption>(props: ComboboxRenderItemProps<TOption>) {
