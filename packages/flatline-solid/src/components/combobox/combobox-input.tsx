@@ -60,6 +60,11 @@ export function ComboboxInput(props: ComboboxInputProps) {
 				return;
 			}
 
+			if (context.visibleItems().length === 0) {
+				context.openAllOptions('first');
+				return;
+			}
+
 			context.openPopup('preserve');
 			return;
 		}
@@ -69,6 +74,11 @@ export function ComboboxInput(props: ComboboxInputProps) {
 
 			if (context.isOpen()) {
 				context.highlightPrevious();
+				return;
+			}
+
+			if (context.visibleItems().length === 0) {
+				context.openAllOptions('last');
 				return;
 			}
 

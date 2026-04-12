@@ -17,6 +17,7 @@ export interface ComboboxContextValue<TOption, TOptionGroup> {
 	setInputValue: (value: string) => void;
 	isOpen: Accessor<boolean>;
 	openPopup: (strategy?: 'first' | 'last' | 'preserve') => void;
+	openAllOptions: (strategy?: 'first' | 'last' | 'preserve') => void;
 	closePopup: (restoreInput?: boolean) => void;
 	togglePopup: () => void;
 	visibleGroups: Accessor<Array<ComboboxGroupData<TOptionGroup, TOption>>>;

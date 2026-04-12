@@ -221,7 +221,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 	};
 
 	const restoreInputFromSelection = () => {
-		setDisplayedInputValue(selectedItem()?.label ?? '');
+		setDisplayedInputValue(selectedItem()?.label ?? '', isControlledInputValue());
 		setFilterValue('');
 	};
 
@@ -278,6 +278,33 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		highlightFirst();
 	};
 
+	const openAllOptions = (strategy: 'first' | 'last' | 'preserve' = 'first') => {
+		if (local.disabled || local.readOnly || allItems().length === 0) {
+			return;
+		}
+
+		setFilterValue('');
+		setOpen(true);
+
+		if (strategy === 'last') {
+			highlightLast();
+			return;
+		}
+
+		if (strategy === 'preserve') {
+			if (highlightedKey() !== null) {
+				return;
+			}
+
+			if (selectedItem()) {
+				setHighlightedKey(selectedItem()!.key);
+				return;
+			}
+		}
+
+		highlightFirst();
+	};
+
 	const closePopup = (restoreInput = true) => {
 		setOpen(false);
 		setHighlightedKey(null);
@@ -306,7 +333,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 
 	const clearPendingInput = () => {
 		if (selectedItem() === null) {
-			setDisplayedInputValue('');
+			setDisplayedInputValue('', isControlledInputValue());
 			setFilterValue('');
 			return;
 		}
@@ -316,7 +343,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 
 	const clearSelectedItem = () => {
 		setSelectedOption(null);
-		setDisplayedInputValue('');
+		setDisplayedInputValue('', true);
 		setFilterValue('');
 		setHighlightedKey(null);
 		setOpen(false);
@@ -324,8 +351,19 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 	};
 
 	createEffect(() => {
-		if (isControlledValue() && selectedItem() !== null) {
+		if (!isControlledValue()) {
+			return;
+		}
+
+		if (selectedItem() !== null) {
 			restoreInputFromSelection();
+			return;
+		}
+
+		setFilterValue('');
+
+		if (!isControlledInputValue()) {
+			setDisplayedInputValue('');
 		}
 	});
 
@@ -381,12 +419,14 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		setInputRef,
 		inputValue,
 		setInputValue: (value) => {
-			setDisplayedInputValue(value, true);
-			setFilterValue(value);
+			const selected = selectedItem();
 
-			if (selectedItem() && value !== selectedItem()!.label) {
+			if (selected && value !== selected.label) {
 				setSelectedOption(null);
 			}
+
+			setDisplayedInputValue(value, true);
+			setFilterValue(value);
 
 			if (value.trim() === '') {
 				closePopup(false);
@@ -397,6 +437,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		},
 		isOpen,
 		openPopup,
+		openAllOptions,
 		closePopup,
 		togglePopup: () => {
 			if (isOpen()) {
