@@ -17,7 +17,24 @@ export function ComboboxInput(props: ComboboxInputProps) {
 			return;
 		}
 
-		context.setInputValue(event.currentTarget.value);
+		const input = event.currentTarget;
+		const nextValue = input.value;
+		const selectionStart = input.selectionStart;
+		const selectionEnd = input.selectionEnd;
+
+		context.setInputValue(nextValue);
+
+		queueMicrotask(() => {
+			if (document.activeElement !== input) {
+				return;
+			}
+
+			if (input.value !== nextValue || selectionStart === null || selectionEnd === null) {
+				return;
+			}
+
+			input.setSelectionRange(selectionStart, selectionEnd);
+		});
 	};
 
 	const handleFocus: JSX.EventHandlerUnion<HTMLInputElement, FocusEvent> = (event) => {
@@ -56,18 +73,6 @@ export function ComboboxInput(props: ComboboxInputProps) {
 			}
 
 			context.openPopup('preserve');
-			return;
-		}
-
-		if (event.key === 'Home' && context.isOpen()) {
-			event.preventDefault();
-			context.highlightFirst();
-			return;
-		}
-
-		if (event.key === 'End' && context.isOpen()) {
-			event.preventDefault();
-			context.highlightLast();
 			return;
 		}
 
