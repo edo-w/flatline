@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite';
-import { type JSX, splitProps } from 'solid-js';
+import { createEffect, type JSX, splitProps } from 'solid-js';
 import { comboboxClass } from './class';
 import { ComboboxItemContext, useComboboxContext } from './context';
 import type { ComboboxItemProps } from './types';
@@ -11,6 +11,15 @@ export function ComboboxItem<TOption = any>(props: ComboboxItemProps<TOption>) {
 	const rootClass = () => clsx(comboboxClass.item, local.class);
 	const selected = () => context.selectedItem()?.key === local.item.key;
 	const highlighted = () => context.highlightedKey() === local.item.key;
+	let itemRef: HTMLLIElement | undefined;
+
+	createEffect(() => {
+		if (!highlighted() || !itemRef || !context.shouldScrollHighlightedItem()) {
+			return;
+		}
+
+		itemRef.scrollIntoView({ block: 'nearest' });
+	});
 
 	const handleMouseEnter: JSX.EventHandlerUnion<HTMLLIElement, MouseEvent> = (event) => {
 		callEventHandler(local.onMouseEnter, event);
@@ -31,6 +40,7 @@ export function ComboboxItem<TOption = any>(props: ComboboxItemProps<TOption>) {
 		<ComboboxItemContext.Provider value={{ item: local.item, selected: selected(), highlighted: highlighted() }}>
 			<li
 				id={context.getItemId(local.item.key)}
+				ref={itemRef}
 				class={rootClass()}
 				role="option"
 				aria-selected={selected()}

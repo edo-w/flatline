@@ -74,6 +74,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 	const [internalInputValue, setInternalInputValue] = createSignal(local.defaultInputValue ?? '');
 	const [filterValue, setFilterValue] = createSignal('');
 	const [highlightedKey, setHighlightedKey] = createSignal<string | null>(null);
+	const [shouldScrollHighlightedItem, setShouldScrollHighlightedItem] = createSignal(false);
 	const isControlledValue = () => local.value !== undefined;
 	const isControlledInputValue = () => local.inputValue !== undefined;
 	const isControlledOpen = () => local.open !== undefined;
@@ -229,11 +230,13 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		const items = visibleItems();
 
 		if (items.length === 0) {
+			setShouldScrollHighlightedItem(false);
 			setHighlightedKey(null);
 			return;
 		}
 
-		const boundedIndex = (index + items.length) % items.length;
+		const boundedIndex = Math.min(Math.max(index, 0), items.length - 1);
+		setShouldScrollHighlightedItem(true);
 		setHighlightedKey(items[boundedIndex]?.key ?? null);
 	};
 
@@ -270,6 +273,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 			}
 
 			if (selectedItem()) {
+				setShouldScrollHighlightedItem(true);
 				setHighlightedKey(selectedItem()!.key);
 				return;
 			}
@@ -297,6 +301,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 			}
 
 			if (selectedItem()) {
+				setShouldScrollHighlightedItem(true);
 				setHighlightedKey(selectedItem()!.key);
 				return;
 			}
@@ -307,6 +312,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 
 	const closePopup = (restoreInput = true) => {
 		setOpen(false);
+		setShouldScrollHighlightedItem(false);
 		setHighlightedKey(null);
 
 		if (restoreInput) {
@@ -322,6 +328,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		setSelectedOption(item.rawValue);
 		setDisplayedInputValue(item.label);
 		setFilterValue('');
+		setShouldScrollHighlightedItem(false);
 		setHighlightedKey(item.key);
 
 		if (local.closeOnSelection) {
@@ -345,6 +352,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		setSelectedOption(null);
 		setDisplayedInputValue('', true);
 		setFilterValue('');
+		setShouldScrollHighlightedItem(false);
 		setHighlightedKey(null);
 		setOpen(false);
 		inputRef()?.focus();
@@ -372,6 +380,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		const selected = selectedItem();
 
 		if (items.length === 0) {
+			setShouldScrollHighlightedItem(false);
 			setHighlightedKey(null);
 			setOpen(false);
 			return;
@@ -383,6 +392,7 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 
 		if (isOpen()) {
 			if (selected && items.some((item) => item.key === selected.key)) {
+				setShouldScrollHighlightedItem(true);
 				setHighlightedKey(selected.key);
 				return;
 			}
@@ -451,7 +461,11 @@ export function ComboboxRoot<TOption, TOptionGroup = never>(props: ComboboxRootP
 		visibleItems,
 		selectedItem,
 		highlightedKey,
-		setHighlightedKey,
+		shouldScrollHighlightedItem,
+		setHighlightedKey: (key) => {
+			setShouldScrollHighlightedItem(false);
+			setHighlightedKey(key);
+		},
 		highlightNext,
 		highlightPrevious,
 		highlightFirst,

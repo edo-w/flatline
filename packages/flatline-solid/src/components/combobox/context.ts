@@ -24,6 +24,7 @@ export interface ComboboxContextValue<TOption, TOptionGroup> {
 	visibleItems: Accessor<Array<ComboboxItemData<TOption>>>;
 	selectedItem: Accessor<ComboboxItemData<TOption> | null>;
 	highlightedKey: Accessor<string | null>;
+	shouldScrollHighlightedItem: Accessor<boolean>;
 	setHighlightedKey: (key: string | null) => void;
 	highlightNext: () => void;
 	highlightPrevious: () => void;

@@ -1,15 +1,18 @@
 @layer components {
 	.fl-combobox_listbox {
+		--fl-combobox-listbox-pad: var(--fl-size-2);
+
 		/* reset */
 		list-style: none;
 
 		/* layout */
 		max-height: inherit;
 		overflow-y: auto;
+		scroll-padding-block: var(--fl-combobox-listbox-pad);
 
 		/* spacing */
 		margin: 0;
-		padding: var(--fl-size-2);
+		padding: var(--fl-combobox-listbox-pad);
 	}
 
 	.fl-combobox_listbox:focus {
