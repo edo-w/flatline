@@ -1,8 +1,9 @@
 {
     "js/ts.experimental.useTsgo": true,
     "chat.tools.terminal.autoApprove": {
-        "git add": true,
-        "git commit": true,
-		"git tag": true
-    }
+		"git add": true,
+		"git commit": true,
+		"git tag": true,
+		"git push": true
+	}
 }
