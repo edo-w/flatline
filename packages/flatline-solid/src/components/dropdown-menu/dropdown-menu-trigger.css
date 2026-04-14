@@ -1,6 +1,7 @@
 @layer components {
 	.fl-dropdown-menu_trigger {
 		/* layout */
+		--fl-button-active-translate-y: 0;
 		--fl-button-pad-x: var(--fl-size-2);
 	}
 }

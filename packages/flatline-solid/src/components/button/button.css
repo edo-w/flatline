@@ -3,6 +3,7 @@
 		--fl-button-inner-gap: var(--fl-size-2);
 		--fl-button-pad-x: var(--fl-size-2);
 		--fl-button-pad-y: var(--fl-size-1-5);
+		--fl-button-active-translate-y: 1px;
 		--fl-button-bg-color: var(--fl-color-gray-100);
 		--fl-button-bg-hover-color: color-mix(in oklab, var(--fl-button-bg-color), black 5%);
 		--fl-button-bg-active-color: color-mix(in oklab, var(--fl-button-bg-color), white 10%);
@@ -56,7 +57,7 @@
 	/* active state */
 	.fl-button:active:not(:disabled) {
 		background: var(--fl-button-bg-active-color);
-		transform: translateY(1px);
+		transform: translateY(var(--fl-button-active-translate-y));
 	}
 
 	/* disabled state */
