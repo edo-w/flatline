@@ -8,6 +8,7 @@
   "author": "https://github.com/juanka881",
   "type": "module",
   "exports": {
+    ".": "./dist/index.js",
     "./button": "./dist/button/index.js",
     "./card": "./dist/card/index.js",
     "./checkbox": "./dist/checkbox/index.js",
@@ -59,7 +60,7 @@
     "dev": "storybook dev -p 6006",
     "build": "pnpm run build:lib && pnpm run build:storybook",
     "build:storybook": "storybook build",
-    "build:lib": "tsdown",
+    "build:lib": "tsdown && cpx \"src/style/*.css\" dist/style",
     "prepack": "pnpm run lint && pnpm run check && pnpm run build:lib",
     "pack": "npm pack"
   },

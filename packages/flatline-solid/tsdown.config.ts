@@ -7,10 +7,10 @@ export default defineConfig({
 	dts: true,
 	sourcemap: true,
 	entry: [
+		'src/index.ts',
 		{
 			'*': 'src/components/**/index.ts'
-		},
-		'src/style/flatline.css'
+		}
 	],
 	deps: {
 		neverBundle: [/^solid-js\//],
