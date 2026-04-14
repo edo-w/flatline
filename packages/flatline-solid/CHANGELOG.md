@@ -1,5 +1,15 @@
 # @edo-w/flatline-solid
 
+## 0.3.1
+
+### Patch Changes
+
+- 3152ed0: Build
+
+  - Restore the package root export for the generated dist entry.
+  - Copy the shared style CSS files into dist/style during the library build.
+  - Remove the empty src/index.ts file from the tsdown entry setup.
+
 ## 0.3.0
 
 ### Minor Changes
