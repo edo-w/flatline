@@ -1,7 +1,5 @@
 @layer components {
 	.fl-dropdown-menu_arrow {
-		/* background */
-		fill: var(--fl-body-bg-color);
-		stroke: var(--fl-border-color);
+		visibility: hidden;
 	}
 }
